@@ -1,0 +1,30 @@
+{
+  "name": "discord-bot-settings-api",
+  "version": "1.0.0",
+  "description": "An API to allow independant developers to have a part of website for their bots",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "api",
+    "settings",
+    "paramètres",
+    "option",
+    "website",
+    "site",
+    "auto",
+    "discordjs",
+    "discordpy",
+    "page"
+  ],
+  "author": "Sylicium",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dom-parser": "^0.1.6"
+  }
+}

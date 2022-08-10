@@ -1,0 +1,27 @@
+
+
+input.credential {
+    
+    width: 100%;
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    font-size: 4vh;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid gray;
+    border-radius: 10px;
+}
+
+h1.credential_title {
+    text-align: center;
+}
+
+input.checkbox_revealInput {
+    width: 4vh;
+    height: 4vh;
+}
+
+div.no_account {
+    margin-top: 50px;
+}

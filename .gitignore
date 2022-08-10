@@ -1,0 +1,6 @@
+*.env
+./gitignore/*
+/gitignore/*
+gitignore/*
+./mongodb_url_and_password.config
+/mongodb_url_and_password.config

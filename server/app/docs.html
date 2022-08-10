@@ -1,0 +1,59 @@
+<html>
+
+<head>
+	<title>
+		Discord Bot Settings API | Documentation
+	</title>
+	<meta charset="utf-8">
+	<meta property="og:title" content="Discord Bot Settings API | Documentation">
+	<meta property="og:description" content="The Documentation of our API to easily create settings page for your discord bot.">
+    <link rel="stylesheet" href="/assets/style/waterfall.css">
+    <link rel="stylesheet" href="/assets/style/discordSwitchButtons.css">
+    <link rel="stylesheet" href="/assets/style/discordRadioButtons.css">
+    <link rel="stylesheet" href="/assets/style/discordSliders.css">
+
+</head>
+
+<body>
+
+    <h1>Documentation</h1>
+
+	<div class="">
+
+
+	</div>
+
+
+	
+
+
+    
+
+</body>
+<style>
+
+
+
+</style>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/assets/script/basicFunctions.js"></script>
+<script>
+
+
+function makeRedirect(redirect_uri) {
+    if(redirect_uri.length >= 10) {
+        setCookie("next_redirect_uri", "",0)
+        setTimeout(() => { document.location.href = redirect_uri }, 100)
+    } else {
+        setCookie("next_redirect_uri", "",0)
+        setTimeout(() => { document.location.href = document.location.origin }, 100)
+    }
+}
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,111 @@
+
+body {
+    background-color: whitesmoke;
+    color: black;
+    font-family: calibri;
+    margin: 0px;
+    margin-top: 8px;
+    padding: 0px;
+    padding-top: 70px;
+}
+
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+#toasts {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 2vh;
+}
+.toast {
+    background-color: #444444;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    margin: 0.5rem;
+}
+.toast.info {color: #44FFFF;}.toast.success {color: #00FF00;}.toast.warn {color: orange;}.toast.error {color: #FF3333;}
+.toasts.toast_fadeout {background-color: red;}
+
+
+p {
+    font-size: 2vh;
+}
+h1 {
+    font-size: 3.5vh;
+}
+
+
+label.checkbox_eye_label input.checkbox_eye { display: none; }
+input.checkbox_eye ~ span {
+  color: #333;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 2px;
+  font-weight: 200;
+  font-size: 4vh;
+  transform: translate(20px, -110px);
+}
+input.checkbox_eye ~ .checked {
+  display: none;
+}
+input.checkbox_eye:checked ~ .checked {
+  display: inline-block;
+}
+input.checkbox_eye:checked ~ .unchecked {
+  display: none;
+}
+input.checkbox_eye:disabled ~ span {
+  color: #999;
+  cursor: not-allowed;
+}
+
+
+.bold {
+    font-weight: bold;
+}
+
+div.button_001 {
+    background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+    linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+    linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+    border: 1px solid #000000;
+    font-size: 4vh;
+    text-align: center;
+    font-family: calibri;
+    width: fit-content;
+    margin: 0px auto;
+    border-radius: 20px;
+    padding: 0px 15px 0px 15px;
+    cursor:pointer;
+    transition: 0.3s all;
+    
+}
+div.button_001:hover {
+    background-color: #008cff;
+    transform: scale(1.1);
+    transition: 0.3s all;
+}
+div.button_001::backdrop {
+    background-color: #008cff;
+    transform: scale(1.1);
+    transition: 0.3s all;
+}
+
+
+input.checkbox_style {
+    width: 3vh;
+    height: 3vh;
+    font-size: 3vh;
+}

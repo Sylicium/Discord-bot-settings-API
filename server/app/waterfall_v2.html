@@ -1,0 +1,111 @@
+<html>
+
+<head>
+	<title>
+		Discord Auth Page
+	</title>
+	<meta charset="utf-8">
+	<meta property="og:title" content="Discord Authentication">
+	<meta property="og:description" content="Please connect to your discord account to continue">
+    <link rel="stylesheet" href="/assets/style/waterfall.css">
+    <link rel="stylesheet" href="/assets/style/discordSwitchButtons.css">
+    <link rel="stylesheet" href="/assets/style/discordRadioButtons.css">
+    <link rel="stylesheet" href="/assets/style/discordSliders.css">
+
+</head>
+
+<body>
+
+
+    <h1>DirtyBiologistan</h1>
+    
+    <div id="mainbox" class="noselect">
+        <!--
+        <div class="radio_button_container">
+            <div class="bloc">
+                <label>
+                      <div class="part"> <input id="cc" class="input_radio" type="radio" checked="checked" name="test"> </div>
+                      <div class="part"> <p>Coucou</p> </div>
+                 </label>
+              </div>
+              <div class="bloc">
+                <label>
+                      <div class="part"> <input class="input_radio" type="radio" checked="checked" name="test"> </div>
+                      <div class="part"> <p>Coucou</p> </div>
+                </label>
+              </div>
+              <div class="bloc">
+                <label>
+                      <div class="part"> <input class="input_radio" type="radio" checked="checked" name="test"> </div>
+                      <div class="part"> <p>Coucou</p> </div>
+                </label>
+              </div>
+              <div class="bloc">
+                <label>
+                      <div class="part"> <input class="input_radio" type="radio" checked="checked" name="test"> </div>
+                      <div class="part"> <p>Coucou</p> </div>
+                </label>
+              </div>
+        
+        </div>
+        -->
+
+      <div class="settingCategory" id="main" bis_skin_checked="1">
+        <div class="title" bis_skin_checked="1">
+            <h2 class="categoryTitle">Paramètres généraux</h2>
+        </div>
+        <div class="setting" id="setting_active" bis_skin_checked="1">
+            <div class="flexed" bis_skin_checked="1">
+                <label class="settingLabel"">
+                    <div class="name" bis_skin_checked="1">Activer le bot ou non</div>
+                    <div class="description" bis_skin_checked="1">Permet d'activer si besoin le bot et de le désactiver</div>
+                </label>
+            </div>
+            <div class="flexed" bis_skin_checked="1">
+              <textarea class="textarea textarea-autoresize-vertically" type="checkbox" id="coucoutoi" rows="5"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="setting" id="setting_slider1" bis_skin_checked="1">
+          <div class="flexed totalwidth" bis_skin_checked="1">
+              <label class="settingLabel">
+                  <div class="name" bis_skin_checked="1">Slider</div>
+                  <div class="description" bis_skin_checked="1">Message envoyé aux nouveaux membres</div>
+              </label>
+          </div>
+          <div class="flexed flexedright_noautowidth totalwidth" bis_skin_checked="1">
+            <textarea class="textarea" type="checkbox" id="setting_active_checkbox"> </textarea>
+          </div>
+
+
+          <span class="textarea" role="textbox" contenteditable></span>
+      </div>
+
+
+
+      </div>
+
+
+    </div>
+
+</body>
+<style>
+
+
+</style>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/assets/script/basicFunctions.js"></script>
+<script src="/assets/script/waterfall_v2.js"></script>
+<script>
+
+window.onload = () => {
+    //let settingsWaterfall = []
+    //Waterfall.createWaterFall(document.getElementById("mainbox"), settingsWaterfall)
+}
+
+</script>
+
+</html>

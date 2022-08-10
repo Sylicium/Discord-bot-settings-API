@@ -1,0 +1,26 @@
+
+.discordSlider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  background: #5865F2;
+  outline: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+
+.discordSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 37px;
+  background: whitesmoke;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.discordSlider::-moz-range-thumb {
+
+  cursor: pointer;
+}

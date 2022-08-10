@@ -1,0 +1,147 @@
+
+body {
+	background-color: #2C2F33;
+	color: #FFFFFF;
+	font-family: consolas;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+hr.separator {
+    height:1px;
+    width:100%;
+    border-width:0;
+    color:var(--gray-two);
+    background-color:var(--gray-three);
+}
+
+
+div.settingCategory {
+    border: 2px solid black;
+    padding: 10px;
+    transition: 0.3s all;
+    margin: 50px 20px 50px 20px ;
+}
+
+div.settingCategory.disabled {
+    /* filter: blur(3px); */
+    opacity: 0.3;
+    transition: 0.3s all;
+    cursor: not-allowed;
+    pointer-events: none;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+div.settingCategory > div{
+}
+
+div.settingCategory > div.setting{
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+div.settingCategory > div.setting .flexed{
+    width: 50%;
+}
+div.settingCategory > div.setting .totalwidth{
+    width: 100%;
+}
+div.settingCategory > div.setting .flexedright{
+    float: right;
+    text-align: right;
+    width: auto;
+}
+div.settingCategory > div.setting .flexedright_noautowidth{
+    float: right;
+    text-align: right;
+}
+
+div.settingCategory div.setting div.sliderSelectedValue {
+    text-align: center;
+}
+div.settingCategory div.setting div.sliderInfos {
+    display: flex;
+    align-items: center;
+}
+div.settingCategory div.setting div.sliderInfos div.borne{
+    margin: 5px;
+    font-weight: bold;
+}
+
+
+div.settingCategory .settingLabel {
+    cursor: pointer;
+}
+div.settingCategory .settingLabel div.name {
+    text-transform: uppercase;
+    color: gray;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+div .categoryTitle {
+    text-decoration: underline;
+    text-align: center;
+    margin: 10px;
+}
+
+
+div.settingCategory input.textInput {
+    background-color: var(--gray-two);
+    font-size: 1.5vh;
+    padding: 10px 15px 10px 15px;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: whitesmoke;
+    font-family: consolas;
+    width: 80%;
+}
+div.settingCategory input.numberInput {
+    background-color: var(--gray-two);
+    font-size: 1.5vh;
+    padding: 10px 15px 10px 15px;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: whitesmoke;
+    font-family: consolas;
+    width: auto;
+}
+div.settingCategory textarea.textarea {
+    background-color: var(--gray-two);
+    font-size: 1.5vh;
+    padding: 10px 15px 10px 15px;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: whitesmoke;
+    font-family: consolas;
+    width: 100%;
+    resize: vertical;
+    min-height: 7vh;
+}
+
+div.settingCategory select.discordSelectCSS {
+    background-color: var(--gray-two);
+    font-size: 1.5vh;
+    padding: 10px 15px 10px 15px;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: whitesmoke;
+    font-family: consolas;
+    min-width: 200px;
+    max-width: 50vw;
+}

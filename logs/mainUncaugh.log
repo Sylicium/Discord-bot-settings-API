@@ -1,0 +1,216 @@
+File created on 02/07/2022, 18:51:13
+
+[02/07/2022, 18:51:13 ERROR] (unknown): /!\ UNCAUGH ERROR /!\ c:\Users\Sylicium\Documents\devlopement\Projets\#0005 Garorock\Garorock v1\server.js:126
+[02/07/2022, 18:51:13 ERROR] (unknown):             let account_infos = await Database_.getAccountByConnectionToken(datas.connectionToken, true)
+[02/07/2022, 18:51:13 ERROR] (unknown):                                 ^^^^^
+[02/07/2022, 18:51:13 ERROR] (unknown): 
+[02/07/2022, 18:51:13 ERROR] (unknown): SyntaxError: await is only valid in async function
+[02/07/2022, 18:51:13 ERROR] (unknown):     at wrapSafe (internal/modules/cjs/loader.js:1001:16)
+[02/07/2022, 18:51:13 ERROR] (unknown):     at Module._compile (internal/modules/cjs/loader.js:1049:27)
+[02/07/2022, 18:51:13 ERROR] (unknown):     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+[02/07/2022, 18:51:13 ERROR] (unknown):     at Module.load (internal/modules/cjs/loader.js:950:32)
+[02/07/2022, 18:51:13 ERROR] (unknown):     at Function.Module._load (internal/modules/cjs/loader.js:790:12)
+[02/07/2022, 18:51:13 ERROR] (unknown):     at Module.require (internal/modules/cjs/loader.js:974:19)
+[02/07/2022, 18:51:13 ERROR] (unknown):     at require (internal/modules/cjs/helpers.js:93:18)
+[02/07/2022, 18:51:13 ERROR] (unknown):     at _allCode (c:\Users\Sylicium\Documents\devlopement\Projets\#0005 Garorock\Garorock v1\index.js:103:14)
+[02/07/2022, 18:51:13 ERROR] (unknown):     at c:\Users\Sylicium\Documents\devlopement\Projets\#0005 Garorock\Garorock v1\index.js:38:5
+[02/07/2022, 18:51:13 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\mongodb\lib\utils.js:423:9
+[02/07/2022, 18:51:13 ERROR] (unknown): 
+[02/07/2022, 18:59:50 ERROR] (unknown): Unhandled Rejection (process.on handle) TypeError: Database_.getAccountByCredentials is not a function
+[02/07/2022, 18:59:50 ERROR] (unknown):     at Socket.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0005 Garorock\Garorock v1\server.js:160:49)
+[02/07/2022, 18:59:50 ERROR] (unknown):     at Socket.emit (events.js:400:28)
+[02/07/2022, 18:59:50 ERROR] (unknown):     at Socket.emitUntyped (c:\Users\Sylicium\node_modules\socket.io\dist\typed-events.js:69:22)
+[02/07/2022, 18:59:50 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\socket.io\dist\socket.js:466:39
+[02/07/2022, 18:59:50 ERROR] (unknown):     at processTicksAndRejections (internal/process/task_queues.js:77:11)
+[02/07/2022, 18:59:50 ERROR] (unknown): 
+[02/07/2022, 21:33:37 ERROR] (unknown): Unhandled Rejection (process.on handle) TypeError: Database_.getAccountByCredentials is not a function
+[02/07/2022, 21:33:37 ERROR] (unknown):     at Socket.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0005 Garorock\Garorock v1\server.js:160:49)
+[02/07/2022, 21:33:37 ERROR] (unknown):     at Socket.emit (events.js:400:28)
+[02/07/2022, 21:33:37 ERROR] (unknown):     at Socket.emitUntyped (c:\Users\Sylicium\node_modules\socket.io\dist\typed-events.js:69:22)
+[02/07/2022, 21:33:37 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\socket.io\dist\socket.js:466:39
+[02/07/2022, 21:33:37 ERROR] (unknown):     at processTicksAndRejections (internal/process/task_queues.js:77:11)
+[02/07/2022, 21:33:37 ERROR] (unknown): 
+[02/07/2022, 21:33:47 ERROR] (unknown): Unhandled Rejection (process.on handle) TypeError: Database_.getAccountByCredentials is not a function
+[02/07/2022, 21:33:47 ERROR] (unknown):     at Socket.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0005 Garorock\Garorock v1\server.js:160:49)
+[02/07/2022, 21:33:47 ERROR] (unknown):     at Socket.emit (events.js:400:28)
+[02/07/2022, 21:33:47 ERROR] (unknown):     at Socket.emitUntyped (c:\Users\Sylicium\node_modules\socket.io\dist\typed-events.js:69:22)
+[02/07/2022, 21:33:47 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\socket.io\dist\socket.js:466:39
+[02/07/2022, 21:33:47 ERROR] (unknown):     at processTicksAndRejections (internal/process/task_queues.js:77:11)
+[02/07/2022, 21:33:47 ERROR] (unknown): 
+[06/08/2022, 23:48:51 ERROR] (unknown): /!\ UNCAUGH ERROR /!\ c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:109
+[06/08/2022, 23:48:51 ERROR] (unknown):             let le_user = await somef.getUserByDiscordAuthCode(datas.discordAuthCode, "identify", config.website.uri.discordAuth.auth.redirectURI)
+[06/08/2022, 23:48:51 ERROR] (unknown):                           ^^^^^
+[06/08/2022, 23:48:51 ERROR] (unknown): 
+[06/08/2022, 23:48:51 ERROR] (unknown): SyntaxError: await is only valid in async functions and the top level bodies of modules
+[06/08/2022, 23:48:51 ERROR] (unknown):     at Object.compileFunction (node:vm:352:18)
+[06/08/2022, 23:48:51 ERROR] (unknown):     at wrapSafe (node:internal/modules/cjs/loader:1033:15)
+[06/08/2022, 23:48:51 ERROR] (unknown):     at Module._compile (node:internal/modules/cjs/loader:1069:27)
+[06/08/2022, 23:48:51 ERROR] (unknown):     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+[06/08/2022, 23:48:51 ERROR] (unknown):     at Module.load (node:internal/modules/cjs/loader:981:32)
+[06/08/2022, 23:48:51 ERROR] (unknown):     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+[06/08/2022, 23:48:51 ERROR] (unknown):     at Module.require (node:internal/modules/cjs/loader:1005:19)
+[06/08/2022, 23:48:51 ERROR] (unknown):     at require (node:internal/modules/cjs/helpers:102:18)
+[06/08/2022, 23:48:51 ERROR] (unknown):     at _allCode (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\index.js:102:14)
+[06/08/2022, 23:48:51 ERROR] (unknown):     at c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\index.js:37:5
+[06/08/2022, 23:48:51 ERROR] (unknown): 
+[07/08/2022, 02:20:13 ERROR] (unknown): /!\ UNCAUGH ERROR /!\ ReferenceError: endpoint_type is not defined
+[07/08/2022, 02:20:13 ERROR] (unknown):     at c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:45:62
+[07/08/2022, 02:20:13 ERROR] (unknown):     at Array.forEach (<anonymous>)
+[07/08/2022, 02:20:13 ERROR] (unknown):     at Object.module.exports.start (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:39:36)
+[07/08/2022, 02:20:13 ERROR] (unknown):     at _allCode (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\index.js:103:8)
+[07/08/2022, 02:20:13 ERROR] (unknown):     at c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\index.js:37:5
+[07/08/2022, 02:20:13 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\mongodb\lib\utils.js:423:9
+[07/08/2022, 02:20:13 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\mongodb\lib\mongo_client.js:130:17
+[07/08/2022, 02:20:13 ERROR] (unknown):     at connectCallback (c:\Users\Sylicium\node_modules\mongodb\lib\operations\connect.js:29:9)
+[07/08/2022, 02:20:13 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\mongodb\lib\operations\connect.js:80:9
+[07/08/2022, 02:20:13 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\mongodb\lib\sdam\topology.js:209:25
+[07/08/2022, 02:20:13 ERROR] (unknown): 
+[07/08/2022, 02:32:41 ERROR] (unknown): /!\ UNCAUGH ERROR /!\ ReferenceError: Cannot access 'Pattern' before initialization
+[07/08/2022, 02:32:41 ERROR] (unknown):     at Object.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server\app\discordAuthError.js:7:26)
+[07/08/2022, 02:32:41 ERROR] (unknown):     at Module._compile (node:internal/modules/cjs/loader:1105:14)
+[07/08/2022, 02:32:41 ERROR] (unknown):     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+[07/08/2022, 02:32:41 ERROR] (unknown):     at Module.load (node:internal/modules/cjs/loader:981:32)
+[07/08/2022, 02:32:41 ERROR] (unknown):     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+[07/08/2022, 02:32:41 ERROR] (unknown):     at Module.require (node:internal/modules/cjs/loader:1005:19)
+[07/08/2022, 02:32:41 ERROR] (unknown):     at require (node:internal/modules/cjs/helpers:102:18)
+[07/08/2022, 02:32:41 ERROR] (unknown):     at c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:45:31
+[07/08/2022, 02:32:41 ERROR] (unknown):     at Array.forEach (<anonymous>)
+[07/08/2022, 02:32:41 ERROR] (unknown):     at Object.module.exports.start (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:39:36)
+[07/08/2022, 02:32:41 ERROR] (unknown): 
+[07/08/2022, 02:32:47 ERROR] (unknown): /!\ UNCAUGH ERROR /!\ ReferenceError: Cannot access 'Pattern' before initialization
+[07/08/2022, 02:32:47 ERROR] (unknown):     at Object.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server\app\discordAuthError.js:7:26)
+[07/08/2022, 02:32:47 ERROR] (unknown):     at Module._compile (node:internal/modules/cjs/loader:1105:14)
+[07/08/2022, 02:32:47 ERROR] (unknown):     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+[07/08/2022, 02:32:47 ERROR] (unknown):     at Module.load (node:internal/modules/cjs/loader:981:32)
+[07/08/2022, 02:32:47 ERROR] (unknown):     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+[07/08/2022, 02:32:47 ERROR] (unknown):     at Module.require (node:internal/modules/cjs/loader:1005:19)
+[07/08/2022, 02:32:47 ERROR] (unknown):     at require (node:internal/modules/cjs/helpers:102:18)
+[07/08/2022, 02:32:47 ERROR] (unknown):     at c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:45:31
+[07/08/2022, 02:32:47 ERROR] (unknown):     at Array.forEach (<anonymous>)
+[07/08/2022, 02:32:47 ERROR] (unknown):     at Object.module.exports.start (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:39:36)
+[07/08/2022, 02:32:47 ERROR] (unknown): 
+[07/08/2022, 03:16:47 ERROR] (unknown): Unhandled Rejection (process.on handle) TypeError: socket.redirect is not a function
+[07/08/2022, 03:16:47 ERROR] (unknown):     at Socket.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:188:24)
+[07/08/2022, 03:16:47 ERROR] (unknown):     at Socket.emit (node:events:527:28)
+[07/08/2022, 03:16:47 ERROR] (unknown):     at Socket.emitUntyped (c:\Users\Sylicium\node_modules\socket.io\dist\typed-events.js:69:22)
+[07/08/2022, 03:16:47 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\socket.io\dist\socket.js:466:39
+[07/08/2022, 03:16:47 ERROR] (unknown):     at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[07/08/2022, 03:16:47 ERROR] (unknown): 
+[07/08/2022, 03:16:51 ERROR] (unknown): Unhandled Rejection (process.on handle) TypeError: socket.redirect is not a function
+[07/08/2022, 03:16:51 ERROR] (unknown):     at Socket.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:188:24)
+[07/08/2022, 03:16:51 ERROR] (unknown):     at Socket.emit (node:events:527:28)
+[07/08/2022, 03:16:51 ERROR] (unknown):     at Socket.emitUntyped (c:\Users\Sylicium\node_modules\socket.io\dist\typed-events.js:69:22)
+[07/08/2022, 03:16:51 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\socket.io\dist\socket.js:466:39
+[07/08/2022, 03:16:51 ERROR] (unknown):     at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[07/08/2022, 03:16:51 ERROR] (unknown): 
+[07/08/2022, 03:16:55 ERROR] (unknown): Unhandled Rejection (process.on handle) TypeError: socket.redirect is not a function
+[07/08/2022, 03:16:55 ERROR] (unknown):     at Socket.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:188:24)
+[07/08/2022, 03:16:55 ERROR] (unknown):     at Socket.emit (node:events:527:28)
+[07/08/2022, 03:16:55 ERROR] (unknown):     at Socket.emitUntyped (c:\Users\Sylicium\node_modules\socket.io\dist\typed-events.js:69:22)
+[07/08/2022, 03:16:55 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\socket.io\dist\socket.js:466:39
+[07/08/2022, 03:16:55 ERROR] (unknown):     at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[07/08/2022, 03:16:55 ERROR] (unknown): 
+[07/08/2022, 03:16:56 ERROR] (unknown): Unhandled Rejection (process.on handle) TypeError: socket.redirect is not a function
+[07/08/2022, 03:16:56 ERROR] (unknown):     at Socket.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:188:24)
+[07/08/2022, 03:16:56 ERROR] (unknown):     at Socket.emit (node:events:527:28)
+[07/08/2022, 03:16:56 ERROR] (unknown):     at Socket.emitUntyped (c:\Users\Sylicium\node_modules\socket.io\dist\typed-events.js:69:22)
+[07/08/2022, 03:16:56 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\socket.io\dist\socket.js:466:39
+[07/08/2022, 03:16:56 ERROR] (unknown):     at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[07/08/2022, 03:16:56 ERROR] (unknown): 
+[07/08/2022, 03:17:24 ERROR] (unknown): Unhandled Rejection (process.on handle) TypeError: socket.redirect is not a function
+[07/08/2022, 03:17:24 ERROR] (unknown):     at Socket.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:188:24)
+[07/08/2022, 03:17:24 ERROR] (unknown):     at Socket.emit (node:events:527:28)
+[07/08/2022, 03:17:24 ERROR] (unknown):     at Socket.emitUntyped (c:\Users\Sylicium\node_modules\socket.io\dist\typed-events.js:69:22)
+[07/08/2022, 03:17:24 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\socket.io\dist\socket.js:466:39
+[07/08/2022, 03:17:24 ERROR] (unknown):     at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[07/08/2022, 03:17:24 ERROR] (unknown): 
+[07/08/2022, 03:17:25 ERROR] (unknown): Unhandled Rejection (process.on handle) TypeError: socket.redirect is not a function
+[07/08/2022, 03:17:25 ERROR] (unknown):     at Socket.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:188:24)
+[07/08/2022, 03:17:25 ERROR] (unknown):     at Socket.emit (node:events:527:28)
+[07/08/2022, 03:17:25 ERROR] (unknown):     at Socket.emitUntyped (c:\Users\Sylicium\node_modules\socket.io\dist\typed-events.js:69:22)
+[07/08/2022, 03:17:25 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\socket.io\dist\socket.js:466:39
+[07/08/2022, 03:17:25 ERROR] (unknown):     at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[07/08/2022, 03:17:25 ERROR] (unknown): 
+[07/08/2022, 03:18:38 ERROR] (unknown): Unhandled Rejection (process.on handle) TypeError: socket.redirect is not a function
+[07/08/2022, 03:18:38 ERROR] (unknown):     at Socket.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:188:24)
+[07/08/2022, 03:18:38 ERROR] (unknown):     at Socket.emit (node:events:527:28)
+[07/08/2022, 03:18:38 ERROR] (unknown):     at Socket.emitUntyped (c:\Users\Sylicium\node_modules\socket.io\dist\typed-events.js:69:22)
+[07/08/2022, 03:18:38 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\socket.io\dist\socket.js:466:39
+[07/08/2022, 03:18:38 ERROR] (unknown):     at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[07/08/2022, 03:18:38 ERROR] (unknown): 
+[07/08/2022, 03:18:40 ERROR] (unknown): Unhandled Rejection (process.on handle) TypeError: socket.redirect is not a function
+[07/08/2022, 03:18:40 ERROR] (unknown):     at Socket.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:188:24)
+[07/08/2022, 03:18:40 ERROR] (unknown):     at Socket.emit (node:events:527:28)
+[07/08/2022, 03:18:40 ERROR] (unknown):     at Socket.emitUntyped (c:\Users\Sylicium\node_modules\socket.io\dist\typed-events.js:69:22)
+[07/08/2022, 03:18:40 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\socket.io\dist\socket.js:466:39
+[07/08/2022, 03:18:40 ERROR] (unknown):     at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[07/08/2022, 03:18:40 ERROR] (unknown): 
+[07/08/2022, 03:18:44 ERROR] (unknown): Unhandled Rejection (process.on handle) TypeError: socket.redirect is not a function
+[07/08/2022, 03:18:44 ERROR] (unknown):     at Socket.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:188:24)
+[07/08/2022, 03:18:44 ERROR] (unknown):     at Socket.emit (node:events:527:28)
+[07/08/2022, 03:18:44 ERROR] (unknown):     at Socket.emitUntyped (c:\Users\Sylicium\node_modules\socket.io\dist\typed-events.js:69:22)
+[07/08/2022, 03:18:44 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\socket.io\dist\socket.js:466:39
+[07/08/2022, 03:18:44 ERROR] (unknown):     at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[07/08/2022, 03:18:44 ERROR] (unknown): 
+[07/08/2022, 03:19:05 ERROR] (unknown): Unhandled Rejection (process.on handle) TypeError: socket.redirect is not a function
+[07/08/2022, 03:19:05 ERROR] (unknown):     at Socket.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:188:24)
+[07/08/2022, 03:19:05 ERROR] (unknown):     at Socket.emit (node:events:527:28)
+[07/08/2022, 03:19:05 ERROR] (unknown):     at Socket.emitUntyped (c:\Users\Sylicium\node_modules\socket.io\dist\typed-events.js:69:22)
+[07/08/2022, 03:19:05 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\socket.io\dist\socket.js:466:39
+[07/08/2022, 03:19:05 ERROR] (unknown):     at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[07/08/2022, 03:19:05 ERROR] (unknown): 
+[07/08/2022, 03:19:06 ERROR] (unknown): Unhandled Rejection (process.on handle) TypeError: socket.redirect is not a function
+[07/08/2022, 03:19:06 ERROR] (unknown):     at Socket.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:188:24)
+[07/08/2022, 03:19:06 ERROR] (unknown):     at Socket.emit (node:events:527:28)
+[07/08/2022, 03:19:06 ERROR] (unknown):     at Socket.emitUntyped (c:\Users\Sylicium\node_modules\socket.io\dist\typed-events.js:69:22)
+[07/08/2022, 03:19:06 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\socket.io\dist\socket.js:466:39
+[07/08/2022, 03:19:06 ERROR] (unknown):     at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[07/08/2022, 03:19:06 ERROR] (unknown): 
+[07/08/2022, 03:19:09 ERROR] (unknown): Unhandled Rejection (process.on handle) TypeError: socket.redirect is not a function
+[07/08/2022, 03:19:09 ERROR] (unknown):     at Socket.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:188:24)
+[07/08/2022, 03:19:09 ERROR] (unknown):     at Socket.emit (node:events:527:28)
+[07/08/2022, 03:19:09 ERROR] (unknown):     at Socket.emitUntyped (c:\Users\Sylicium\node_modules\socket.io\dist\typed-events.js:69:22)
+[07/08/2022, 03:19:09 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\socket.io\dist\socket.js:466:39
+[07/08/2022, 03:19:09 ERROR] (unknown):     at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[07/08/2022, 03:19:09 ERROR] (unknown): 
+[07/08/2022, 03:19:11 ERROR] (unknown): Unhandled Rejection (process.on handle) TypeError: socket.redirect is not a function
+[07/08/2022, 03:19:11 ERROR] (unknown):     at Socket.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:188:24)
+[07/08/2022, 03:19:11 ERROR] (unknown):     at Socket.emit (node:events:527:28)
+[07/08/2022, 03:19:11 ERROR] (unknown):     at Socket.emitUntyped (c:\Users\Sylicium\node_modules\socket.io\dist\typed-events.js:69:22)
+[07/08/2022, 03:19:11 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\socket.io\dist\socket.js:466:39
+[07/08/2022, 03:19:11 ERROR] (unknown):     at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[07/08/2022, 03:19:11 ERROR] (unknown): 
+[07/08/2022, 03:19:16 ERROR] (unknown): Unhandled Rejection (process.on handle) TypeError: socket.redirect is not a function
+[07/08/2022, 03:19:16 ERROR] (unknown):     at Socket.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:188:24)
+[07/08/2022, 03:19:16 ERROR] (unknown):     at Socket.emit (node:events:527:28)
+[07/08/2022, 03:19:16 ERROR] (unknown):     at Socket.emitUntyped (c:\Users\Sylicium\node_modules\socket.io\dist\typed-events.js:69:22)
+[07/08/2022, 03:19:16 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\socket.io\dist\socket.js:466:39
+[07/08/2022, 03:19:16 ERROR] (unknown):     at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[07/08/2022, 03:19:16 ERROR] (unknown): 
+[07/08/2022, 03:19:47 ERROR] (unknown): Unhandled Rejection (process.on handle) ReferenceError: res is not defined
+[07/08/2022, 03:19:47 ERROR] (unknown):     at Socket.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:201:17)
+[07/08/2022, 03:19:47 ERROR] (unknown):     at Socket.emit (node:events:527:28)
+[07/08/2022, 03:19:47 ERROR] (unknown):     at Socket.emitUntyped (c:\Users\Sylicium\node_modules\socket.io\dist\typed-events.js:69:22)
+[07/08/2022, 03:19:47 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\socket.io\dist\socket.js:466:39
+[07/08/2022, 03:19:47 ERROR] (unknown):     at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[07/08/2022, 03:19:47 ERROR] (unknown): 
+[07/08/2022, 03:19:49 ERROR] (unknown): Unhandled Rejection (process.on handle) ReferenceError: res is not defined
+[07/08/2022, 03:19:49 ERROR] (unknown):     at Socket.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:201:17)
+[07/08/2022, 03:19:49 ERROR] (unknown):     at Socket.emit (node:events:527:28)
+[07/08/2022, 03:19:49 ERROR] (unknown):     at Socket.emitUntyped (c:\Users\Sylicium\node_modules\socket.io\dist\typed-events.js:69:22)
+[07/08/2022, 03:19:49 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\socket.io\dist\socket.js:466:39
+[07/08/2022, 03:19:49 ERROR] (unknown):     at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[07/08/2022, 03:19:49 ERROR] (unknown): 
+[07/08/2022, 03:57:05 ERROR] (unknown): Unhandled Rejection (process.on handle) TypeError: Logger.warn is not a function
+[07/08/2022, 03:57:05 ERROR] (unknown):     at Database.website_disconnectAllUsers (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\localModules\database.js:200:16)
+[07/08/2022, 03:57:05 ERROR] (unknown):     at Socket.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\server.js:152:58)
+[07/08/2022, 03:57:05 ERROR] (unknown):     at Socket.emit (node:events:527:28)
+[07/08/2022, 03:57:05 ERROR] (unknown):     at Socket.emitUntyped (c:\Users\Sylicium\node_modules\socket.io\dist\typed-events.js:69:22)
+[07/08/2022, 03:57:05 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\socket.io\dist\socket.js:466:39
+[07/08/2022, 03:57:05 ERROR] (unknown):     at processTicksAndRejections (node:internal/process/task_queues:78:11)
+[07/08/2022, 03:57:05 ERROR] (unknown): 
+[08/08/2022, 02:01:08 ERROR] (unknown): Unhandled Rejection (process.on handle) MongoServerSelectionError: connect ETIMEDOUT 13.37.33.104:27017
+[08/08/2022, 02:01:08 ERROR] (unknown):     at Timeout._onTimeout (c:\Users\Sylicium\node_modules\mongodb\lib\sdam\topology.js:305:38)
+[08/08/2022, 02:01:08 ERROR] (unknown):     at listOnTimeout (node:internal/timers:559:17)
+[08/08/2022, 02:01:08 ERROR] (unknown):     at processTimers (node:internal/timers:502:7)
+[08/08/2022, 02:01:08 ERROR] (unknown): 

@@ -1,0 +1,205 @@
+<html>
+
+<head>
+	<title>
+		Garrockk
+	</title>
+	<meta charset="utf-8">
+	<!-- <meta property="og:title" content="DirtyBiologistan | Main page">
+	<meta property="og:description" content="Page principale du site d'où on peut inviter le bot, rejoindre les Discord principaux du DirtyBiologistan et bien plus encore ...">
+    <meta property="og:image" content="https://dirtybiology.captaincommand.repl.co/site/img/dirtybiologistan_bot_blue_circle.png">
+	<link rel="icon" type="image/jpg" href="../../../../../../site/img/ying_yang_loups.jpg"> -->
+    <link rel="stylesheet" href="/assets/style/global.css">
+    <link rel="stylesheet" href="/assets/style/login.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div id="toasts"></div>
+
+
+    <div id="loginbox">
+        <div>
+            <h1 class="credential_title">Identifiant de votre bracelet Garorock 2022</h1>
+            <input id="wristbandID" class="credential" placeholder="Identifiant de bracelet"></input>
+        </div>
+        <div>
+            <h1 class="credential_title">Votre mot de passe</h1>
+            <input id="password" class="credential" placeholder="Mot de passe" type="password"><label class="checkbox_eye_label">
+                <input id="checkbox_unmaskPassword" class="checkbox_eye" type="checkbox" onclick='toggleInput("checkbox_unmaskPassword","password")'><span class="glyphicon glyphicon-eye-open checked"></span><span class="glyphicon glyphicon-eye-close unchecked"></span></input>
+            </label></input>
+        </div>
+        <div style="display:inline-flex">
+            <input id="stayLoggedIn" class="checkbox_style" type="checkbox"></input>
+            <p>Rester connecté</p>
+        </div>
+
+        <div class="button_001" onclick="connect()">Connexion</div>
+
+        <div class="no_account">
+            <p>Pas encore de compte ? <a href="/signup">crééz le maintenant!</a></p>
+        </div>
+
+    </div>
+
+</body>
+<style>
+
+
+
+
+</style>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/assets/script/basicFunctions.js"></script>
+<script>
+
+
+    function toggleInput(from,inputToToggle) {
+        if(document.getElementById(from).checked) {
+            document.getElementById(inputToToggle).type = "text"
+        } else {
+            document.getElementById(inputToToggle).type = "password"
+        }
+    }
+
+    //let types = ['info', 'success', 'error']
+
+    
+    function connect() {
+
+        createNotification("info", "Connecting...")
+
+        let wristbandID = document.getElementById("wristbandID").value
+        let password = document.getElementById("password").value
+        let stayLoggedIn = document.getElementById("stayLoggedIn").checked
+        let datas_to_send = {
+                credentials: {
+                    password: password,
+                    wristbandID: wristbandID
+                },
+                stayLoggedIn: stayLoggedIn
+            }
+        console.log("Sending credential datas:",datas_to_send)
+        if(socket) {
+            socket.emit("processLogin", datas_to_send)
+        }
+    }
+
+    socket.on("reconnected", () => {
+        createNotification("info", "Connected from server.")
+    })
+    socket.on("disconnect", () => {
+        createNotification("warn", "Disconnected from server.")
+    })
+
+
+
+
+    let ConnectionToken = getCookie("connectionToken")
+
+    socket.emit("IsAuthentified", {
+        connectionToken: getCookie("connectionToken")
+    })
+    socket.on("IsAuthentifiedBack", datas => {
+        if(!datas) return console.log("[IsAuthentifiedBack] Server responded with no datas.")
+        console.log(datas)
+        if(datas.connected) {
+            let myAccountButton = document.getElementById("myAccountButton")
+            myAccountButton.onclick = () => {
+                document.location.href = `${document.location.origin}/account/me`
+            }
+            let label = document.getElementById("myAccountButton_label")
+            label.textContent = "Mon compte"
+            label.className = "myAccount"
+            /* Uniquement pour la page gouv ou plus tard à la premiere page chargée du site. (un cookie AlreadySaidConnectionMessage ?)*/
+            console.log("connected.")
+            createNotification("info","Connecté.")
+
+            
+            MyAccount.connected = true
+            if(datas.account) {
+                MyAccount.discord.id = datas.account.id
+                MyAccount.discord.username = datas.account.username
+                MyAccount.discord.discriminator = datas.account.discriminator
+                MyAccount.discord.avatarURL = datas.account.avatarURL
+                MyAccount.discord.locale = datas.account.locale
+                MyAccount.website.username = datas.account.username
+                _refreshDisplayAccount()
+            } else {
+                console.log("[IsAuthentifiedBack] Server responded with no datas for the account informations")
+            }
+        } else {
+            console.log("Not connected")
+            createNotification("warn", "Vous n'êtes pas connecté.")
+            //document.location.href = datas.redirectURI
+            let myAccountButton = document.getElementById("myAccountButton")
+            myAccountButton.onclick = () => {
+                if(!!datas.redirectURI) document.location.href = `${datas.redirectURI}`
+            }
+            let label = document.getElementById("myAccountButton_label")
+            label.textContent = "Se connecter"
+            
+        }
+
+    })
+
+    let MyAccount = {
+        connected: false,
+        discord: {
+            id: undefined,
+            username: undefined,
+            avatarURL: undefined,
+            discriminator: undefined,
+            locale: undefined
+        },
+        website: {
+            username: "Anonyme"
+        }
+    }
+    if(!!getCookie("myAccount")) {
+        MyAccount = JSON.parse(getCookie("myAccount"))
+    }
+    function _refreshDisplayAccount() {
+        if(MyAccount) {
+            document.getElementById("userAccountIcon").src = MyAccount.discord.avatarURL
+            let label = document.getElementById("myAccountButton_label")
+            label.textContent = MyAccount.website.username
+            label.className = "myAccount"
+        }
+    }
+
+
+
+
+
+
+    function setCookie(cname, cvalue, exdays) {
+        if(!exdays) exdays = 1
+        const d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        let expires = "expires="+d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    function getCookie(cname) {
+        let name = cname + "=";
+        let ca = document.cookie.split(';');
+        for(let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+</script>
+
+</html>
