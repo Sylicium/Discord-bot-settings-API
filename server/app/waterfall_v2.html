@@ -7,6 +7,7 @@
 	<meta charset="utf-8">
 	<meta property="og:title" content="Discord Authentication">
 	<meta property="og:description" content="Please connect to your discord account to continue">
+    <link rel="stylesheet" href="/assets/style/discordColors.css">
     <link rel="stylesheet" href="/assets/style/waterfall.css">
     <link rel="stylesheet" href="/assets/style/discordSwitchButtons.css">
     <link rel="stylesheet" href="/assets/style/discordRadioButtons.css">
@@ -20,74 +21,44 @@
     <h1>DirtyBiologistan</h1>
     
     <div id="mainbox" class="noselect">
-        <!--
-        <div class="radio_button_container">
-            <div class="bloc">
-                <label>
-                      <div class="part"> <input id="cc" class="input_radio" type="radio" checked="checked" name="test"> </div>
-                      <div class="part"> <p>Coucou</p> </div>
-                 </label>
-              </div>
-              <div class="bloc">
-                <label>
-                      <div class="part"> <input class="input_radio" type="radio" checked="checked" name="test"> </div>
-                      <div class="part"> <p>Coucou</p> </div>
-                </label>
-              </div>
-              <div class="bloc">
-                <label>
-                      <div class="part"> <input class="input_radio" type="radio" checked="checked" name="test"> </div>
-                      <div class="part"> <p>Coucou</p> </div>
-                </label>
-              </div>
-              <div class="bloc">
-                <label>
-                      <div class="part"> <input class="input_radio" type="radio" checked="checked" name="test"> </div>
-                      <div class="part"> <p>Coucou</p> </div>
-                </label>
-              </div>
-        
-        </div>
-        -->
-
-      <div class="settingCategory" id="main" bis_skin_checked="1">
-        <div class="title" bis_skin_checked="1">
-            <h2 class="categoryTitle">Paramètres généraux</h2>
-        </div>
-        <div class="setting" id="setting_active" bis_skin_checked="1">
-            <div class="flexed" bis_skin_checked="1">
-                <label class="settingLabel"">
-                    <div class="name" bis_skin_checked="1">Activer le bot ou non</div>
-                    <div class="description" bis_skin_checked="1">Permet d'activer si besoin le bot et de le désactiver</div>
-                </label>
-            </div>
-            <div class="flexed" bis_skin_checked="1">
-              <textarea class="textarea textarea-autoresize-vertically" type="checkbox" id="coucoutoi" rows="5"></textarea>
-            </div>
-          </div>
-        </div>
-
-        <div class="setting" id="setting_slider1" bis_skin_checked="1">
-          <div class="flexed totalwidth" bis_skin_checked="1">
-              <label class="settingLabel">
-                  <div class="name" bis_skin_checked="1">Slider</div>
-                  <div class="description" bis_skin_checked="1">Message envoyé aux nouveaux membres</div>
-              </label>
-          </div>
-          <div class="flexed flexedright_noautowidth totalwidth" bis_skin_checked="1">
-            <textarea class="textarea" type="checkbox" id="setting_active_checkbox"> </textarea>
-          </div>
-
-
-          <span class="textarea" role="textbox" contenteditable></span>
-      </div>
-
-
-
-      </div>
-
-
+  
     </div>
+
+    
+    
+    <div class="confirm_button" id="confirm_button">
+        <div class="centered">
+            <div class="padded carefultext">Careful - you have unsaved changes!</div>
+            
+            <div class="buttons padded">
+
+                <!-- <div>
+                    <button id="button_settings_discard_changes" onclick="_settings_reset_default()">Reset as first open</button>
+                </div> -->
+                 <div>
+                    <button id="button_settings_save_changes" onclick="_settings_send_datas()">Send changes</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>  
+     
+
+    <div id="contents_diverged" class=" opened">
+        <div class="centered">
+            <div class="padded carefultext">Careful - Contents diverged from the original page</div>
+            
+            <div class="buttons padded">
+
+                <div>
+                    <button id="button_settings_discard_changes" onclick="_settings_reset_default()">Reset as original page</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div> 
 
 </body>
 <style>
@@ -101,10 +72,46 @@
 <script src="/assets/script/waterfall_v2.js"></script>
 <script>
 
+
 window.onload = () => {
-    //let settingsWaterfall = []
-    //Waterfall.createWaterFall(document.getElementById("mainbox"), settingsWaterfall)
+    Waterfall.createWaterfall(document.getElementById("mainbox"), settingList)
+    very_default_settings = Waterfall.getSettings()
+    
+    default_settings = Waterfall.getSettings()
+    
+    let reset_from_opening_page_button = document.getElementById("contents_diverged")
+
+    setInterval(() => {
+        try {
+            if(JSON.stringify(Waterfall.getSettings()) != JSON.stringify(default_settings)) {
+                confirm_button.className = confirm_button.className.split(" opened").join("")+" opened"
+            } else {
+                confirm_button.className = confirm_button.className.split(" opened").join("")
+            }
+            
+            if(JSON.stringify(Waterfall.getSettings()) != JSON.stringify(very_default_settings)) {
+                reset_from_opening_page_button.className = reset_from_opening_page_button.className.split(" opened").join("")+" opened"
+            } else {
+                reset_from_opening_page_button.className = reset_from_opening_page_button.className.split(" opened").join("")
+            }
+        } catch(e) {
+            
+        }
+    }, 200)
+
 }
+
+function _settings_reset_default() {
+    Waterfall.clearWaterfall(document.getElementById("mainbox"))
+    Waterfall.createWaterfall(document.getElementById("mainbox"), settingList)
+    default_settings = Waterfall.getSettings()
+}
+
+function _settings_send_datas() {
+    default_settings = Waterfall.getSettings()
+}
+
+
 
 </script>
 

@@ -7,7 +7,7 @@ const logger = new (require("./logger"))()
 var DOMParser = require('dom-parser');
 const fetch = require('node-fetch');
 const { red } = require("cli-color");
-
+const Database_ = require("./database")
 
 module.exports.shuffle = shuffle
 /**
@@ -301,24 +301,38 @@ module.exports.getUserByDiscordAuthCode = async (discordAuthCode, scope, redirec
  * @param {string} string - Code html en texte brut
  * @returns html document
  */
- module.exports.parseHTMLpart = parseHTMLpart
- function parseHTMLpart(string) {
-     let DOMparser = new DOMParser(); // DOMparser.parseFromString("string")
-     let string2 = `<div class="ZojGHNZkjZOJzcAEJNGZACILkgjhazLCDigjhlibzdfcikbgzakCieeeeeeeeebdhbikhbfIZHKCDFikZAC">${string}</div>`
-     //console.log(string2)
-     let a = DOMparser.parseFromString(string2, "text/html")
-     let b = a.getElementsByClassName("ZojGHNZkjZOJzcAEJNGZACILkgjhazLCDigjhlibzdfcikbgzakCieeeeeeeeebdhbikhbfIZHKCDFikZAC")[0].firstChild
-     return b
- }
- /**
-  * parseHTML(): retourne le document html ENTIER généré à partir du code html donné en texte brut
-  * @param {string} string - Code html en texte brut
-  * @returns html document
-  */
+module.exports.parseHTMLpart = parseHTMLpart
+function parseHTMLpart(string) {
+    let DOMparser = new DOMParser(); // DOMparser.parseFromString("string")
+    let string2 = `<div class="ZojGHNZkjZOJzcAEJNGZACILkgjhazLCDigjhlibzdfcikbgzakCieeeeeeeeebdhbikhbfIZHKCDFikZAC">${string}</div>`
+    //console.log(string2)
+    let a = DOMparser.parseFromString(string2, "text/html")
+    let b = a.getElementsByClassName("ZojGHNZkjZOJzcAEJNGZACILkgjhazLCDigjhlibzdfcikbgzakCieeeeeeeeebdhbikhbfIZHKCDFikZAC")[0].firstChild
+    return b
+}
+
+/**
+* parseHTML(): retourne le document html ENTIER généré à partir du code html donné en texte brut
+* @param {string} string - Code html en texte brut
+* @returns html document
+*/
 module.exports.parseHTML = parseHTML
 function parseHTML(string) {
     let DOMparser = new DOMParser(); // DOMparser.parseFromString("string")
     //console.log(string2)
     let a = DOMparser.parseFromString(string, "text/html")
     return a
+}
+
+
+/**
+* getSettingPageInformations(): retourne toutes les informations relative à la page de setting correspondant à l'id
+* @param {string} identifiant - ID de la page
+* @returns JSON Object
+*/
+module.exports.getSettingPageInformations = getSettingPageInformations
+function getSettingPageInformations(identifiant) {
+    return {
+        id: identifiant
+    }
 }

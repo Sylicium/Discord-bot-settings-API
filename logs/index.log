@@ -1194,3 +1194,201 @@ File created on 02/07/2022 at 15:59:04.074
 [10/08/2022 - 20:27:15.113 ERROR] (\v1\index.js:109:12): error
 [10/08/2022 - 20:27:15.114 LOG] (\v1\index.js:110:12): log
 [10/08/2022 - 20:27:15.115 DEBUG] (\v1\index.js:111:12): debug
+[10/08/2022 - 21:12:37.489 INFO] (\Discord-bot-settings-API\index.js:21:8): =======================================
+[10/08/2022 - 21:12:37.534 INFO] (\Discord-bot-settings-API\index.js:22:8): ========== [Starting script] ==========
+[10/08/2022 - 21:12:37.536 INFO] (\Discord-bot-settings-API\index.js:23:8): =======================================
+[10/08/2022 - 21:12:37.539 INFO] (\Discord-bot-settings-API\index.js:31:8): Tentative de connection à MongoDB...
+[10/08/2022 - 21:12:38.121 INFO] (\Discord-bot-settings-API\index.js:36:12):   Mongo instance connected.
+[10/08/2022 - 21:12:38.669 INFO] (\Discord-bot-settings-API\index.js:96:8): Starting all modules...
+[10/08/2022 - 21:12:41.528 INFO] (\Discord-bot-settings-API\index.js:107:12): info
+[10/08/2022 - 21:12:41.530 WARN] (\Discord-bot-settings-API\index.js:108:12): warn
+[10/08/2022 - 21:12:41.532 ERROR] (\Discord-bot-settings-API\index.js:109:12): error
+[10/08/2022 - 21:12:41.533 LOG] (\Discord-bot-settings-API\index.js:110:12): log
+[10/08/2022 - 21:12:41.533 DEBUG] (\Discord-bot-settings-API\index.js:111:12): debug
+[10/08/2022 - 21:22:26.600 INFO] (\Discord-bot-settings-API\index.js:21:8): =======================================
+[10/08/2022 - 21:22:26.610 INFO] (\Discord-bot-settings-API\index.js:22:8): ========== [Starting script] ==========
+[10/08/2022 - 21:22:26.611 INFO] (\Discord-bot-settings-API\index.js:23:8): =======================================
+[10/08/2022 - 21:22:26.612 INFO] (\Discord-bot-settings-API\index.js:31:8): Tentative de connection à MongoDB...
+[10/08/2022 - 21:22:27.126 INFO] (\Discord-bot-settings-API\index.js:36:12):   Mongo instance connected.
+[10/08/2022 - 21:22:27.561 INFO] (\Discord-bot-settings-API\index.js:96:8): Starting all modules...
+[10/08/2022 - 21:22:30.309 INFO] (\Discord-bot-settings-API\index.js:107:12): info
+[10/08/2022 - 21:22:30.310 WARN] (\Discord-bot-settings-API\index.js:108:12): warn
+[10/08/2022 - 21:22:30.312 ERROR] (\Discord-bot-settings-API\index.js:109:12): error
+[10/08/2022 - 21:22:30.313 LOG] (\Discord-bot-settings-API\index.js:110:12): log
+[10/08/2022 - 21:22:30.314 DEBUG] (\Discord-bot-settings-API\index.js:111:12): debug
+[10/08/2022 - 21:24:10.455 INFO] (\Discord-bot-settings-API\index.js:21:8): =======================================
+[10/08/2022 - 21:24:10.468 INFO] (\Discord-bot-settings-API\index.js:22:8): ========== [Starting script] ==========
+[10/08/2022 - 21:24:10.469 INFO] (\Discord-bot-settings-API\index.js:23:8): =======================================
+[10/08/2022 - 21:24:10.471 INFO] (\Discord-bot-settings-API\index.js:31:8): Tentative de connection à MongoDB...
+[10/08/2022 - 21:24:10.917 INFO] (\Discord-bot-settings-API\index.js:36:12):   Mongo instance connected.
+[10/08/2022 - 21:24:11.333 INFO] (\Discord-bot-settings-API\index.js:96:8): Starting all modules...
+[10/08/2022 - 21:24:13.954 INFO] (\Discord-bot-settings-API\index.js:107:12): info
+[10/08/2022 - 21:24:13.965 WARN] (\Discord-bot-settings-API\index.js:108:12): warn
+[10/08/2022 - 21:24:13.971 ERROR] (\Discord-bot-settings-API\index.js:109:12): error
+[10/08/2022 - 21:24:13.974 LOG] (\Discord-bot-settings-API\index.js:110:12): log
+[10/08/2022 - 21:24:13.976 DEBUG] (\Discord-bot-settings-API\index.js:111:12): debug
+[10/08/2022 - 21:24:28.990 INFO] (\Discord-bot-settings-API\index.js:21:8): =======================================
+[10/08/2022 - 21:24:28.995 INFO] (\Discord-bot-settings-API\index.js:22:8): ========== [Starting script] ==========
+[10/08/2022 - 21:24:28.997 INFO] (\Discord-bot-settings-API\index.js:23:8): =======================================
+[10/08/2022 - 21:24:29.005 INFO] (\Discord-bot-settings-API\index.js:31:8): Tentative de connection à MongoDB...
+[10/08/2022 - 21:24:29.413 INFO] (\Discord-bot-settings-API\index.js:36:12):   Mongo instance connected.
+[10/08/2022 - 21:24:29.838 INFO] (\Discord-bot-settings-API\index.js:96:8): Starting all modules...
+[10/08/2022 - 21:24:32.402 INFO] (\Discord-bot-settings-API\index.js:107:12): info
+[10/08/2022 - 21:24:32.403 WARN] (\Discord-bot-settings-API\index.js:108:12): warn
+[10/08/2022 - 21:24:32.404 ERROR] (\Discord-bot-settings-API\index.js:109:12): error
+[10/08/2022 - 21:24:32.405 LOG] (\Discord-bot-settings-API\index.js:110:12): log
+[10/08/2022 - 21:24:32.407 DEBUG] (\Discord-bot-settings-API\index.js:111:12): debug
+[10/08/2022 - 21:24:45.678 INFO] (\Discord-bot-settings-API\index.js:21:8): =======================================
+[10/08/2022 - 21:24:45.688 INFO] (\Discord-bot-settings-API\index.js:22:8): ========== [Starting script] ==========
+[10/08/2022 - 21:24:45.691 INFO] (\Discord-bot-settings-API\index.js:23:8): =======================================
+[10/08/2022 - 21:24:45.693 INFO] (\Discord-bot-settings-API\index.js:31:8): Tentative de connection à MongoDB...
+[10/08/2022 - 21:24:46.044 INFO] (\Discord-bot-settings-API\index.js:36:12):   Mongo instance connected.
+[10/08/2022 - 21:24:46.578 INFO] (\Discord-bot-settings-API\index.js:96:8): Starting all modules...
+[10/08/2022 - 21:24:49.318 INFO] (\Discord-bot-settings-API\index.js:107:12): info
+[10/08/2022 - 21:24:49.320 WARN] (\Discord-bot-settings-API\index.js:108:12): warn
+[10/08/2022 - 21:24:49.322 ERROR] (\Discord-bot-settings-API\index.js:109:12): error
+[10/08/2022 - 21:24:49.323 LOG] (\Discord-bot-settings-API\index.js:110:12): log
+[10/08/2022 - 21:24:49.324 DEBUG] (\Discord-bot-settings-API\index.js:111:12): debug
+[10/08/2022 - 21:25:42.878 INFO] (\Discord-bot-settings-API\index.js:21:8): =======================================
+[10/08/2022 - 21:25:42.888 INFO] (\Discord-bot-settings-API\index.js:22:8): ========== [Starting script] ==========
+[10/08/2022 - 21:25:42.889 INFO] (\Discord-bot-settings-API\index.js:23:8): =======================================
+[10/08/2022 - 21:25:42.890 INFO] (\Discord-bot-settings-API\index.js:31:8): Tentative de connection à MongoDB...
+[10/08/2022 - 21:25:43.346 INFO] (\Discord-bot-settings-API\index.js:36:12):   Mongo instance connected.
+[10/08/2022 - 21:25:43.909 INFO] (\Discord-bot-settings-API\index.js:96:8): Starting all modules...
+[10/08/2022 - 21:25:46.494 INFO] (\Discord-bot-settings-API\index.js:107:12): info
+[10/08/2022 - 21:25:46.495 WARN] (\Discord-bot-settings-API\index.js:108:12): warn
+[10/08/2022 - 21:25:46.497 ERROR] (\Discord-bot-settings-API\index.js:109:12): error
+[10/08/2022 - 21:25:46.498 LOG] (\Discord-bot-settings-API\index.js:110:12): log
+[10/08/2022 - 21:25:46.499 DEBUG] (\Discord-bot-settings-API\index.js:111:12): debug
+[10/08/2022 - 21:26:56.167 INFO] (\Discord-bot-settings-API\index.js:21:8): =======================================
+[10/08/2022 - 21:26:56.188 INFO] (\Discord-bot-settings-API\index.js:22:8): ========== [Starting script] ==========
+[10/08/2022 - 21:26:56.191 INFO] (\Discord-bot-settings-API\index.js:23:8): =======================================
+[10/08/2022 - 21:26:56.197 INFO] (\Discord-bot-settings-API\index.js:31:8): Tentative de connection à MongoDB...
+[10/08/2022 - 21:26:56.733 INFO] (\Discord-bot-settings-API\index.js:36:12):   Mongo instance connected.
+[10/08/2022 - 21:26:57.525 INFO] (\Discord-bot-settings-API\index.js:96:8): Starting all modules...
+[10/08/2022 - 21:27:00.215 INFO] (\Discord-bot-settings-API\index.js:107:12): info
+[10/08/2022 - 21:27:00.216 WARN] (\Discord-bot-settings-API\index.js:108:12): warn
+[10/08/2022 - 21:27:00.217 ERROR] (\Discord-bot-settings-API\index.js:109:12): error
+[10/08/2022 - 21:27:00.218 LOG] (\Discord-bot-settings-API\index.js:110:12): log
+[10/08/2022 - 21:27:00.219 DEBUG] (\Discord-bot-settings-API\index.js:111:12): debug
+[10/08/2022 - 21:27:11.578 INFO] (\Discord-bot-settings-API\index.js:21:8): =======================================
+[10/08/2022 - 21:27:11.588 INFO] (\Discord-bot-settings-API\index.js:22:8): ========== [Starting script] ==========
+[10/08/2022 - 21:27:11.592 INFO] (\Discord-bot-settings-API\index.js:23:8): =======================================
+[10/08/2022 - 21:27:11.594 INFO] (\Discord-bot-settings-API\index.js:31:8): Tentative de connection à MongoDB...
+[10/08/2022 - 21:27:11.957 INFO] (\Discord-bot-settings-API\index.js:36:12):   Mongo instance connected.
+[10/08/2022 - 21:27:12.501 INFO] (\Discord-bot-settings-API\index.js:96:8): Starting all modules...
+[10/08/2022 - 21:27:15.281 INFO] (\Discord-bot-settings-API\index.js:107:12): info
+[10/08/2022 - 21:27:15.283 WARN] (\Discord-bot-settings-API\index.js:108:12): warn
+[10/08/2022 - 21:27:15.284 ERROR] (\Discord-bot-settings-API\index.js:109:12): error
+[10/08/2022 - 21:27:15.288 LOG] (\Discord-bot-settings-API\index.js:110:12): log
+[10/08/2022 - 21:27:15.290 DEBUG] (\Discord-bot-settings-API\index.js:111:12): debug
+[10/08/2022 - 21:28:01.146 INFO] (\Discord-bot-settings-API\index.js:21:8): =======================================
+[10/08/2022 - 21:28:01.155 INFO] (\Discord-bot-settings-API\index.js:22:8): ========== [Starting script] ==========
+[10/08/2022 - 21:28:01.157 INFO] (\Discord-bot-settings-API\index.js:23:8): =======================================
+[10/08/2022 - 21:28:01.164 INFO] (\Discord-bot-settings-API\index.js:31:8): Tentative de connection à MongoDB...
+[10/08/2022 - 21:28:01.626 INFO] (\Discord-bot-settings-API\index.js:36:12):   Mongo instance connected.
+[10/08/2022 - 21:28:02.037 INFO] (\Discord-bot-settings-API\index.js:96:8): Starting all modules...
+[10/08/2022 - 21:28:04.666 INFO] (\Discord-bot-settings-API\index.js:107:12): info
+[10/08/2022 - 21:28:04.667 WARN] (\Discord-bot-settings-API\index.js:108:12): warn
+[10/08/2022 - 21:28:04.669 ERROR] (\Discord-bot-settings-API\index.js:109:12): error
+[10/08/2022 - 21:28:04.671 LOG] (\Discord-bot-settings-API\index.js:110:12): log
+[10/08/2022 - 21:28:04.673 DEBUG] (\Discord-bot-settings-API\index.js:111:12): debug
+[10/08/2022 - 21:28:26.738 INFO] (\Discord-bot-settings-API\index.js:21:8): =======================================
+[10/08/2022 - 21:28:26.747 INFO] (\Discord-bot-settings-API\index.js:22:8): ========== [Starting script] ==========
+[10/08/2022 - 21:28:26.749 INFO] (\Discord-bot-settings-API\index.js:23:8): =======================================
+[10/08/2022 - 21:28:26.752 INFO] (\Discord-bot-settings-API\index.js:31:8): Tentative de connection à MongoDB...
+[10/08/2022 - 21:28:27.091 INFO] (\Discord-bot-settings-API\index.js:36:12):   Mongo instance connected.
+[10/08/2022 - 21:28:27.552 INFO] (\Discord-bot-settings-API\index.js:96:8): Starting all modules...
+[10/08/2022 - 21:28:30.323 INFO] (\Discord-bot-settings-API\index.js:107:12): info
+[10/08/2022 - 21:28:30.324 WARN] (\Discord-bot-settings-API\index.js:108:12): warn
+[10/08/2022 - 21:28:30.325 ERROR] (\Discord-bot-settings-API\index.js:109:12): error
+[10/08/2022 - 21:28:30.326 LOG] (\Discord-bot-settings-API\index.js:110:12): log
+[10/08/2022 - 21:28:30.327 DEBUG] (\Discord-bot-settings-API\index.js:111:12): debug
+[10/08/2022 - 21:29:11.823 INFO] (\Discord-bot-settings-API\index.js:21:8): =======================================
+[10/08/2022 - 21:29:11.840 INFO] (\Discord-bot-settings-API\index.js:22:8): ========== [Starting script] ==========
+[10/08/2022 - 21:29:11.846 INFO] (\Discord-bot-settings-API\index.js:23:8): =======================================
+[10/08/2022 - 21:29:11.849 INFO] (\Discord-bot-settings-API\index.js:31:8): Tentative de connection à MongoDB...
+[10/08/2022 - 21:29:12.308 INFO] (\Discord-bot-settings-API\index.js:36:12):   Mongo instance connected.
+[10/08/2022 - 21:29:12.870 INFO] (\Discord-bot-settings-API\index.js:96:8): Starting all modules...
+[10/08/2022 - 21:29:15.701 INFO] (\Discord-bot-settings-API\index.js:107:12): info
+[10/08/2022 - 21:29:15.705 WARN] (\Discord-bot-settings-API\index.js:108:12): warn
+[10/08/2022 - 21:29:15.710 ERROR] (\Discord-bot-settings-API\index.js:109:12): error
+[10/08/2022 - 21:29:15.713 LOG] (\Discord-bot-settings-API\index.js:110:12): log
+[10/08/2022 - 21:29:15.715 DEBUG] (\Discord-bot-settings-API\index.js:111:12): debug
+[10/08/2022 - 21:30:04.586 INFO] (\Discord-bot-settings-API\index.js:21:8): =======================================
+[10/08/2022 - 21:30:04.606 INFO] (\Discord-bot-settings-API\index.js:22:8): ========== [Starting script] ==========
+[10/08/2022 - 21:30:04.607 INFO] (\Discord-bot-settings-API\index.js:23:8): =======================================
+[10/08/2022 - 21:30:04.611 INFO] (\Discord-bot-settings-API\index.js:31:8): Tentative de connection à MongoDB...
+[10/08/2022 - 21:30:05.093 INFO] (\Discord-bot-settings-API\index.js:36:12):   Mongo instance connected.
+[10/08/2022 - 21:30:05.630 INFO] (\Discord-bot-settings-API\index.js:96:8): Starting all modules...
+[10/08/2022 - 21:30:08.498 INFO] (\Discord-bot-settings-API\index.js:107:12): info
+[10/08/2022 - 21:30:08.499 WARN] (\Discord-bot-settings-API\index.js:108:12): warn
+[10/08/2022 - 21:30:08.501 ERROR] (\Discord-bot-settings-API\index.js:109:12): error
+[10/08/2022 - 21:30:08.503 LOG] (\Discord-bot-settings-API\index.js:110:12): log
+[10/08/2022 - 21:30:08.504 DEBUG] (\Discord-bot-settings-API\index.js:111:12): debug
+[10/08/2022 - 21:31:59.370 INFO] (\Discord-bot-settings-API\index.js:21:8): =======================================
+[10/08/2022 - 21:31:59.376 INFO] (\Discord-bot-settings-API\index.js:22:8): ========== [Starting script] ==========
+[10/08/2022 - 21:31:59.378 INFO] (\Discord-bot-settings-API\index.js:23:8): =======================================
+[10/08/2022 - 21:31:59.379 INFO] (\Discord-bot-settings-API\index.js:31:8): Tentative de connection à MongoDB...
+[10/08/2022 - 21:31:59.799 INFO] (\Discord-bot-settings-API\index.js:36:12):   Mongo instance connected.
+[10/08/2022 - 21:32:00.525 INFO] (\Discord-bot-settings-API\index.js:96:8): Starting all modules...
+[10/08/2022 - 21:32:03.305 INFO] (\Discord-bot-settings-API\index.js:107:12): info
+[10/08/2022 - 21:32:03.307 WARN] (\Discord-bot-settings-API\index.js:108:12): warn
+[10/08/2022 - 21:32:03.310 ERROR] (\Discord-bot-settings-API\index.js:109:12): error
+[10/08/2022 - 21:32:03.313 LOG] (\Discord-bot-settings-API\index.js:110:12): log
+[10/08/2022 - 21:32:03.316 DEBUG] (\Discord-bot-settings-API\index.js:111:12): debug
+[10/08/2022 - 21:32:53.593 INFO] (\Discord-bot-settings-API\index.js:21:8): =======================================
+[10/08/2022 - 21:32:53.599 INFO] (\Discord-bot-settings-API\index.js:22:8): ========== [Starting script] ==========
+[10/08/2022 - 21:32:53.600 INFO] (\Discord-bot-settings-API\index.js:23:8): =======================================
+[10/08/2022 - 21:32:53.601 INFO] (\Discord-bot-settings-API\index.js:31:8): Tentative de connection à MongoDB...
+[10/08/2022 - 21:32:54.029 INFO] (\Discord-bot-settings-API\index.js:36:12):   Mongo instance connected.
+[10/08/2022 - 21:32:54.719 INFO] (\Discord-bot-settings-API\index.js:96:8): Starting all modules...
+[10/08/2022 - 21:32:57.529 INFO] (\Discord-bot-settings-API\index.js:107:12): info
+[10/08/2022 - 21:32:57.533 WARN] (\Discord-bot-settings-API\index.js:108:12): warn
+[10/08/2022 - 21:32:57.537 ERROR] (\Discord-bot-settings-API\index.js:109:12): error
+[10/08/2022 - 21:32:57.540 LOG] (\Discord-bot-settings-API\index.js:110:12): log
+[10/08/2022 - 21:32:57.545 DEBUG] (\Discord-bot-settings-API\index.js:111:12): debug
+[10/08/2022 - 21:33:27.638 INFO] (\Discord-bot-settings-API\index.js:21:8): =======================================
+[10/08/2022 - 21:33:27.644 INFO] (\Discord-bot-settings-API\index.js:22:8): ========== [Starting script] ==========
+[10/08/2022 - 21:33:27.646 INFO] (\Discord-bot-settings-API\index.js:23:8): =======================================
+[10/08/2022 - 21:33:27.649 INFO] (\Discord-bot-settings-API\index.js:31:8): Tentative de connection à MongoDB...
+[10/08/2022 - 21:33:28.019 INFO] (\Discord-bot-settings-API\index.js:36:12):   Mongo instance connected.
+[10/08/2022 - 21:33:28.511 INFO] (\Discord-bot-settings-API\index.js:96:8): Starting all modules...
+[10/08/2022 - 21:33:31.295 INFO] (\Discord-bot-settings-API\index.js:107:12): info
+[10/08/2022 - 21:33:31.301 WARN] (\Discord-bot-settings-API\index.js:108:12): warn
+[10/08/2022 - 21:33:31.304 ERROR] (\Discord-bot-settings-API\index.js:109:12): error
+[10/08/2022 - 21:33:31.308 LOG] (\Discord-bot-settings-API\index.js:110:12): log
+[10/08/2022 - 21:33:31.309 DEBUG] (\Discord-bot-settings-API\index.js:111:12): debug
+[10/08/2022 - 21:35:48.962 INFO] (\Discord-bot-settings-API\index.js:21:8): =======================================
+[10/08/2022 - 21:35:48.972 INFO] (\Discord-bot-settings-API\index.js:22:8): ========== [Starting script] ==========
+[10/08/2022 - 21:35:48.977 INFO] (\Discord-bot-settings-API\index.js:23:8): =======================================
+[10/08/2022 - 21:35:48.982 INFO] (\Discord-bot-settings-API\index.js:31:8): Tentative de connection à MongoDB...
+[10/08/2022 - 21:35:49.435 INFO] (\Discord-bot-settings-API\index.js:36:12):   Mongo instance connected.
+[10/08/2022 - 21:35:50.190 INFO] (\Discord-bot-settings-API\index.js:96:8): Starting all modules...
+[10/08/2022 - 21:35:53.068 INFO] (\Discord-bot-settings-API\index.js:107:12): info
+[10/08/2022 - 21:35:53.073 WARN] (\Discord-bot-settings-API\index.js:108:12): warn
+[10/08/2022 - 21:35:53.075 ERROR] (\Discord-bot-settings-API\index.js:109:12): error
+[10/08/2022 - 21:35:53.077 LOG] (\Discord-bot-settings-API\index.js:110:12): log
+[10/08/2022 - 21:35:53.079 DEBUG] (\Discord-bot-settings-API\index.js:111:12): debug
+[10/08/2022 - 21:36:55.197 INFO] (\Discord-bot-settings-API\index.js:21:8): =======================================
+[10/08/2022 - 21:36:55.207 INFO] (\Discord-bot-settings-API\index.js:22:8): ========== [Starting script] ==========
+[10/08/2022 - 21:36:55.209 INFO] (\Discord-bot-settings-API\index.js:23:8): =======================================
+[10/08/2022 - 21:36:55.212 INFO] (\Discord-bot-settings-API\index.js:31:8): Tentative de connection à MongoDB...
+[10/08/2022 - 21:36:55.629 INFO] (\Discord-bot-settings-API\index.js:36:12):   Mongo instance connected.
+[10/08/2022 - 21:36:56.280 INFO] (\Discord-bot-settings-API\index.js:96:8): Starting all modules...
+[10/08/2022 - 21:36:59.136 INFO] (\Discord-bot-settings-API\index.js:107:12): info
+[10/08/2022 - 21:36:59.138 WARN] (\Discord-bot-settings-API\index.js:108:12): warn
+[10/08/2022 - 21:36:59.141 ERROR] (\Discord-bot-settings-API\index.js:109:12): error
+[10/08/2022 - 21:36:59.144 LOG] (\Discord-bot-settings-API\index.js:110:12): log
+[10/08/2022 - 21:36:59.146 DEBUG] (\Discord-bot-settings-API\index.js:111:12): debug
+[10/08/2022 - 21:39:17.070 INFO] (\Discord-bot-settings-API\index.js:21:8): =======================================
+[10/08/2022 - 21:39:17.079 INFO] (\Discord-bot-settings-API\index.js:22:8): ========== [Starting script] ==========
+[10/08/2022 - 21:39:17.084 INFO] (\Discord-bot-settings-API\index.js:23:8): =======================================
+[10/08/2022 - 21:39:17.086 INFO] (\Discord-bot-settings-API\index.js:31:8): Tentative de connection à MongoDB...
+[10/08/2022 - 21:39:17.817 INFO] (\Discord-bot-settings-API\index.js:36:12):   Mongo instance connected.
+[10/08/2022 - 21:39:18.457 INFO] (\Discord-bot-settings-API\index.js:96:8): Starting all modules...
+[10/08/2022 - 21:39:21.313 INFO] (\Discord-bot-settings-API\index.js:107:12): info
+[10/08/2022 - 21:39:21.314 WARN] (\Discord-bot-settings-API\index.js:108:12): warn
+[10/08/2022 - 21:39:21.316 ERROR] (\Discord-bot-settings-API\index.js:109:12): error
+[10/08/2022 - 21:39:21.317 LOG] (\Discord-bot-settings-API\index.js:110:12): log
+[10/08/2022 - 21:39:21.318 DEBUG] (\Discord-bot-settings-API\index.js:111:12): debug

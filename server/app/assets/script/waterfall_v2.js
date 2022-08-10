@@ -47,6 +47,11 @@ function updateTextInput(elementId, value) {
     document.getElementById(elementId).textContent = `${value}`
 }
 
+
+let Errors = [
+
+]
+
 class generateCategory {
     constructor(categoryName, categoryID, settingList, isEnabled=true, depthIDS=null, depth=1) {
         this.settingList = settingList
@@ -114,15 +119,15 @@ class generateCategory {
     }
     addReference(setting, submenuCategoryClass=false) {
         this.references.push({setting: setting, submenuCategoryClass: submenuCategoryClass, waterfallID: `${this.getDepthIDS_String()}_${setting.id}` })
-        console.log("references",this.references)
+        //console.log("references",this.references)
         return this.references
     }
 
     getSettingsValuesJSON() {
         let mapped = this.references.map((item, index) => {
             if(item.submenuCategoryClass) {
-                console.log("depthIDS",this.getDepthIDS())
-                console.log("item.submenuCategoryClass",item.submenuCategoryClass.getSettingsValuesJSON())
+                //console.log("depthIDS",this.getDepthIDS())
+                //console.log("item.submenuCategoryClass",item.submenuCategoryClass.getSettingsValuesJSON())
             }
             let setting = item.setting
             if(setting.settingType.type == 0) {
@@ -399,16 +404,20 @@ class generateCategory {
         }))
         //console.log("duplicates",duplicates)
         if(duplicates.length != 0) {
+            let textError = `[COMPILE ERROR] invalid settingList: Duplicates ids were founds ['${duplicates.join("', '")}']`
             let settingList_html = [`<div>
-                <h1 style="color:red">[COMPILE ERROR] invalid settingList: Duplicates ids were founds ['${duplicates.join("', '")}']</h1>
+                <h1 style="color:red">${textError}</h1>
             </div>`]
+            Errors.push(textError)
             return this.categoryBase(this.categoryName, this.categoryID, settingList_html).html
         }
 
         if(this.depth > this.maxDepth) {
+            let textError = `[COMPILE ERROR] invalid Depth: Trying to make submenus in submenus for a depth more than ${this.maxDepth}`
             let settingList_html = [`<div>
-                <h1 style="color:red">[COMPILE ERROR] invalid Depth: Trying to make submenus in submenus for a depth more than ${this.maxDepth}</h1>
+                <h1 style="color:red">${textError}</h1>
             </div>`]
+            Errors.push(textError)
             return this.categoryBase(this.categoryName, this.categoryID, settingList_html).html
         }
 
@@ -855,6 +864,15 @@ let Global_ = {
 }
 
 let Waterfall = {
+    genWaterfallHTML: (settingsWaterfall) => {
+        let html = []
+        for(let i in settingsWaterfall) {
+            let new_category = new generateCategory(settingsWaterfall[i].name, settingsWaterfall[i].id, settingsWaterfall[i].submenu)
+            html.push(new_category.getHTML())
+            html.push(separator)
+        }
+        return html.join("\n")
+    },
     createWaterfall: (element, settingsWaterfall) => {
         for(let i in settingsWaterfall) {
             let new_category = new generateCategory(settingsWaterfall[i].name, settingsWaterfall[i].id, settingsWaterfall[i].submenu)
@@ -864,11 +882,15 @@ let Waterfall = {
         }
         _autoResizeVerticallyAllTextarea()
     },
+    clearWaterfall(element) {
+        element.innerHTML = ""
+        Global_["categories"] = []
+    },
     getSettings() {
         return Global_["categories"].map((category, index) => {
             return { id: category.id, value: category.object.getSettingsValuesJSON()}
         })
-    }
+    },
 }
 
 // let category1 = new generateCategory("Paramètres généraux", "main", settingList)

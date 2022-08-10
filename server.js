@@ -2,7 +2,11 @@
 const config = require("./config")
 const somef = require("./localModules/someFunctions");
 
-const app = require('express')();
+const express = require('express');
+const app = express();
+app.use(express.urlencoded())
+app.use(express.json())
+
 const serv = require('http').createServer(app);
 const io = require('socket.io')(serv);
 

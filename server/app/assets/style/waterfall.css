@@ -145,3 +145,175 @@ div.settingCategory select.discordSelectCSS {
     min-width: 200px;
     max-width: 50vw;
 }
+
+
+
+
+div.confirm_button {
+    width: 100vw;
+    position: fixed;
+    bottom: 3vh;
+}
+
+div.confirm_button div.centered {
+    background-color: rgb(119, 0, 255);
+    border-radius: 5px;
+    max-width: 600px;
+    margin: 0px auto;
+    padding: 5px;
+    background-color: var(--btn-careful-red);
+    display: flex;
+    align-items:baseline;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.5);
+}
+
+div.confirm_button div.centered > div.padded {
+    flex: 1;
+}
+div.confirm_button div.centered div.carefultext {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+div.confirm_button div.centered div.buttons {
+    text-align: right;
+    display: flex;
+}
+div.confirm_button div.centered div.buttons > div {
+    flex: 3;
+}
+div.confirm_button button#button_settings_discard_changes {
+    background: none;
+    border: none;
+    color: whitesmoke;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 0px 10px 0px;
+}
+div.confirm_button div.centered button#button_settings_discard_changes:hover {
+    text-decoration: underline;
+}
+div.confirm_button div.centered button#button_settings_save_changes {
+    color: whitesmoke;
+    background-color: var(--btn-positive);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s all;
+}
+div.confirm_button div.centered button#button_settings_save_changes:hover {
+    background-color: var(--btn-positive-hover);
+    transition: 0.3s all;
+}
+
+
+div.confirm_button.opened {
+    transform: translate(0,0px);
+    animation-timing-function: linear;
+    animation: unsavedChangesButton_in;
+    animation-duration: 0.5s;
+}
+div.confirm_button:not(.opened) {
+    transform: translate(0,110px);
+    animation-timing-function: linear;
+    animation: unsavedChangesButton_out;
+    animation-duration: 0.7s;
+}
+
+@keyframes unsavedChangesButton_in {
+    0% {
+        transform: translate(0,110px);
+    }
+    50% {
+        transform: translate(0,-10px);
+    }
+    100% {
+        transform: translate(0,0px);
+    }
+}
+@keyframes unsavedChangesButton_out {
+    0% {
+        transform: translate(0,0px);
+    }
+    50% {
+        transform: translate(0,-20px);
+    }
+    100% {
+        transform: translate(0,110px);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+div#contents_diverged {
+    position: fixed;
+    bottom: 3vh;
+}
+
+div#contents_diverged div.centered {
+    background-color: rgb(119, 0, 255);
+    border-radius: 5px;
+    max-width: 400px;
+    margin-left: 50px;
+    padding: 5px;
+    background-color: var(--gray-three);
+    display: flex;
+    border: 1px solid black;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.5);
+}
+
+div#contents_diverged div.centered > div.padded {
+    flex: 1;
+}
+div#contents_diverged div.centered div.carefultext {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+div#contents_diverged div.centered div.buttons {
+    text-align: right;
+    display: flex;
+}
+div#contents_diverged div.centered div.buttons > div {
+    flex: 3;
+}
+div#contents_diverged button#button_settings_discard_changes {
+    color: whitesmoke;
+    background-color: var(--btn-blue);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s all;
+}
+div#contents_diverged div.centered button#button_settings_discard_changes:hover {
+    background-color: var(--btn-careful-red);
+    transition: 0.3s all;
+    text-decoration: underline;
+}
+
+
+div#contents_diverged.opened {
+    transform: translate(0,0px);
+    animation-timing-function:cubic-bezier(1, 0, 0, 1);
+    animation-timing-function: linear;
+    animation-duration: 0.5s;
+}
+div#contents_diverged:not(.opened) {
+    transform: translate(0,110px);
+    animation-timing-function: linear;
+    animation: unsavedChangesButton_out;
+    animation-duration: 0.7s;
+}
