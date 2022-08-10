@@ -158,7 +158,7 @@ div.confirm_button {
 div.confirm_button div.centered {
     background-color: rgb(119, 0, 255);
     border-radius: 5px;
-    max-width: 600px;
+    max-width: 550px;
     margin: 0px auto;
     padding: 5px;
     background-color: var(--btn-careful-red);
@@ -290,7 +290,7 @@ div#contents_diverged div.centered div.buttons > div {
 }
 div#contents_diverged button#button_settings_discard_changes {
     color: whitesmoke;
-    background-color: var(--btn-blue);
+    background-color: var(--btn-careful-red2);
     border: none;
     font-weight: bold;
     cursor: pointer;
@@ -299,7 +299,7 @@ div#contents_diverged button#button_settings_discard_changes {
     transition: 0.3s all;
 }
 div#contents_diverged div.centered button#button_settings_discard_changes:hover {
-    background-color: var(--btn-careful-red);
+    background-color: var(--btn-careful-red2-hover);
     transition: 0.3s all;
     text-decoration: underline;
 }
