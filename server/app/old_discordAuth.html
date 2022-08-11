@@ -56,7 +56,7 @@ div.main {
 
     let ServerResponded = false
 
-    let DiscordAuthCode = ""    
+    let DiscordAuthCode = ""
 	window.onload = () => {
 
         // "https://dirtybiology.captaincommand.repl.co/auth?error=access_denied&error_description=The+resource+owner+or+authorization+server+denied+the+request"
@@ -188,10 +188,10 @@ div.main {
     
     function makeRedirect(redirect_uri) {
         if(redirect_uri.length >= 10) {
-            setCookie("next_redirect_uri", "",0)
+            setCookie("nextRedirectURI", "",0)
             setTimeout(() => { document.location.href = redirect_uri }, 100)
         } else {
-            setCookie("next_redirect_uri", "",0)
+            setCookie("nextRedirectURI", "",0)
             setTimeout(() => { document.location.href = document.location.origin }, 100)
         }
     }

@@ -242,6 +242,10 @@ module.exports.getUserByDiscordAuthCode = async (discordAuthCode, scope, redirec
 
     logger.debug(discordAuthCode)
 
+    if(!discordAuthCode) return {
+        state: false
+    }
+
     //logger.log(`[somefunction][getUserByDiscordAuthCode] > discordAuthCode: ${discordAuthCode}\nscope: ${scope}\nredirect_uri: ${redirect_uri}`)
 
     //const fetch = require('node-fetch');

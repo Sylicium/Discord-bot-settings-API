@@ -1,0 +1,35 @@
+<html>
+
+<head>
+	<title>
+		DBS API | Logout
+	</title>
+	<meta charset="utf-8">
+	<meta property="og:title" content="Discord Bot Settings API | Logout">
+	<meta property="og:description" content="Disconnects you from discord. You'll need to reconnect in order to use our API.">
+
+</head>
+
+<body>
+
+    <h1>Logging out...</h1>
+   
+</body>
+<style>
+
+</style>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/assets/script/basicFunctions.js"></script>
+<script>
+
+    window.onload = () => {
+        setCookie("connectionToken", "",0)
+        setTimeout(() => { document.location.href = document.location.origin }, 500)
+    }
+
+
+</script>
+
+</html>
