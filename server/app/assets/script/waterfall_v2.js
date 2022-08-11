@@ -145,7 +145,9 @@ class generateCategory {
             } else if(setting.settingType.type == 2) {
                 return { id: setting.id, value: (document.getElementById(`setting_${item.waterfallID}_select`).value || null) }
             } else if(setting.settingType.type == 3) {
-                return { id: setting.id, value: document.querySelector(`input[name="setting_${item.waterfallID}_radiobutton"]:checked`).value }
+                let elem_query = document.querySelector(`input[name="setting_${item.waterfallID}_radiobutton"]:checked`)
+                let value = (elem_query? elem_query.value : undefined)
+                return { id: setting.id, value: value }
             } else if(setting.settingType.type == 4) {
                 return { id: setting.id, value: (document.getElementById(`setting_${item.waterfallID}_value`).value || null) }
             } else if(setting.settingType.type == 5) {
@@ -321,13 +323,13 @@ class generateCategory {
                 </label>
             </div>
             <div class="flexed flexedright_noautowidth">
-                <input class="textInput" type="text" id="setting_${waterfallID}_value"${placeholder ? `placeholder="${placeholder}"` : ""}${value ? `value="${value}"` : ""}>
+                <input class="textInput" type="${settingType.value.password ? 'password' : 'text'}" id="setting_${waterfallID}_value"${placeholder ? `placeholder="${placeholder}"` : ""}${value ? `value="${value}"` : ""}>
             </div>
         </div>`
         }
     }
 
-    _genSetting_text(name, description, id, settingType) {
+    _genSetting_textarea(name, description, id, settingType) {
         let waterfallID = this.getWaterfallID(id)
         let placeholder, value;
         if(settingType.value) {
@@ -368,8 +370,8 @@ class generateCategory {
         }
     }
     
-    _genSetting_float(name, description, id, settingType) {
-        _genSetting_number(name, description, id, settingType, step=0.01)
+    _genSetting_float(name, description, id, settingType, step=0.01) {
+        return this._genSetting_number(name, description, id, settingType, step)
     }
 
     _genSetting_slider(name, description, id, settingType, step=1) {
@@ -500,7 +502,7 @@ let OnclickFunctions = {
 
 }
 
-let settingList = [
+let waterfall_example_settingList = [
     {
         name: "Paramètres généraux",
         description: "Paramètres généraux",
@@ -893,7 +895,7 @@ let Waterfall = {
     },
 }
 
-// let category1 = new generateCategory("Paramètres généraux", "main", settingList)
+// let category1 = new generateCategory("Paramètres généraux", "main", waterfall_example_settingList)
 
 /*
 let parsed = settingBlocks.category("CategoryTitle1").html.appendChild(settingBlocks.switch("Sitch Button 1").html)

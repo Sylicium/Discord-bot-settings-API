@@ -129,6 +129,10 @@ div.main {
         */
         ServerResponded = true
 
+        if(datas.connectionToken) {
+            setCookie("connectionToken",datas.connectionToken)
+        }
+
         return makeRedirect(datas.redirect)
 
         

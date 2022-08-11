@@ -1392,3 +1392,20 @@ File created on 02/07/2022 at 15:59:04.074
 [10/08/2022 - 21:39:21.316 ERROR] (\Discord-bot-settings-API\index.js:109:12): error
 [10/08/2022 - 21:39:21.317 LOG] (\Discord-bot-settings-API\index.js:110:12): log
 [10/08/2022 - 21:39:21.318 DEBUG] (\Discord-bot-settings-API\index.js:111:12): debug
+[11/08/2022 - 00:33:31.924 INFO] (\Discord-bot-settings-API\index.js:21:8): =======================================
+[11/08/2022 - 00:33:31.939 INFO] (\Discord-bot-settings-API\index.js:22:8): ========== [Starting script] ==========
+[11/08/2022 - 00:33:31.948 INFO] (\Discord-bot-settings-API\index.js:23:8): =======================================
+[11/08/2022 - 00:33:31.953 INFO] (\Discord-bot-settings-API\index.js:31:8): Tentative de connection à MongoDB...
+[11/08/2022 - 00:33:32.840 INFO] (\Discord-bot-settings-API\index.js:36:12):   Mongo instance connected.
+[11/08/2022 - 00:33:33.490 INFO] (\Discord-bot-settings-API\index.js:96:8): Starting all modules...
+[11/08/2022 - 00:34:09.993 INFO] (\Discord-bot-settings-API\index.js:21:8): =======================================
+[11/08/2022 - 00:34:10.011 INFO] (\Discord-bot-settings-API\index.js:22:8): ========== [Starting script] ==========
+[11/08/2022 - 00:34:10.014 INFO] (\Discord-bot-settings-API\index.js:23:8): =======================================
+[11/08/2022 - 00:34:10.016 INFO] (\Discord-bot-settings-API\index.js:31:8): Tentative de connection à MongoDB...
+[11/08/2022 - 00:34:10.766 INFO] (\Discord-bot-settings-API\index.js:36:12):   Mongo instance connected.
+[11/08/2022 - 00:34:11.278 INFO] (\Discord-bot-settings-API\index.js:96:8): Starting all modules...
+[11/08/2022 - 00:34:14.036 INFO] (\Discord-bot-settings-API\index.js:107:12): info
+[11/08/2022 - 00:34:14.037 WARN] (\Discord-bot-settings-API\index.js:108:12): warn
+[11/08/2022 - 00:34:14.038 ERROR] (\Discord-bot-settings-API\index.js:109:12): error
+[11/08/2022 - 00:34:14.040 LOG] (\Discord-bot-settings-API\index.js:110:12): log
+[11/08/2022 - 00:34:14.041 DEBUG] (\Discord-bot-settings-API\index.js:111:12): debug

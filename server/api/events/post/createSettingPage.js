@@ -6,7 +6,7 @@ const fs = require("fs");
 const axios = require('axios')
 const fetch = require('node-fetch');
 const Logger = new (require("../../../../localModules/logger"))()
-const Database_ = new (require("../../../../localModules/database"))()
+const Database_ = require("../../../../localModules/database")
 
 
 module.exports.config = {
@@ -83,7 +83,7 @@ module.exports.onEvent = (req, res) => {
                 createdAt: 1659817225058,
                 expiresAt: 1691353227104,
             },
-            details: [
+            details: [      
                 {
                     name: "Main settings",
                     description: "Les paramètres principaux",

@@ -214,3 +214,15 @@ File created on 02/07/2022, 18:51:13
 [08/08/2022, 02:01:08 ERROR] (unknown):     at listOnTimeout (node:internal/timers:559:17)
 [08/08/2022, 02:01:08 ERROR] (unknown):     at processTimers (node:internal/timers:502:7)
 [08/08/2022, 02:01:08 ERROR] (unknown): 
+[11/08/2022, 00:33:34 ERROR] (unknown): /!\ UNCAUGH ERROR /!\ TypeError: require(...) is not a constructor
+[11/08/2022, 00:33:34 ERROR] (unknown):     at Object.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server\api\events\POST\createSettingPage.js:9:19)
+[11/08/2022, 00:33:34 ERROR] (unknown):     at Module._compile (node:internal/modules/cjs/loader:1105:14)
+[11/08/2022, 00:33:34 ERROR] (unknown):     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+[11/08/2022, 00:33:34 ERROR] (unknown):     at Module.load (node:internal/modules/cjs/loader:981:32)
+[11/08/2022, 00:33:34 ERROR] (unknown):     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+[11/08/2022, 00:33:34 ERROR] (unknown):     at Module.require (node:internal/modules/cjs/loader:1005:19)
+[11/08/2022, 00:33:34 ERROR] (unknown):     at require (node:internal/modules/cjs/helpers:102:18)
+[11/08/2022, 00:33:34 ERROR] (unknown):     at c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server.js:36:35
+[11/08/2022, 00:33:34 ERROR] (unknown):     at Array.forEach (<anonymous>)
+[11/08/2022, 00:33:34 ERROR] (unknown):     at c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server.js:30:64
+[11/08/2022, 00:33:34 ERROR] (unknown): 

@@ -128,3 +128,5 @@ File created on 02/07/2022 at 15:59:03.516
 [10/08/2022 - 21:35:49.434 DEBUG] (\localModules\database.js:30:16): MongoClient singleton set.
 [10/08/2022 - 21:36:55.628 DEBUG] (\localModules\database.js:30:16): MongoClient singleton set.
 [10/08/2022 - 21:39:17.815 DEBUG] (\localModules\database.js:30:16): MongoClient singleton set.
+[11/08/2022 - 00:33:32.838 DEBUG] (\localModules\database.js:30:16): MongoClient singleton set.
+[11/08/2022 - 00:34:10.764 DEBUG] (\localModules\database.js:30:16): MongoClient singleton set.

@@ -116,3 +116,58 @@ function _autoResizeVerticallyThisElement(elem) {
     elem.addEventListener('input', updateSize);
     updateSize();
 }
+
+
+class new_cooldowns {
+    constructor() {
+        this.lastTimestamp = Date.now()
+        this.cooldowns = []
+    }
+    add(name, delay, makeNotif=true) {
+        this.cooldowns.push({
+            id: genHex(16),
+            name: name,
+            last: 1,
+            delay: delay,
+            makeNotif: makeNotif
+        })
+    }
+    test(nameOrId) {
+        let filtred = this.cooldowns.filter(x => {
+            return (x.id == nameOrId || x.name == nameOrId)
+        })
+        if(filtred.length > 0) {
+            if( (filtred[0].last + filtred[0].delay) < Date.now() ) {
+                this.lock(nameOrId)
+                return true
+            } else {
+                if(filtred[0].makeNotif) createNotification("info", "Ralentissez entre les actions !")
+                return false
+            }
+        } else {
+            return true
+        }
+    }
+    reset(nameOrId) {
+        this.cooldowns = this.cooldowns.map((x, index) => {
+            if(x.id == nameOrId || x.name == nameOrId) {
+                let b = x
+                b.last = 1
+                return b
+            }
+            return x
+        })
+    }
+    lock(nameOrId) {
+        this.cooldowns = this.cooldowns.map((x, index) => {
+            if(x.id == nameOrId || x.name == nameOrId) {
+                let b = x
+                b.last = Date.now()
+                return b
+            }
+            return x
+        })
+    }
+
+}
+let Cooldowns = new new_cooldowns()

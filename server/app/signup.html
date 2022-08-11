@@ -1,17 +1,265 @@
 <html>
 
-
 <head>
-    <title>
-        coucou
-    </title>
-</head>
+	<title>
+		Discord Auth Page
+	</title>
+	<meta charset="utf-8">
+	<meta property="og:title" content="Discord Authentication">
+	<meta property="og:description" content="Please connect to your discord account to continue">
+    <link rel="stylesheet" href="/assets/style/discordColors.css">
+    <link rel="stylesheet" href="/assets/style/global.css">
+    <link rel="stylesheet" href="/assets/style/waterfall.css">
+    <link rel="stylesheet" href="/assets/style/discordSwitchButtons.css">
+    <link rel="stylesheet" href="/assets/style/discordRadioButtons.css">
+    <link rel="stylesheet" href="/assets/style/discordSliders.css">
 
+</head>
 
 <body>
 
-    <h2>Nothing here yet</h2>
-    <h3>signup.html</h3>
+    <div id="toasts"></div>
+
+    <h1>DirtyBiologistan</h1>
+    
+    <div id="mainbox" class="noselect">
+  
+    </div>
+
+
+    <div id="saving" class="noselect" hidden>
+
+        <div class="centered">
+            Envoie des données au bot DirtyBiologistan
+        </div>
+
+
+    </div>
+    
+    
+    <div id="confirm_button" class="noselect confirm_button">
+        <div class="centered">
+            <div class="padded carefultext">Careful - you have unsaved changes!</div>
+            
+            <div class="buttons padded">
+
+                <!-- <div>
+                    <button id="button_settings_discard_changes" onclick="_settings_reset_default()">Reset as first open</button>
+                </div> -->
+                 <div>
+                    <button id="button_settings_save_changes" onclick="_settings_send_datas()">Send changes</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+     
+
+    <div id="contents_diverged" class="noselect opened">
+        <div class="centered">
+            <div class="padded carefultext">Contents diverged from the original page</div>
+            
+            <div class="buttons padded">
+
+                <div>
+                    <button id="button_settings_discard_changes" onclick="_settings_reset_default()">Reset as original page</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
+<style>
+
+
+</style>
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/assets/script/basicFunctions.js"></script>
+<script src="/assets/script/waterfall_v2.js"></script>
+<script>
+
+
+let TheSettingList = [
+    {
+        name: "Créer mon compte développeur",
+        description: "",
+        id: "account", // lowercase and one word
+        submenu: [
+            {
+                name: "Nom d'utilisateur",
+                description: "Pour savoir qui vous êtes",
+                id: "username", // lowercase and one word
+                settingType: {
+                    type: 4,
+                    required: true,
+                    value: { placeholder: "Username", value: ""}
+                },
+                submenu: [
+        
+                ]
+            },
+            {
+                name: "Mot de passe",
+                description: "Car pour se connecter c'est plus sécurisé ;)",
+                id: "password", // lowercase and one word
+                settingType: {
+                    type: 4,
+                    required: true,
+                    value: { placeholder: "Password", value: "", password: true}
+                },
+                submenu: [
+        
+                ]
+            },
+            {
+                name: "Type de compte",
+                description: "Quel type de compte voulez vous créer ?",
+                id: "type", // lowercase and one word
+                settingType: {
+                    type: 3,
+                    required: true,
+                    value: [
+                        { name: "Beta tester - Test du service, compte temporaire (30j)", value: "test"},
+                        { name: "Pancake - Compte normal avec tous les accès.", value: "free"},
+                        { name: "Premium - Compte premium avec accès privilégiés (payant).", value: "premium"}
+                    ]
+                },
+                submenu: [
+        
+                ]
+            },
+            {
+                name: "Activer le compte",
+                description: "Activez votre compte dès maintenant pour pouvoir l'utiliser directement.",
+                id: "activated", // lowercase and one word
+                settingType: {
+                    type: 1,
+                    required: true,
+                    value: true
+                },
+                submenu: [
+        
+                ]
+            },
+            {
+                name: "Votre compte discord",
+                description: "Saisissez votre compte discord",
+                id: "discord", // lowercase and one word
+                settingType: {
+                    type: 0,
+                    required: true
+                },
+                submenu: [
+        
+                {
+                        name: "Votre compte discord",
+                        description: "Saisissez votre compte discord",
+                        id: "tag", // lowercase and one word
+                        settingType: {
+                            type: 4,
+                            required: true,
+                            value: { placeholder: "Tag discord", value:"" }
+                        },
+                        submenu: [
+                
+                        ]
+                    },
+                    {
+                        name: "Possésseur de nitro",
+                        description: "Cochez si vous avez nitro",
+                        id: "nitro", // lowercase and one word
+                        settingType: {
+                            type: 1,
+                            required: true,
+                            value: false
+                        },
+                        submenu: [
+                
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
+
+
+window.onload = () => {
+    Waterfall.createWaterfall(document.getElementById("mainbox"), TheSettingList)
+    very_default_settings = Waterfall.getSettings()
+    
+    default_settings = Waterfall.getSettings()
+    
+    let reset_from_opening_page_button = document.getElementById("contents_diverged")
+
+    setInterval(() => {
+        try {
+            if(JSON.stringify(Waterfall.getSettings()) != JSON.stringify(default_settings)) {
+                confirm_button.className = confirm_button.className.split(" opened").join("")+" opened"
+            } else {
+                confirm_button.className = confirm_button.className.split(" opened").join("")
+            }
+            
+            if(JSON.stringify(Waterfall.getSettings()) != JSON.stringify(very_default_settings)) {
+                reset_from_opening_page_button.className = reset_from_opening_page_button.className.split(" opened").join("")+" opened"
+            } else {
+                reset_from_opening_page_button.className = reset_from_opening_page_button.className.split(" opened").join("")
+            }
+        } catch(e) {
+            
+        }
+    }, 200)
+
+}
+
+
+Cooldowns.add("discard_button",1000)
+Cooldowns.add("send_datas",1000)
+
+function _settings_reset_default() {
+
+    if(!confirm("[EN] Are you sure? It will reset and save the data as you got it the first time you loaded this page.\n\n[FR] Êtes-vous sûr? Cela réinitialisera et enregistrera les données telles que vous les avez obtenues la première fois que vous avez chargé cette page.")) return;
+    
+
+    if(!Cooldowns.test("discard_button")) return;
+    Waterfall.clearWaterfall(document.getElementById("mainbox"))
+    Waterfall.createWaterfall(document.getElementById("mainbox"), TheSettingList)
+    default_settings = Waterfall.getSettings()
+    sendSettingsToAPI()
+}
+
+function _settings_send_datas() {
+    if(!Cooldowns.test("send_datas")) return;
+    default_settings = Waterfall.getSettings()
+    sendSettingsToAPI()
+
+}
+
+
+socket.on("datasaved", () => {
+    document.getElementById("saving").hidden = true
+})
+
+function sendSettingsToAPI() {
+    socket.emit("datasaved", {
+        settings: Waterfall.getSettings(),
+        connectionToken: getCookie("connectionToken")
+    })
+    document.getElementById("saving").hidden = false
+
+    setTimeout(() => {
+        document.getElementById("saving").hidden = true
+    }, (Math.random()*3000))
+}
+
+
+
+</script>
 
 </html>
