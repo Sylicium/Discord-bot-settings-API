@@ -156,6 +156,36 @@ module.exports.start = () => {
             if(datas.adminToken == "azertyml") Database_.website_disconnectAllUsers()
         })
 
+        socket.on("checkDiscordAuth", async datas => {
+            /*
+            datas = {
+                connectionToken: connectionToken
+            }
+            */
+            try {
+
+                let isConnected = await Database_.website_isConnected_byConnectionToken(datas.connectionToken)
+
+                if(isConnected) {
+                    return socket.emit("checkDiscordAuth", {
+                        state: true,
+                        connectionToken: datas.connectionToken
+                    })
+                } else {
+                    return socket.emit("checkDiscordAuth", {
+                        state: false,
+                        connectionToken: "",
+                        redirect: config.website.uri.discordAuth.auth.oauth2
+                    })
+                }
+
+            }catch(e) {
+                Logger.warn(e)
+                console.log(e)
+                return;
+            }
+
+        })
 
         socket.on("discordAuth", async datas => {
             /*
@@ -171,8 +201,11 @@ module.exports.start = () => {
             */
             try {
 
+                if(!datas) return;
+
                 function redirectToDiscordAuthError(title, message) {
                     socket.emit("discordAuth", {
+                        state: false,
                         connectionToken: datas.connectionToken,
                         redirect: `/discordAuthError?title=${title.split(" ").join("%20")}&message=${message.split(" ").join("%20")}`
                     })
@@ -183,6 +216,7 @@ module.exports.start = () => {
                 
                 if(isConnected) {
                     socket.emit("discordAuth", {
+                        state: true,
                         connectionToken: datas.connectionToken,
                         redirect: datas.nextRedirectURI
                     })
@@ -205,6 +239,7 @@ module.exports.start = () => {
                 let DatabaseObject = await Database_.website_connectUser(le_user)
 
                 socket.emit("discordAuth", {
+                    state: true,
                     connectionToken: DatabaseObject.connectionToken,
                     redirect: datas.nextRedirectURI
                 })
@@ -214,6 +249,7 @@ module.exports.start = () => {
             } catch(e) {
                 console.log(e)
                 socket.emit("discordAuth", {
+                    state: false,
                     connectionToken: datas.connectionToken,
                     redirect: `/discordAuthError?title=Cannot%20process%20to%20login&message=${e}`
                 })

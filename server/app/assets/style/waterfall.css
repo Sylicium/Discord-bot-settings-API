@@ -321,7 +321,7 @@ div#contents_diverged:not(.opened) {
 
 
 
-div#saving {
+div.fullPageCentered {
     position: fixed;
     top: 0px;
     width: 100%;
@@ -329,7 +329,7 @@ div#saving {
     background-color: rgba(0, 0, 0, 0.2);
     z-index: 10;
 }
-div#saving div.centered{
+div.fullPageCentered div.centered{
     width: fit-content;
     max-width: 600px;
     background-color: #2B2D30;
@@ -340,7 +340,18 @@ div#saving div.centered{
     margin: 0px auto;
     margin-top: 50vh;
     transform: translateY(-50%);
-    
+}
+div#saving div.centered {
+    color: #FFFFFF;
+    font-family: consolas;
+    font-size: 3vh;
+}
+
+
+div#pleaseconnect {
+    background-color: var(--gray-two);
+}
+div#pleaseconnect div.centered {
     color: #FFFFFF;
     font-family: consolas;
     font-size: 3vh;

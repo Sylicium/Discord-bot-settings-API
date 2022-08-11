@@ -82,3 +82,40 @@ File created on 07/08/2022 at 02:20:09.236
 [11/08/2022 - 02:33:36.826 DEBUG] (\localModules\someFunctions.js:264:12): oauthResult,[object Response]
 [11/08/2022 - 02:39:21.462 DEBUG] (\localModules\someFunctions.js:243:12): lHmzw49cVzE0oIIJ7E3brAcuwn3VaG
 [11/08/2022 - 02:39:21.793 DEBUG] (\localModules\someFunctions.js:264:12): oauthResult,[object Response]
+[11/08/2022 - 20:46:34.350 DEBUG] (\localModules\someFunctions.js:243:12): 
+[11/08/2022 - 20:46:34.620 DEBUG] (\localModules\someFunctions.js:264:12): oauthResult,[object Response]
+[11/08/2022 - 20:46:49.693 DEBUG] (\localModules\someFunctions.js:243:12): 
+[11/08/2022 - 20:46:49.974 DEBUG] (\localModules\someFunctions.js:264:12): oauthResult,[object Response]
+[11/08/2022 - 20:48:47.302 DEBUG] (\localModules\someFunctions.js:243:12): WUQwUdA4eNhStDgea40uy6nF3p38S0
+[11/08/2022 - 20:48:47.587 DEBUG] (\localModules\someFunctions.js:264:12): oauthResult,[object Response]
+[11/08/2022 - 20:48:53.044 DEBUG] (\localModules\someFunctions.js:243:12): WUQwUdA4eNhStDgea40uy6nF3p38S0
+[11/08/2022 - 20:48:53.270 DEBUG] (\localModules\someFunctions.js:264:12): oauthResult,[object Response]
+[11/08/2022 - 20:49:02.351 DEBUG] (\localModules\someFunctions.js:243:12): zgg28oh3QFNkuzqVvzcwHugZsUy42Q
+[11/08/2022 - 20:49:02.573 DEBUG] (\localModules\someFunctions.js:264:12): oauthResult,[object Response]
+[12/08/2022 - 00:21:31.330 DEBUG] (\localModules\someFunctions.js:243:12): 
+[12/08/2022 - 00:21:31.691 DEBUG] (\localModules\someFunctions.js:264:12): oauthResult,[object Response]
+[12/08/2022 - 00:22:35.605 DEBUG] (\localModules\someFunctions.js:243:12): 
+[12/08/2022 - 00:22:35.983 DEBUG] (\localModules\someFunctions.js:264:12): oauthResult,[object Response]
+[12/08/2022 - 00:22:41.298 DEBUG] (\localModules\someFunctions.js:243:12): 
+[12/08/2022 - 00:22:41.585 DEBUG] (\localModules\someFunctions.js:264:12): oauthResult,[object Response]
+[12/08/2022 - 00:22:58.094 DEBUG] (\localModules\someFunctions.js:243:12): 8uKqdBNiDizI2wcnwTimbpwCVQrgWU
+[12/08/2022 - 00:22:58.373 DEBUG] (\localModules\someFunctions.js:264:12): oauthResult,[object Response]
+[12/08/2022 - 00:23:58.221 DEBUG] (\localModules\someFunctions.js:243:12): clientSecret,clK8z3wJSnGeAzCK-FsD1AJZwxnmKDn3
+[12/08/2022 - 00:23:58.223 DEBUG] (\localModules\someFunctions.js:245:12): 8uKqdBNiDizI2wcnwTimbpwCVQrgWU
+[12/08/2022 - 00:23:58.506 DEBUG] (\localModules\someFunctions.js:266:12): oauthResult,[object Response]
+[12/08/2022 - 00:26:18.720 DEBUG] (\localModules\someFunctions.js:243:12): clientSecret,clK8z3wJSnGeAzCK-FsD1AJZwxnmKDn3
+[12/08/2022 - 00:26:18.724 DEBUG] (\localModules\someFunctions.js:245:12): 8uKqdBNiDizI2wcnwTimbpwCVQrgWU
+[12/08/2022 - 00:26:18.997 DEBUG] (\localModules\someFunctions.js:266:12): oauthResult,[object Response]
+[12/08/2022 - 00:26:23.602 DEBUG] (\localModules\someFunctions.js:243:12): clientSecret,clK8z3wJSnGeAzCK-FsD1AJZwxnmKDn3
+[12/08/2022 - 00:26:23.603 DEBUG] (\localModules\someFunctions.js:245:12): 8uKqdBNiDizI2wcnwTimbpwCVQrgWU
+[12/08/2022 - 00:26:23.891 DEBUG] (\localModules\someFunctions.js:266:12): oauthResult,[object Response]
+[12/08/2022 - 00:28:43.709 DEBUG] (\localModules\someFunctions.js:243:12): https://discord.com/oauth2/authorize?client_id=1005628956965343253
+[12/08/2022 - 00:28:44.119 DEBUG] (\localModules\someFunctions.js:264:12): oauthResult,[object Response]
+[12/08/2022 - 00:28:46.058 DEBUG] (\localModules\someFunctions.js:243:12): 8uKqdBNiDizI2wcnwTimbpwCVQrgWU
+[12/08/2022 - 00:28:46.349 DEBUG] (\localModules\someFunctions.js:264:12): oauthResult,[object Response]
+[12/08/2022 - 00:29:50.793 DEBUG] (\localModules\someFunctions.js:243:12): GWEJUsLbDgsOFUQxkqWIZlQ4vu5t8E
+[12/08/2022 - 00:29:51.158 DEBUG] (\localModules\someFunctions.js:264:12): oauthResult,[object Response]
+[12/08/2022 - 00:31:54.985 DEBUG] (\localModules\someFunctions.js:243:12): 4p4Q91IJUKrOwa8Fn4XNY6jKfkerlQ
+[12/08/2022 - 00:31:55.379 DEBUG] (\localModules\someFunctions.js:264:12): oauthResult,[object Response]
+[12/08/2022 - 00:33:59.165 DEBUG] (\localModules\someFunctions.js:243:12): x6U30kbyIu79u6EgZLDWMGEdJJpoic
+[12/08/2022 - 00:33:59.475 DEBUG] (\localModules\someFunctions.js:264:12): oauthResult,[object Response]

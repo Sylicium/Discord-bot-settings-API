@@ -22,6 +22,8 @@ let Pattern = `<html>
     <h2 class="red">{{error.title}}</h2>
     <p class="red">{{error.message}}</p>
 
+    <a class="link" href="${config.website.uri.discordAuth.auth.oauth2}">Click here to connect on discord</a>
+
 </body>
 <style>
 
@@ -35,6 +37,15 @@ body {
     color: red
 }
 .underline {
+    text-decoration: underline;
+}
+
+.link {
+    color: whitesmoke;
+    text-decoration: none;
+}
+.link:hover {
+    color: white;
     text-decoration: underline;
 }
 </style>

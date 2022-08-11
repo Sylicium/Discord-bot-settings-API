@@ -1,3 +1,4 @@
+const { config } = require("dotenv")
 
 try {
     require("dotenv").config()
@@ -20,7 +21,8 @@ module.exports = {
         uri: {
             discordAuth: {
                 auth: {
-                    redirectURI: "https://google.com"
+                    redirectURI: "https://google.com",
+                    oauth2: "https://discord.com/oauth2/authorize?client_id=1005628956965343253&redirect_uri=https%3A%2F%2Fgoogle.com&response_type=code&scope=identify"
                 }
             },
             api_documentation: "localhost/docs"

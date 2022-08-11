@@ -51,14 +51,6 @@ div.main {
 <script>
 
 
-
-    socket.on("discordAuth", datas => {
-        if(!datas) return;
-
-        let uri = getCookie("nextRedirectURI")
-        makeRedirect(datas.redirect)
-    })
-
     
     
 
@@ -129,11 +121,14 @@ div.main {
         */
         ServerResponded = true
 
+        if(!datas) return;
+
         if(datas.connectionToken) {
             setCookie("connectionToken",datas.connectionToken)
         }
 
-        return makeRedirect(datas.redirect)
+        let uri = getCookie("nextRedirectURI")
+        return makeRedirect((uri ? uri : datas.redirect))
 
         
         if(datas.state == "0") {

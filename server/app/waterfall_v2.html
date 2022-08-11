@@ -2,11 +2,11 @@
 
 <head>
 	<title>
-		Discord Auth Page
+		DirtyBiologistan | Discord Setting API
 	</title>
 	<meta charset="utf-8">
-	<meta property="og:title" content="Discord Authentication">
-	<meta property="og:description" content="Please connect to your discord account to continue">
+	<meta property="og:title" content="DirtyBiologistan">
+	<meta property="og:description" content="{{settings.description}}">
     <link rel="stylesheet" href="/assets/style/discordColors.css">
     <link rel="stylesheet" href="/assets/style/global.css">
     <link rel="stylesheet" href="/assets/style/waterfall.css">
@@ -19,6 +19,11 @@
 <body>
 
     <div id="toasts"></div>
+    <div id="pleaseconnect" class="fullPageCentered noselect">
+        <div class="centered" id="loading_page_text">
+            Loading settings page ...
+        </div>
+    </div>
 
     <h1>DirtyBiologistan</h1>
     
@@ -27,7 +32,7 @@
     </div>
 
 
-    <div id="saving" class="noselect" hidden>
+    <div id="saving" class="fullPageCentered noselect" hidden>
 
         <div class="centered">
             Envoie des données au bot DirtyBiologistan
@@ -80,12 +85,33 @@
 
 
 <script src="/socket.io/socket.io.js"></script>
-<script src="/assets/script/basicFunctions.js"></script>
+<script src="/assets/script/basicFunctions.js"></script>    
 <script src="/assets/script/waterfall_v2.js"></script>
 <script>
 
 
 window.onload = () => {
+
+    socket.emit("checkDiscordAuth", {
+        connectionToken: getCookie("connectionToken")
+    })
+
+    socket.on("checkDiscordAuth", datas => {
+
+        if(datas.state) {
+            document.getElementById("pleaseconnect").hidden = true
+        } else {
+            if(datas.redirect) {
+                setCookie("nextRedirectURI", `${window.location.href}`)
+                setTimeout(() => { window.location.href = datas.redirect }, 100)
+            } else {
+                document.getElementById("loading_page_text").textContent = `Cannot load the page, please connect before throught the url ${window.location.origin}/discordAuth?discordredirect=true`
+            }
+        }
+    })
+
+
+
     Waterfall.createWaterfall(document.getElementById("mainbox"), waterfall_example_settingList)
     very_default_settings = Waterfall.getSettings()
     
@@ -133,18 +159,17 @@ function _settings_send_datas() {
     if(!Cooldowns.test("send_datas")) return;
     default_settings = Waterfall.getSettings()
     sendSettingsToAPI()
-
 }
 
 
-socket.on("datasaved", () => {
+socket.on("sendSettings", () => {
     document.getElementById("saving").hidden = true
 })
 
 function sendSettingsToAPI() {
-    socket.emit("datasaved", {
+    socket.emit("sendSettings", {
+        connectionToken: getCookie("connectionToken"),
         settings: Waterfall.getSettings(),
-        connectionToken: getCookie("connectionToken")
     })
     document.getElementById("saving").hidden = false
 
