@@ -157,6 +157,10 @@ function _settings_reset_default() {
 
 function _settings_send_datas() {
     if(!Cooldowns.test("send_datas")) return;
+    if(!Waterfall.canSaveJSON()) {
+        alert(`Certains champs requis ne sont pas remplis !`)
+        return;
+    }
     default_settings = Waterfall.getSettings()
     sendSettingsToAPI()
 }

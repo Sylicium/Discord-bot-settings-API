@@ -123,6 +123,63 @@ class generateCategory {
         return this.references
     }
 
+    /**
+     * Retourne true si tous les champs requis sont remplis, cela inclu tous les champs pouvant être vide
+     */
+    canSaveJSON() {
+        let notFilled = false
+        let mapped = this.references.map((item, index) => {
+            if(item.submenuCategoryClass) {
+                //console.log("depthIDS",this.getDepthIDS())
+                //console.log("item.submenuCategoryClass",item.submenuCategoryClass.getSettingsValuesJSON())
+            }
+            let setting = item.setting
+            if(setting.settingType.type == 0) {
+                return false
+            } else if(setting.settingType.type == 1) {
+                if(setting.submenu && setting.submenu.length > 0) {
+                    if(item.submenuCategoryClass) {
+                        if(document.getElementById(`setting_${item.waterfallID}_checkbox`).checked) {
+                            let v = item.submenuCategoryClass.canSaveJSON()
+                            if(!v) {
+                                notFilled = true
+                            }
+                        }
+                    }
+                } else {
+                    return undefined
+                }
+            } else if(setting.settingType.type == 2) {
+                let v = document.getElementById(`setting_${item.waterfallID}_select`).value
+                if(!v || v == undefined || v == null || v == "") notFilled = true
+            } else if(setting.settingType.type == 3) {
+                let elem_query = document.querySelector(`input[name="setting_${item.waterfallID}_radiobutton"]:checked`)
+                let value = (elem_query? elem_query.value : undefined)
+                let v = (elem_query ? elem_query.value : false)
+                if(!elem_query || !v || v == undefined || v == null || v == "") notFilled = true
+            } else if(setting.settingType.type == 4) {
+                let v = document.getElementById(`setting_${item.waterfallID}_value`).value
+                if(!v || v == undefined || v == null || v == "") notFilled = true
+            } else if(setting.settingType.type == 5) {
+                let v = document.getElementById(`setting_${item.waterfallID}_value`).value
+                if(!v || v == undefined || v == null || v == "") notFilled = true
+            } else if(setting.settingType.type == 6) {
+                let v = document.getElementById(`setting_${item.waterfallID}_value`).value
+                if(!v || v == undefined || v == null || v == "") notFilled = true
+            } else if(setting.settingType.type == 7) {
+                let v = document.getElementById(`setting_${item.waterfallID}_value`).value
+                if(!v || v == undefined || v == null || v == "") notFilled = true
+            } else if(setting.settingType.type == 8) {
+                let v = document.getElementById(`setting_${item.waterfallID}_value`).value
+                if(!v || v == undefined || v == null || v == "") notFilled = true
+            } else if(setting.settingType.type == 9) {
+                return { id: setting.id, value: ("list manager not created" || null) }
+            }
+            return undefined
+        })
+        return !notFilled
+    }
+
     getSettingsValuesJSON() {
         let mapped = this.references.map((item, index) => {
             if(item.submenuCategoryClass) {
@@ -364,7 +421,7 @@ class generateCategory {
                 </label>
             </div>
             <div class="flexed flexedright">
-                <input type="number" class="numberInput" id="setting_${waterfallID}_value" ${(settingType.value ? ` value="${settingType}"` : "")}>
+                <input type="number" class="numberInput" id="setting_${waterfallID}_value" ${(settingType.value ? ` value="${settingType.value}"` : "")}>
             </div>
         </div>`
         }
@@ -884,15 +941,20 @@ let Waterfall = {
         }
         _autoResizeVerticallyAllTextarea()
     },
-    clearWaterfall(element) {
+    clearWaterfall: (element) => {
         element.innerHTML = ""
         Global_["categories"] = []
     },
-    getSettings() {
+    getSettings: () => {
         return Global_["categories"].map((category, index) => {
             return { id: category.id, value: category.object.getSettingsValuesJSON()}
         })
     },
+    canSaveJSON: () => {
+        return !(Global_["categories"].map((category, index) => {
+            return category.object.canSaveJSON()
+        }).indexOf(false) != -1)
+    }
 }
 
 // let category1 = new generateCategory("Paramètres généraux", "main", waterfall_example_settingList)

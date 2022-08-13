@@ -226,3 +226,8 @@ File created on 02/07/2022, 18:51:13
 [11/08/2022, 00:33:34 ERROR] (unknown):     at Array.forEach (<anonymous>)
 [11/08/2022, 00:33:34 ERROR] (unknown):     at c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server.js:30:64
 [11/08/2022, 00:33:34 ERROR] (unknown): 
+[12/08/2022, 01:32:36 ERROR] (unknown): Unhandled Rejection (process.on handle) MongoServerSelectionError: connect ETIMEDOUT 13.37.33.104:27017
+[12/08/2022, 01:32:36 ERROR] (unknown):     at Timeout._onTimeout (c:\Users\Sylicium\node_modules\mongodb\lib\sdam\topology.js:305:38)
+[12/08/2022, 01:32:36 ERROR] (unknown):     at listOnTimeout (node:internal/timers:559:17)
+[12/08/2022, 01:32:36 ERROR] (unknown):     at processTimers (node:internal/timers:502:7)
+[12/08/2022, 01:32:36 ERROR] (unknown): 

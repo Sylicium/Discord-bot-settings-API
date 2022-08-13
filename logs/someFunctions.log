@@ -136,3 +136,5 @@ File created on 07/08/2022 at 02:20:09.236
 [12/08/2022 - 01:00:40.561 DEBUG] (\localModules\someFunctions.js:243:12): 
 [12/08/2022 - 01:00:52.858 DEBUG] (\localModules\someFunctions.js:243:12): HKteZbsovOmQzXYyGOsWp5TmkeMER4
 [12/08/2022 - 01:00:53.158 DEBUG] (\localModules\someFunctions.js:268:12): oauthResult,[object Response]
+[13/08/2022 - 13:54:45.495 DEBUG] (\localModules\someFunctions.js:243:12): OPf8xwItZmcimNjJGg6TVxCtJfVfjW
+[13/08/2022 - 13:54:45.736 DEBUG] (\localModules\someFunctions.js:268:12): oauthResult,[object Response]

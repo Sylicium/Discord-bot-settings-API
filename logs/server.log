@@ -18367,3 +18367,254 @@ File created on 02/07/2022 at 15:59:05.548
 [12/08/2022 - 01:00:53.791 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/waterfall_v2.js
 [12/08/2022 - 01:00:53.960 LOG] (\Discord-bot-settings-API\server.js:148:16): [sock][+] [2CTiDTQzohc1C1DOAAAV] Connected.
 [12/08/2022 - 01:00:54.077 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /favicon.ico
+[12/08/2022 - 01:18:19.425 INFO] (\Discord-bot-settings-API\server.js:26:12): Chargement des fichiers API
+[12/08/2022 - 01:18:19.437 INFO] (\Discord-bot-settings-API\server.js:38:24): [API] Loaded endpoint GET /api/infos
+[12/08/2022 - 01:18:19.440 INFO] (\Discord-bot-settings-API\server.js:38:24): [API] Loaded endpoint GET /api/status
+[12/08/2022 - 01:18:19.449 INFO] (\Discord-bot-settings-API\server.js:38:24): [API] Loaded endpoint POST /api/createSettingPage
+[12/08/2022 - 01:18:19.453 INFO] (\Discord-bot-settings-API\server.js:51:20): [HTML] Loaded dynamic html page /app/discordAuth
+[12/08/2022 - 01:18:19.459 INFO] (\Discord-bot-settings-API\server.js:51:20): [HTML] Loaded dynamic html page /app/discordAuthError
+[12/08/2022 - 01:18:19.460 DEBUG] (\Discord-bot-settings-API\server.js:56:12): [object Object]
+[12/08/2022 - 01:18:19.474 INFO] (\Discord-bot-settings-API\server.js:142:16): Serveur démarré sur le port 80
+[12/08/2022 - 01:18:20.245 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /favicon.ico
+[12/08/2022 - 01:19:11.469 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /waterfall_v2
+[12/08/2022 - 01:19:11.509 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordColors.css
+[12/08/2022 - 01:19:11.512 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/global.css
+[12/08/2022 - 01:19:11.518 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/waterfall.css
+[12/08/2022 - 01:19:11.520 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSwitchButtons.css
+[12/08/2022 - 01:19:11.524 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordRadioButtons.css
+[12/08/2022 - 01:19:11.528 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSliders.css
+[12/08/2022 - 01:19:11.542 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/basicFunctions.js
+[12/08/2022 - 01:19:11.548 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/waterfall_v2.js
+[12/08/2022 - 01:19:11.734 LOG] (\Discord-bot-settings-API\server.js:148:16): [sock][+] [ahK2FiNQv6qESDgEAAAC] Connected.
+[12/08/2022 - 01:19:11.938 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /favicon.ico
+[12/08/2022 - 01:19:13.135 LOG] (\Discord-bot-settings-API\server.js:151:20): [sock][-] [undefined] Disconnected.
+[12/08/2022 - 01:19:13.385 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /favicon.ico
+[12/08/2022 - 01:19:14.961 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /signup
+[12/08/2022 - 01:19:15.013 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordColors.css
+[12/08/2022 - 01:19:15.017 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/global.css
+[12/08/2022 - 01:19:15.020 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/waterfall.css
+[12/08/2022 - 01:19:15.022 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSwitchButtons.css
+[12/08/2022 - 01:19:15.025 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordRadioButtons.css
+[12/08/2022 - 01:19:15.028 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSliders.css
+[12/08/2022 - 01:19:15.038 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/basicFunctions.js
+[12/08/2022 - 01:19:15.048 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/waterfall_v2.js
+[12/08/2022 - 01:19:15.174 LOG] (\Discord-bot-settings-API\server.js:148:16): [sock][+] [wkNaebDit0iVyThAAAAE] Connected.
+[12/08/2022 - 01:19:15.294 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /favicon.ico
+[12/08/2022 - 01:19:17.171 LOG] (\Discord-bot-settings-API\server.js:151:20): [sock][-] [undefined] Disconnected.
+[12/08/2022 - 01:19:17.176 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /signup
+[12/08/2022 - 01:19:17.211 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordColors.css
+[12/08/2022 - 01:19:17.229 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/global.css
+[12/08/2022 - 01:19:17.233 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/waterfall.css
+[12/08/2022 - 01:19:17.237 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSwitchButtons.css
+[12/08/2022 - 01:19:17.242 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordRadioButtons.css
+[12/08/2022 - 01:19:17.245 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSliders.css
+[12/08/2022 - 01:19:17.252 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/basicFunctions.js
+[12/08/2022 - 01:19:17.256 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/waterfall_v2.js
+[12/08/2022 - 01:19:17.337 LOG] (\Discord-bot-settings-API\server.js:148:16): [sock][+] [61sJva_LQ7woQBvgAAAG] Connected.
+[12/08/2022 - 01:19:17.412 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /favicon.ico
+[12/08/2022 - 01:19:18.065 LOG] (\Discord-bot-settings-API\server.js:151:20): [sock][-] [undefined] Disconnected.
+[12/08/2022 - 01:19:18.070 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /signup
+[12/08/2022 - 01:19:18.132 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordColors.css
+[12/08/2022 - 01:19:18.135 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/global.css
+[12/08/2022 - 01:19:18.139 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/waterfall.css
+[12/08/2022 - 01:19:18.142 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSwitchButtons.css
+[12/08/2022 - 01:19:18.146 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordRadioButtons.css
+[12/08/2022 - 01:19:18.148 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSliders.css
+[12/08/2022 - 01:19:18.167 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/basicFunctions.js
+[12/08/2022 - 01:19:18.171 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/waterfall_v2.js
+[12/08/2022 - 01:19:18.230 LOG] (\Discord-bot-settings-API\server.js:148:16): [sock][+] [MogtzGWuoC-3ixPnAAAI] Connected.
+[12/08/2022 - 01:19:18.280 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /favicon.ico
+[12/08/2022 - 01:21:21.459 LOG] (\Discord-bot-settings-API\server.js:151:20): [sock][-] [undefined] Disconnected.
+[12/08/2022 - 01:21:21.466 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /signup
+[12/08/2022 - 01:21:21.528 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordColors.css
+[12/08/2022 - 01:21:21.531 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/global.css
+[12/08/2022 - 01:21:21.534 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/waterfall.css
+[12/08/2022 - 01:21:21.537 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSwitchButtons.css
+[12/08/2022 - 01:21:21.539 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordRadioButtons.css
+[12/08/2022 - 01:21:21.541 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSliders.css
+[12/08/2022 - 01:21:21.550 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/basicFunctions.js
+[12/08/2022 - 01:21:21.553 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/waterfall_v2.js
+[12/08/2022 - 01:21:21.664 LOG] (\Discord-bot-settings-API\server.js:148:16): [sock][+] [FI1nlR6UJ5pQR_y8AAAK] Connected.
+[12/08/2022 - 01:21:21.720 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /favicon.ico
+[12/08/2022 - 01:21:42.014 LOG] (\Discord-bot-settings-API\server.js:151:20): [sock][-] [undefined] Disconnected.
+[12/08/2022 - 01:21:42.042 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /signup
+[12/08/2022 - 01:21:42.088 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordColors.css
+[12/08/2022 - 01:21:42.091 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/global.css
+[12/08/2022 - 01:21:42.093 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/waterfall.css
+[12/08/2022 - 01:21:42.099 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSwitchButtons.css
+[12/08/2022 - 01:21:42.103 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordRadioButtons.css
+[12/08/2022 - 01:21:42.106 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSliders.css
+[12/08/2022 - 01:21:42.120 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/basicFunctions.js
+[12/08/2022 - 01:21:42.122 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/waterfall_v2.js
+[12/08/2022 - 01:21:42.276 LOG] (\Discord-bot-settings-API\server.js:148:16): [sock][+] [-YdGV-5fjQdYpW1nAAAM] Connected.
+[12/08/2022 - 01:21:42.355 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /favicon.ico
+[12/08/2022 - 01:21:48.736 LOG] (\Discord-bot-settings-API\server.js:151:20): [sock][-] [undefined] Disconnected.
+[12/08/2022 - 01:21:48.744 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /signup
+[12/08/2022 - 01:21:48.801 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordColors.css
+[12/08/2022 - 01:21:48.803 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/global.css
+[12/08/2022 - 01:21:48.806 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/waterfall.css
+[12/08/2022 - 01:21:48.812 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSwitchButtons.css
+[12/08/2022 - 01:21:48.814 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordRadioButtons.css
+[12/08/2022 - 01:21:48.817 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSliders.css
+[12/08/2022 - 01:21:48.831 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/basicFunctions.js
+[12/08/2022 - 01:21:48.837 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/waterfall_v2.js
+[12/08/2022 - 01:21:48.907 LOG] (\Discord-bot-settings-API\server.js:148:16): [sock][+] [N88NT1pXlMbTMa8PAAAO] Connected.
+[12/08/2022 - 01:21:48.945 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /favicon.ico
+[12/08/2022 - 01:25:07.853 LOG] (\Discord-bot-settings-API\server.js:151:20): [sock][-] [undefined] Disconnected.
+[12/08/2022 - 01:25:07.861 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /signup
+[12/08/2022 - 01:25:07.904 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordColors.css
+[12/08/2022 - 01:25:07.907 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/global.css
+[12/08/2022 - 01:25:07.910 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/waterfall.css
+[12/08/2022 - 01:25:07.914 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSwitchButtons.css
+[12/08/2022 - 01:25:07.917 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordRadioButtons.css
+[12/08/2022 - 01:25:07.919 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSliders.css
+[12/08/2022 - 01:25:07.935 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/basicFunctions.js
+[12/08/2022 - 01:25:07.942 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/waterfall_v2.js
+[12/08/2022 - 01:25:08.082 LOG] (\Discord-bot-settings-API\server.js:148:16): [sock][+] [MkM7Qz5BLO1pNsSoAAAQ] Connected.
+[12/08/2022 - 01:25:08.183 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /favicon.ico
+[12/08/2022 - 01:32:06.209 LOG] (\Discord-bot-settings-API\server.js:151:20): [sock][-] [undefined] Disconnected.
+[12/08/2022 - 01:32:06.214 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /signup
+[12/08/2022 - 01:32:06.249 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordColors.css
+[12/08/2022 - 01:32:06.252 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/global.css
+[12/08/2022 - 01:32:06.255 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/waterfall.css
+[12/08/2022 - 01:32:06.257 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSwitchButtons.css
+[12/08/2022 - 01:32:06.264 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordRadioButtons.css
+[12/08/2022 - 01:32:06.266 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSliders.css
+[12/08/2022 - 01:32:06.282 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/basicFunctions.js
+[12/08/2022 - 01:32:06.285 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/waterfall_v2.js
+[12/08/2022 - 01:32:06.419 LOG] (\Discord-bot-settings-API\server.js:148:16): [sock][+] [HiOjKfH7MaqYrJyHAAAS] Connected.
+[12/08/2022 - 01:32:06.485 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /favicon.ico
+[12/08/2022 - 01:32:36.561 WARN] (\Discord-bot-settings-API\server.js:183:24): MongoServerSelectionError: connect ETIMEDOUT 13.37.33.104:27017
+[12/08/2022 - 01:37:30.237 LOG] (\Discord-bot-settings-API\server.js:151:20): [sock][-] [undefined] Disconnected.
+[12/08/2022 - 01:37:30.255 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /signup
+[12/08/2022 - 01:37:30.312 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordColors.css
+[12/08/2022 - 01:37:30.318 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/global.css
+[12/08/2022 - 01:37:30.322 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/waterfall.css
+[12/08/2022 - 01:37:30.326 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSliders.css
+[12/08/2022 - 01:37:30.331 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSwitchButtons.css
+[12/08/2022 - 01:37:30.334 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordRadioButtons.css
+[12/08/2022 - 01:37:30.340 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/basicFunctions.js
+[12/08/2022 - 01:37:30.343 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/waterfall_v2.js
+[12/08/2022 - 01:37:30.598 LOG] (\Discord-bot-settings-API\server.js:148:16): [sock][+] [k9d1RW8G_FeC_UQgAAAU] Connected.
+[12/08/2022 - 01:37:30.791 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /favicon.ico
+[12/08/2022 - 01:37:31.760 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordColors.css
+[12/08/2022 - 01:37:31.819 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/global.css
+[12/08/2022 - 01:37:31.823 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/waterfall.css
+[12/08/2022 - 01:37:31.827 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSwitchButtons.css
+[12/08/2022 - 01:37:31.831 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordRadioButtons.css
+[12/08/2022 - 01:37:31.834 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSliders.css
+[13/08/2022 - 13:54:27.106 INFO] (\Discord-bot-settings-API\server.js:26:12): Chargement des fichiers API
+[13/08/2022 - 13:54:27.133 INFO] (\Discord-bot-settings-API\server.js:38:24): [API] Loaded endpoint GET /api/infos
+[13/08/2022 - 13:54:27.137 INFO] (\Discord-bot-settings-API\server.js:38:24): [API] Loaded endpoint GET /api/status
+[13/08/2022 - 13:54:27.145 INFO] (\Discord-bot-settings-API\server.js:38:24): [API] Loaded endpoint POST /api/createSettingPage
+[13/08/2022 - 13:54:27.149 INFO] (\Discord-bot-settings-API\server.js:51:20): [HTML] Loaded dynamic html page /app/discordAuth
+[13/08/2022 - 13:54:27.153 INFO] (\Discord-bot-settings-API\server.js:51:20): [HTML] Loaded dynamic html page /app/discordAuthError
+[13/08/2022 - 13:54:27.155 DEBUG] (\Discord-bot-settings-API\server.js:56:12): [object Object]
+[13/08/2022 - 13:54:27.165 INFO] (\Discord-bot-settings-API\server.js:142:16): Serveur démarré sur le port 80
+[13/08/2022 - 13:54:27.760 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /favicon.ico
+[13/08/2022 - 13:54:28.953 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /waterfall_v2
+[13/08/2022 - 13:54:29.054 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordColors.css
+[13/08/2022 - 13:54:29.057 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/waterfall.css
+[13/08/2022 - 13:54:29.060 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSwitchButtons.css
+[13/08/2022 - 13:54:29.070 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSliders.css
+[13/08/2022 - 13:54:29.073 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordRadioButtons.css
+[13/08/2022 - 13:54:29.077 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/basicFunctions.js
+[13/08/2022 - 13:54:29.080 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/waterfall_v2.js
+[13/08/2022 - 13:54:29.101 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/global.css
+[13/08/2022 - 13:54:29.614 LOG] (\Discord-bot-settings-API\server.js:148:16): [sock][+] [_ponqdjqCXjpY1vYAAAB] Connected.
+[13/08/2022 - 13:54:29.734 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /favicon.ico
+[13/08/2022 - 13:54:30.012 LOG] (\Discord-bot-settings-API\server.js:151:20): [sock][-] [undefined] Disconnected.
+[13/08/2022 - 13:54:44.128 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /discordAuth
+[13/08/2022 - 13:54:44.447 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/basicFunctions.js
+[13/08/2022 - 13:54:45.262 LOG] (\Discord-bot-settings-API\server.js:148:16): [sock][+] [Mtv8fFuR_imRlqasAAAD] Connected.
+[13/08/2022 - 13:54:45.449 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /favicon.ico
+[13/08/2022 - 13:54:46.109 LOG] (\Discord-bot-settings-API\server.js:151:20): [sock][-] [undefined] Disconnected.
+[13/08/2022 - 13:54:46.136 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /waterfall_v2
+[13/08/2022 - 13:54:46.304 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordColors.css
+[13/08/2022 - 13:54:46.307 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/global.css
+[13/08/2022 - 13:54:46.315 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/waterfall.css
+[13/08/2022 - 13:54:46.317 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSwitchButtons.css
+[13/08/2022 - 13:54:46.320 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordRadioButtons.css
+[13/08/2022 - 13:54:46.322 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSliders.css
+[13/08/2022 - 13:54:46.336 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/basicFunctions.js
+[13/08/2022 - 13:54:46.347 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/waterfall_v2.js
+[13/08/2022 - 13:54:46.793 LOG] (\Discord-bot-settings-API\server.js:148:16): [sock][+] [q1WARTmoh0RC53NUAAAF] Connected.
+[13/08/2022 - 13:54:47.305 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /favicon.ico
+[13/08/2022 - 13:54:49.830 LOG] (\Discord-bot-settings-API\server.js:151:20): [sock][-] [undefined] Disconnected.
+[13/08/2022 - 13:54:49.840 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /waterfall_v2
+[13/08/2022 - 13:54:49.986 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordColors.css
+[13/08/2022 - 13:54:49.993 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/global.css
+[13/08/2022 - 13:54:50.100 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/waterfall.css
+[13/08/2022 - 13:54:50.129 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSwitchButtons.css
+[13/08/2022 - 13:54:50.145 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordRadioButtons.css
+[13/08/2022 - 13:54:50.164 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSliders.css
+[13/08/2022 - 13:54:50.207 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/basicFunctions.js
+[13/08/2022 - 13:54:50.283 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/waterfall_v2.js
+[13/08/2022 - 13:54:50.537 LOG] (\Discord-bot-settings-API\server.js:148:16): [sock][+] [2tV1xllFdoQ409wmAAAH] Connected.
+[13/08/2022 - 13:54:50.770 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /favicon.ico
+[13/08/2022 - 13:54:55.273 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordColors.css
+[13/08/2022 - 13:54:55.276 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/global.css
+[13/08/2022 - 13:54:55.278 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/waterfall.css
+[13/08/2022 - 13:54:55.283 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSwitchButtons.css
+[13/08/2022 - 13:54:55.286 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordRadioButtons.css
+[13/08/2022 - 13:54:55.289 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSliders.css
+[13/08/2022 - 13:57:58.488 LOG] (\Discord-bot-settings-API\server.js:151:20): [sock][-] [undefined] Disconnected.
+[13/08/2022 - 13:57:58.494 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /waterfall_v2
+[13/08/2022 - 13:57:58.933 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordColors.css
+[13/08/2022 - 13:57:58.964 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/global.css
+[13/08/2022 - 13:57:58.987 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/waterfall.css
+[13/08/2022 - 13:57:59.005 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSwitchButtons.css
+[13/08/2022 - 13:57:59.032 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordRadioButtons.css
+[13/08/2022 - 13:57:59.058 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSliders.css
+[13/08/2022 - 13:57:59.087 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/basicFunctions.js
+[13/08/2022 - 13:57:59.104 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/waterfall_v2.js
+[13/08/2022 - 13:57:59.880 LOG] (\Discord-bot-settings-API\server.js:148:16): [sock][+] [RqVn_33_4ytT_5B5AAAJ] Connected.
+[13/08/2022 - 13:58:00.455 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /favicon.ico
+[13/08/2022 - 13:59:09.077 LOG] (\Discord-bot-settings-API\server.js:151:20): [sock][-] [undefined] Disconnected.
+[13/08/2022 - 13:59:09.319 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /waterfall_v2
+[13/08/2022 - 13:59:09.499 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordColors.css
+[13/08/2022 - 13:59:09.519 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/global.css
+[13/08/2022 - 13:59:09.541 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/waterfall.css
+[13/08/2022 - 13:59:09.553 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSwitchButtons.css
+[13/08/2022 - 13:59:09.599 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordRadioButtons.css
+[13/08/2022 - 13:59:09.611 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSliders.css
+[13/08/2022 - 13:59:09.635 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/basicFunctions.js
+[13/08/2022 - 13:59:09.649 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/waterfall_v2.js
+[13/08/2022 - 13:59:11.146 LOG] (\Discord-bot-settings-API\server.js:148:16): [sock][+] [gUwzyNPd1VxDKFjjAAAL] Connected.
+[13/08/2022 - 13:59:11.610 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /favicon.ico
+[13/08/2022 - 13:59:30.751 LOG] (\Discord-bot-settings-API\server.js:151:20): [sock][-] [undefined] Disconnected.
+[13/08/2022 - 13:59:30.762 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /waterfall_v2
+[13/08/2022 - 13:59:30.812 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordColors.css
+[13/08/2022 - 13:59:30.831 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/global.css
+[13/08/2022 - 13:59:30.853 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/waterfall.css
+[13/08/2022 - 13:59:30.866 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSwitchButtons.css
+[13/08/2022 - 13:59:30.881 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordRadioButtons.css
+[13/08/2022 - 13:59:30.890 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSliders.css
+[13/08/2022 - 13:59:30.909 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/basicFunctions.js
+[13/08/2022 - 13:59:30.922 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/waterfall_v2.js
+[13/08/2022 - 13:59:31.500 LOG] (\Discord-bot-settings-API\server.js:148:16): [sock][+] [2JKuZNStq3RnjmzLAAAN] Connected.
+[13/08/2022 - 13:59:32.100 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /favicon.ico
+[13/08/2022 - 13:59:36.633 LOG] (\Discord-bot-settings-API\server.js:151:20): [sock][-] [undefined] Disconnected.
+[13/08/2022 - 13:59:36.639 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /waterfall_v2
+[13/08/2022 - 13:59:36.758 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordColors.css
+[13/08/2022 - 13:59:36.766 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/global.css
+[13/08/2022 - 13:59:36.875 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/waterfall.css
+[13/08/2022 - 13:59:36.909 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSwitchButtons.css
+[13/08/2022 - 13:59:36.926 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordRadioButtons.css
+[13/08/2022 - 13:59:36.946 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSliders.css
+[13/08/2022 - 13:59:37.016 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/basicFunctions.js
+[13/08/2022 - 13:59:37.127 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/waterfall_v2.js
+[13/08/2022 - 13:59:37.798 LOG] (\Discord-bot-settings-API\server.js:148:16): [sock][+] [LA2mFEJHKiPI8m3mAAAP] Connected.
+[13/08/2022 - 13:59:38.664 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /favicon.ico
+[13/08/2022 - 14:04:44.923 LOG] (\Discord-bot-settings-API\server.js:151:20): [sock][-] [undefined] Disconnected.
+[13/08/2022 - 14:04:44.937 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /waterfall_v2
+[13/08/2022 - 14:04:45.028 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordColors.css
+[13/08/2022 - 14:04:45.032 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/global.css
+[13/08/2022 - 14:04:45.035 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/waterfall.css
+[13/08/2022 - 14:04:45.038 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSwitchButtons.css
+[13/08/2022 - 14:04:45.044 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordRadioButtons.css
+[13/08/2022 - 14:04:45.048 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/style/discordSliders.css
+[13/08/2022 - 14:04:45.060 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/basicFunctions.js
+[13/08/2022 - 14:04:45.063 LOG] (\Discord-bot-settings-API\server.js:98:20): [assets] Getting ressource: /assets/script/waterfall_v2.js
+[13/08/2022 - 14:04:45.618 LOG] (\Discord-bot-settings-API\server.js:148:16): [sock][+] [mtJBYvxk6jxawRlGAAAR] Connected.
+[13/08/2022 - 14:04:45.820 LOG] (\Discord-bot-settings-API\server.js:114:16): [site] Request to /favicon.ico
