@@ -12,3 +12,4 @@ logs/*
 /logs/*
 logs/
 ./logs/
+logs

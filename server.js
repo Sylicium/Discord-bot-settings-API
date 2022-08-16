@@ -2,10 +2,12 @@
 const config = require("./config")
 const somef = require("./localModules/someFunctions");
 
+const cookieParser = require("cookie-parser");
 const express = require('express');
 const app = express();
 app.use(express.urlencoded())
 app.use(express.json())
+app.use(cookieParser());
 
 const serv = require('http').createServer(app);
 const io = require('socket.io')(serv);
@@ -15,6 +17,7 @@ const path = require("path")
 const axios = require('axios')
 const fetch = require('node-fetch');
 const Database_ = require("./localModules/database");
+const { off } = require("process");
 const Logger = new (require("./localModules/logger"))()
 
 
@@ -279,6 +282,26 @@ module.exports.start = () => {
             3: Account disabled
 
             */
+
+            try {
+
+                if(!datas || !datas.connectionToken ||! datas.url || !Array.isArray(datas["settings"])) return Logger.log("[sock][sendSettings] No datas")
+
+                if(datas.url != socket.handshake.headers.referer) {
+                    let msg = "Invalid client url provided.".split(" ").join("%20")
+                    socket.emit("redirect",{ url: `/error?message=${msg}?code=${code}` })
+                    Logger.debug("error")
+                    return;
+                }
+                
+                
+            } catch(e) {
+                Logger.error(e)
+            }
+
+
+            Logger.debug("[sendSettings] datas:",datas)
+            Logger.debug("[sendSettings] socket:",socket.handshake.headers.referer)
 
 
 

@@ -7,7 +7,8 @@ const logger = new (require("./logger"))()
 var DOMParser = require('dom-parser');
 const fetch = require('node-fetch');
 const { red } = require("cli-color");
-const Database_ = require("./database")
+const Database_ = require("./database");
+const { monitorEventLoopDelay } = require("perf_hooks");
 
 module.exports.shuffle = shuffle
 /**
@@ -240,8 +241,6 @@ module.exports.getUserByDiscordAuthCode = async (discordAuthCode, scope, redirec
     let clientSecret = config.application.clientSecret
     let code = discordAuthCode
 
-    logger.debug(discordAuthCode)
-
     if(!discordAuthCode) return {
         state: false
     }
@@ -340,3 +339,68 @@ function getSettingPageInformations(identifiant) {
         id: identifiant
     }
 }
+
+
+class Cooldowns_manager {
+    constructor() {
+        this.lastTimestamp = Date.now()
+        this.cooldowns = []
+    }
+    add(name, delay) {
+        this.cooldowns.push({
+            id: genHex(16),
+            name: name,
+            last: 1,
+            delay: delay
+        })
+    }
+    test(nameOrId) {
+        let filtred = this.cooldowns.filter(x => {
+            return (x.id == nameOrId || x.name == nameOrId)
+        })
+        if(filtred.length > 0) {
+            if( (filtred[0].last + filtred[0].delay) < Date.now() ) {
+                this.lock(nameOrId)
+                return true
+            } else {
+                return false
+            }
+        } else {
+            return true
+        }
+    }
+    reset(nameOrId) {
+        this.cooldowns = this.cooldowns.map((x, index) => {
+            if(x.id == nameOrId || x.name == nameOrId) {
+                let b = x
+                b.last = 1
+                return b
+            }
+            return x
+        })
+    }
+    lock(nameOrId) {
+        this.cooldowns = this.cooldowns.map((x, index) => {
+            if(x.id == nameOrId || x.name == nameOrId) {
+                let b = x
+                b.last = Date.now()
+                return b
+            }
+            return x
+        })
+    }
+
+}
+let Cooldowns = new Cooldowns_manager()
+module.exports.Cooldowns = Cooldowns
+
+
+class Gshield_manager {
+    constructor() {
+        this.cooldowns = new Cooldowns_manager()
+
+    }
+
+}
+let GShield = new Gshield_manager()
+module.exports.GShield = GShield

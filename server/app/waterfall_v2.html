@@ -90,6 +90,12 @@
 <script>
 
 
+let pageInfos = {
+    oneUse: true,
+    waterfallSettings: []
+}
+
+
 window.onload = () => {
 
     socket.emit("checkDiscordAuth", {
@@ -168,11 +174,17 @@ function _settings_send_datas() {
 
 socket.on("sendSettings", () => {
     document.getElementById("saving").hidden = true
+        console.log("aaz")
+    if(pageInfos.oneUse) {
+        console.log("ff")
+        window.location.href = `/expired?message=${"The setting page you previously was on was a one-use page.".split(" ").join("%20")}`
+    }
 })
 
 function sendSettingsToAPI() {
     socket.emit("sendSettings", {
         connectionToken: getCookie("connectionToken"),
+        url: window.location.href,
         settings: Waterfall.getSettings(),
     })
     document.getElementById("saving").hidden = false
