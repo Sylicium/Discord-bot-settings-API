@@ -924,22 +924,26 @@ let Global_ = {
 
 let Waterfall = {
     genWaterfallHTML: (settingsWaterfall) => {
-        let html = []
-        for(let i in settingsWaterfall) {
-            let new_category = new generateCategory(settingsWaterfall[i].name, settingsWaterfall[i].id, settingsWaterfall[i].submenu)
-            html.push(new_category.getHTML())
-            html.push(separator)
-        }
-        return html.join("\n")
+        try {
+            let html = []
+            for(let i in settingsWaterfall) {
+                let new_category = new generateCategory(settingsWaterfall[i].name, settingsWaterfall[i].id, settingsWaterfall[i].submenu)
+                html.push(new_category.getHTML())
+                html.push(separator)
+            }
+            return html.join("\n")
+        } catch(e) { console.error(e) }
     },
     createWaterfall: (element, settingsWaterfall) => {
-        for(let i in settingsWaterfall) {
-            let new_category = new generateCategory(settingsWaterfall[i].name, settingsWaterfall[i].id, settingsWaterfall[i].submenu)
-            element.appendChild(new_category.generate())
-            element.appendChild(parseHTML(separator))
-            Global_["categories"].push({id: settingsWaterfall[i].id, object: new_category})
-        }
-        _autoResizeVerticallyAllTextarea()
+        try {
+            for(let i in settingsWaterfall) {
+                let new_category = new generateCategory(settingsWaterfall[i].name, settingsWaterfall[i].id, settingsWaterfall[i].submenu)
+                element.appendChild(new_category.generate())
+                element.appendChild(parseHTML(separator))
+                Global_["categories"].push({id: settingsWaterfall[i].id, object: new_category})
+            }
+            _autoResizeVerticallyAllTextarea()
+        } catch(e) { console.error(e) }
     },
     clearWaterfall: (element) => {
         element.innerHTML = ""

@@ -18,8 +18,10 @@ const axios = require('axios')
 const fetch = require('node-fetch');
 const Database_ = require("./localModules/database");
 const { off } = require("process");
+const { LoggerLevel } = require("mongodb");
 const Logger = new (require("./localModules/logger"))()
 
+let DBAPageManager = require("./localModules/DBA_page_manager").DBAPageManager
 
 
 module.exports.start = () => {
@@ -113,10 +115,54 @@ module.exports.start = () => {
     app.get("/", (req, res) => {
         res.sendFile(path.join(__dirname, "/server/app/index.html"))
     })
-    app.get("*", (req, res) => {
+
+    app.get("/g/:pageID", async (req, res) => {
+
+        try {
+
+
+            // Database_.tempCommand()
+
+            Logger.log(`[site:settingPages] Request to ${req.path}`)
+            Logger.log(`[site:settingPages] 1`, req.params)
+            Logger.log(`[site:settingPages] 2`)
+    
+            function send404() {
+                return res.sendFile(`${__dirname}/server/app/404.html`)
+            }
+    
+            Logger.debug("1", "req.params.pageID",req.params.pageID)
+            if(!req.params.pageID) { return send404() }
+
+            Logger.debug("2")
+    
+            let object = await Database_.loadSettingPage(req.params.pageID)
+
+            Logger.debug("3",object)
+    
+            if(!object) { return send404() }
+    
+            Logger.debug("4")
+            let html = DBAPageManager.createPageHTMLFromPageOptions(object)
+    
+            Logger.debug("5")
+            
+            res.set('Content-Type', 'text/html');
+            res.send(html)
+            return;
+
+        } catch(e) {
+            Logger.error(e)
+        }
+
+    })
+
+
+    app.get("*", (req, res) => { // TOUJOURS METTRE LE APP GET * a la fin sinon il empeche les autres app.get de se faire
         Logger.log(`[site] Request to ${req.path}`)
         if(req.path == "/") return;
         if(req.url.startsWith("/api/")) return;
+        if(req.url.startsWith("/g/")) { return res.sendFile(`${__dirname}/server/app/404.html`) }
         if(req.path.startsWith("/assets/")) return;
         
         if(fs.existsSync(`${__dirname}/server/app${req.path}.js`)) {
@@ -289,8 +335,7 @@ module.exports.start = () => {
 
                 if(datas.url != socket.handshake.headers.referer) {
                     let msg = "Invalid client url provided.".split(" ").join("%20")
-                    socket.emit("redirect",{ url: `/error?message=${msg}?code=${code}` })
-                    Logger.debug("error")
+                    socket.emit("redirect",{ url: `/error?message=${msg}&code=SOCKET_INTEGRITY_FAIL` })
                     return;
                 }
                 

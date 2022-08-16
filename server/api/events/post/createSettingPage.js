@@ -27,8 +27,12 @@ module.exports.onEvent = (req, res) => {
         }
 
         let checkList = [
-            { check: "backToEndpointToken", required: true, msg: "No endpoint specified to receive the operation."},
-            { check: "settingsWaterfall", required: true, msg: `No settings waterfall specified to generate the page. For examples, please refer to ${config.website.uri.api_documentation}/createPage#settingsWaterfall`}
+            { check: "pageName", required: true, msg: "No page name specified."},
+            { check: "pageDescription", required: true, msg: "No page description specified."},
+            { check: "backToEndpointToken", required: true, msg: "No endpoint TOKEN specified to receive the operation."},
+            { check: "backToEndpointUrl", required: true, msg: "No endpoint URL specified to receive the operation."},
+            { check: "settingsWaterfall", required: true, msg: `No settings waterfall specified to generate the page. For examples, please refer to ${config.website.uri.api_documentation}/createPage#settingsWaterfall`},
+            { check: "oneUse", required: true, msg: "No page description specified."},
         ]
 
         if(!req.body) return sendError("No body specified.")
@@ -41,9 +45,22 @@ module.exports.onEvent = (req, res) => {
             }
         }
 
+        if(!req.body["oneUse"] || req.body["oneUse"] != true) {
+            res.send({
+                status: 400,
+                message: "Bad request",
+                error: `In this version you can only make oneUse page. Please add oneUse=true to your request`
+            })
+            return;
+        }
+
         let pageOptions = {
             oneUse: (req.body.oneUse || true),
+            token: somef.genbase64(64,true,true),
             backToEndpointToken: req.body.backToEndpointToken,
+            backToEndpointUrl: req.body.backToEndpointUrl,
+            pageName: req.body.pageName,
+            pageDescription: (req.body.pageDescription || ""),
             settingsWaterfall: [
 
                 {

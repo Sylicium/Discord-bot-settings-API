@@ -7,18 +7,18 @@ let Pattern = `<html>
 
 <head>
 	<title>
-		${config.website.title} | Page expired
+		${config.website.title} | Error
 	</title>
 	<meta charset="utf-8">
-	<meta property="og:title" content="${config.website.title} Page expired or not exists">
+	<meta property="og:title" content="${config.website.title} Error">
 	<meta property="og:description" content="{{message}}{{br}}{{code}}">
 
 </head>
 
 <body>
 
-    <h1>The page expired</h1>
-    <p>TThis page does not exists anymore</p>
+    <h1>An error occured</h1>
+    <p>You were redirected here because an error occured:</p>
     <h2>{{message}}</h2>
     <h2>{{code}}</h2>
 

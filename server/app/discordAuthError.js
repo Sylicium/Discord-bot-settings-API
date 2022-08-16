@@ -41,11 +41,11 @@ body {
 }
 
 .link {
-    color: whitesmoke;
+    color: cyan;
     text-decoration: none;
 }
 .link:hover {
-    color: white;
+    color: cyan;
     text-decoration: underline;
 }
 </style>

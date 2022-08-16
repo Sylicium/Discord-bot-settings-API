@@ -6,9 +6,7 @@ let config = require("../config")
 const logger = new (require("./logger"))()
 var DOMParser = require('dom-parser');
 const fetch = require('node-fetch');
-const { red } = require("cli-color");
 const Database_ = require("./database");
-const { monitorEventLoopDelay } = require("perf_hooks");
 
 module.exports.shuffle = shuffle
 /**
@@ -58,11 +56,13 @@ module.exports.genbase64 = genbase64
  * @param {Number} length - Longueur de la chaine voulue
  * @param {Boolean} capitalize - Mettre la chaine en caractères majuscule
  */
-function genbase64(length, urlSafe=true) {
+function genbase64(length, urlSafe=true, base62mode=false) {
     let list = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-    if(urlSafe) list+="_-"
-    else list+="+/"
-    list = list.split("")
+    if(!base62mode) {
+        if(urlSafe) list+="_-"
+        else list+="+/"
+        list = list.split("")
+    }
     return [...Array(length)].map(() => choice(list)).join('');
 }
 
@@ -114,6 +114,26 @@ function all(from_list, list_in, caseSensitive=true) {
 }
 
 
+module.exports.replaceAllThoses = replaceAllThoses
+/**
+ * f() : Traite la chaine en remplaçant chaque caractère par son remplacement dans la liste fournie
+ * @param {Number} string - La chaine à traiter
+ * @param {Boolean} replacementList - La liste de dictionnaire de remplacement
+ */
+function replaceAllThoses(string, replacementList) {
+    /*
+    string: ""
+    replacementList = [
+        { split: ".", join:"-" }
+    ]
+    */
+    let new_string = string
+    for(let i in replacementList) {
+        let item = replacementList[i]
+        new_string = new_string.split(item.split).join(item.join)
+    }
+    return new_string
+}
 
 
 module.exports.formatDate = formatDate

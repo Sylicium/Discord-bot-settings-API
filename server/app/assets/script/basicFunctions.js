@@ -1,7 +1,11 @@
 
 let socket = io()
 
-
+socket.on("redirect", datas => {
+    if(datas && datas.url) {
+        window.location.href = datas.url
+    }
+})
 
 function setCookie(cname, cvalue, exdays) {
     if(!exdays) exdays = 1

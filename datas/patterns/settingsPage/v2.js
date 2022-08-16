@@ -1,12 +1,15 @@
-<html>
+
+
+
+let html_page = `<html>
 
 <head>
 	<title>
-		DirtyBiologistan | Discord Setting API
+		{{page.name}} | Discord Setting API
 	</title>
 	<meta charset="utf-8">
-	<meta property="og:title" content="DirtyBiologistan">
-	<meta property="og:description" content="{{settings.description}}">
+	<meta property="og:title" content="{{page.name}}">
+	<meta property="og:description" content="{{page.description}}">
     <link rel="stylesheet" href="/assets/style/discordColors.css">
     <link rel="stylesheet" href="/assets/style/global.css">
     <link rel="stylesheet" href="/assets/style/waterfall.css">
@@ -25,7 +28,7 @@
         </div>
     </div>
 
-    <h1>DirtyBiologistan</h1>
+    <h1>{{page.name}}</h1>
     
     <div id="mainbox" class="noselect">
   
@@ -35,7 +38,7 @@
     <div id="saving" class="fullPageCentered noselect" hidden>
 
         <div class="centered">
-            Envoie des données au bot DirtyBiologistan
+            Envoie des données à l'application {{page.name}}
         </div>
 
 
@@ -91,8 +94,8 @@
 
 
 let pageInfos = {
-    oneUse: false,
-    waterfallSettings: []
+    oneUse: {{page.oneUse}},
+    waterfallSettings: {{page.waterfall}}
 }
 
 
@@ -108,17 +111,17 @@ window.onload = () => {
             document.getElementById("pleaseconnect").hidden = true
         } else {
             if(datas.redirect) {
-                setCookie("nextRedirectURI", `${window.location.href}`)
+                setCookie("nextRedirectURI", \`\${window.location.href}\`)
                 setTimeout(() => { window.location.href = datas.redirect }, 100)
             } else {
-                document.getElementById("loading_page_text").textContent = `Cannot load the page, please connect before throught the url ${window.location.origin}/discordAuth?discordredirect=true`
+                document.getElementById("loading_page_text").textContent = \`Cannot load the page, please connect before throught the url \${window.location.origin}/discordAuth?discordredirect=true\`
             }
         }
     })
 
 
 
-    Waterfall.createWaterfall(document.getElementById("mainbox"), waterfall_example_settingList)
+    Waterfall.createWaterfall(document.getElementById("mainbox"), pageInfos.waterfallSettings)
     very_default_settings = Waterfall.getSettings()
     
     default_settings = Waterfall.getSettings()
@@ -150,20 +153,22 @@ Cooldowns.add("discard_button",1000)
 Cooldowns.add("send_datas",1000)
 
 function _settings_reset_default() {
+    if(!confirm("[EN] Are you sure? It will reset and save the data as you got it the first time you loaded this page.\\n\\n[FR] Êtes-vous sûr? Cela réinitialisera et enregistrera les données telles que vous les avez obtenues la première fois que vous avez chargé cette page.")) return;
+    
     if(!Cooldowns.test("discard_button")) return;
     Waterfall.clearWaterfall(document.getElementById("mainbox"))
-    Waterfall.createWaterfall(document.getElementById("mainbox"), waterfall_example_settingList)
+    Waterfall.createWaterfall(document.getElementById("mainbox"), pageInfos.waterfallSettings)
 }
 
 function _settings_send_datas() {
-
+    
     if(pageInfos.oneUse) {
-        if(!confirm("[EN] Warning ! This page is for single use, it means that if you save this page only once it will expire. DO NOT SAVE UNTIL YOU DONE.\n\n[FR] Avertissement ! Cette page est à usage unique, cela signifie que si vous enregistrez cette page une seule fois elle expirera. NE PAS ENREGISTRER AVANT D'AVOIR TERMINÉ.")) return;
+        if(!confirm("[EN] Warning ! This page is for single use, it means that if you save this page only once it will expire. DO NOT SAVE UNTIL YOU DONE.\\n\\n[FR] Avertissement ! Cette page est à usage unique, cela signifie que si vous enregistrez cette page une seule fois elle expirera. NE PAS ENREGISTRER AVANT D'AVOIR TERMINÉ.")) return;
     }
 
     if(!Cooldowns.test("send_datas")) return;
     if(!Waterfall.canSaveJSON()) {
-        alert(`Certains champs requis ne sont pas remplis !`)
+        alert(\`Certains champs requis ne sont pas remplis !\`)
         return;
     }
     default_settings = Waterfall.getSettings()
@@ -176,7 +181,7 @@ socket.on("sendSettings", () => {
         console.log("aaz")
     if(pageInfos.oneUse) {
         console.log("ff")
-        window.location.href = `/expired?message=${"The setting page you previously was on was a one-use page.".split(" ").join("%20")}`
+        window.location.href = \`/expired?message=\${"The setting page you previously was on was a one-use page.".split(" ").join("%20")}\`
     }
 })
 
@@ -197,4 +202,7 @@ function sendSettingsToAPI() {
 
 </script>
 
-</html>
+</html>`
+
+module.exports.getHTML = getHTML
+function getHTML() { return html_page }

@@ -79,6 +79,7 @@ class Database {
             id: somef.genHex(16),
             username: username,
             password: password,
+            accountID: somef.genbase64(32, true, true),
             identity: {
                 firstname: identity.firstname,
                 name: identity.name,
@@ -93,11 +94,12 @@ class Database {
                 disabledAccount: false,
                 enpoints: [
                     // { permanent: false, expireAt: 1691349879999, requireDiscordLogin: true, name: "main endpoint", endpointID: "ab2c23ef2c7d04a", url: "https://dirtybiology.captaincommand.repl.co/api/back"} 
+                    // { owner: "accountID", endpointID: "ab2c23ef2c7d04a" } 
                 ],
                 // -1 for no expires, max 3 endpoints permanent | Max expire time = 3 years | Total endpoints simultanéously: 100 (except pernanent endpoints, so max 103 endpoints)
                 access: [
                     /*
-                    { name: "main bot", username: "uZHBtPDZaHocUA9VAv7qdg", password: "fUeW8l3SDH94d-xb7Nva8dcP41Pck908SG7TtWMTiqq2G9To1_zoxxGTEwf991O89h8jqM5m3HZkrBL2CbQRrg", permissions: {
+                    { accessAccountID: "38fa0b22", name: "main bot", username: "uZHBtPDZaHocUA9VAv7qdg", password: "fUeW8l3SDH94d-xb7Nva8dcP41Pck908SG7TtWMTiqq2G9To1_zoxxGTEwf991O89h8jqM5m3HZkrBL2CbQRrg", permissions: {
                         createPermanentEndpoints: false,
                         createTemporaryEndpoints: true,
                         maxTemporaryEndpointExpiration: 1000*3600*24, // in ms
@@ -110,6 +112,17 @@ class Database {
                     */
                 ],
                 activePages: [
+
+                    /*
+                    {
+                        token: "token de la page",
+                        author: {
+                            accessAccountID: "38fa0b22",
+                            username: "acces author username",
+                            password: "access author password"
+                        }
+                    }
+                    */
                     /* {
                         oneUse: true,
                         name: "",
@@ -246,6 +259,390 @@ class Database {
 
     async getBackEndpointURI_byApplicationToken(token) {
 
+    }
+
+    async createSettingPage(pageOptions, accountID) {
+        /*
+        pageInfos = {
+
+        }
+        */
+        let json = {
+            accountID: accountID,
+            pageToken: somef.genbase64(64, true)
+        }
+        await this.Mongo.db(this._usedDataBaseName).collection("setting_pages").insertOne(json)
+        return json
+    }
+
+    async loadSettingPage(pageID) {
+        let object = await this.Mongo.db(this._usedDataBaseName).collection("setting_pages").findOne({
+            "id": pageID
+        })
+        return (object ? object : false)
+    }
+
+
+    async tempCommand() {
+
+        try {
+
+            let json = {
+                oneUse: true,
+                id: somef.genbase64(64,true),
+                backToEndpointToken: "AAAAbacktotoken",
+                backToEndpointUrl: "AAAAbacktourl",
+                pageName: "PageNameDirtyBiologistan",
+                pageDescription: "PageDescription hello",
+                settingsWaterfall: [
+                    {
+                        name: "Paramètres généraux",
+                        description: "Paramètres généraux",
+                        id: "main", // lowercase and one word
+                        submenu: [
+                            {
+                                name: "Activer le bot ou non",
+                                description: "Permet d'activer si besoin le bot et de le désactiver",
+                                id: "active", // lowercase and one word
+                                settingType: {
+                                    type: 1,
+                                    value: true
+                                },
+                                submenu: [
+                        
+                                ]
+                            },
+                            {
+                                name: "Activer le bot ou non",
+                                description: "Permet d'activer si besoin le bot et de le désactiver",
+                                id: "1", // lowercase and one word
+                                settingType: {
+                                    type: 1,
+                                    value: false
+                                },
+                                submenu: [
+                        
+                                ]
+                            },
+                            {
+                                name: "Activer le bot ou non",
+                                description: "Permet d'activer si besoin le bot et de le désactiver",
+                                id: "2", // lowercase and one word
+                                settingType: {
+                                    type: 1,
+                                    value: false
+                                },
+                                submenu: [
+                        
+                                ]
+                            },
+                            {
+                                name: "Activer le bot ou non",
+                                description: "Permet d'activer si besoin le bot et de le désactiver",
+                                id: "3", // lowercase and one word
+                                settingType: {
+                                    type: 1,
+                                    value: true
+                                },
+                                submenu: [
+                        
+                                ]
+                            },
+                            {
+                                name: "Activer le bot ou non",
+                                description: "Permet d'activer si besoin le bot et de le désactiver",
+                                id: "4", // lowercase and one word
+                                settingType: {
+                                    type: 1,
+                                    value: false
+                                },
+                                submenu: [
+                        
+                                ]
+                            },
+                            {
+                                name: "Auto redémarrage",
+                                description: "Redémarrer ou non automatiquement le bot",
+                                id: "restart", // lowercase and one word
+                                settingType: {
+                                    type: 1,
+                                    value: true
+                                },
+                                submenu: [
+                                    {
+                                        name: "",
+                                        description: "Lundi",
+                                        id: "lundi", // lowercase and one word
+                                        settingType: {
+                                            type: 1,
+                                            value: false
+                                        }
+                                    },
+                                    {
+                                        name: "",
+                                        description: "Mardi",
+                                        id: "mardi", // lowercase and one word
+                                        settingType: {
+                                            type: 1,
+                                            value: false
+                                        }
+                                    },
+                                    {
+                                        name: "",
+                                        description: "Mercredi",
+                                        id: "mercredi", // lowercase and one word
+                                        settingType: {
+                                            type: 1,
+                                            value: false
+                                        },
+                                        submenu: [
+                                            {
+                                                name: "",
+                                                description: "Mardi",
+                                                id: "mardi", // lowercase and one word
+                                                settingType: {
+                                                    type: 8,
+                                                    value: { min: 1, max: 255, step: 1}
+                                                }
+                                            },
+                                            {
+                                                name: "",
+                                                description: "Mercredi",
+                                                id: "mercredi", // lowercase and one word
+                                                settingType: {
+                                                    type: 1,
+                                                    value: false
+                                                }
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        name: "",
+                                        description: "Jeudi",
+                                        id: "jeudi", // lowercase and one word
+                                        settingType: {
+                                            type: 1,
+                                            value: false
+                                        }
+                                    },
+                                    {
+                                        name: "",
+                                        description: "Vendredi",
+                                        id: "vendredi", // lowercase and one word
+                                        settingType: {
+                                            type: 1,
+                                            value: false
+                                        }
+                                    },
+                                    {
+                                        name: "",
+                                        description: "Samedi",
+                                        id: "samedi", // lowercase and one word
+                                        settingType: {
+                                            type: 1,
+                                            value: false
+                                        }
+                                    },
+                                    {
+                                        name: "",
+                                        description: "Dimanche",
+                                        id: "dimanche", // lowercase and one word
+                                        settingType: {
+                                            type: 1,
+                                            value: false
+                                        }
+                                    },
+                                ]
+                            },
+                            {
+                                name: "Mon animal",
+                                description: "Choisir votre animal",
+                                id: "selectsheep", // lowercase and one word
+                                settingType: {
+                                    type: 2,
+                                    required: true,
+                                    selected: 1,
+                                    value: [
+                                        { name: "-- Choose element --", value:""},
+                                        { name: "One sheep", value:"sheep"},
+                                        { name: "A Creeper", value:"creeper"},
+                                    ]
+                                },
+                                submenu: [
+                        
+                                ]
+                            },
+                            {
+                                name: "Couleurs de base",
+                                description: "Choisir la couleur de base parmis les 3",
+                                id: "basecolor", // lowercase and one word
+                                settingType: {
+                                    type: 3,
+                                    selected: 1,
+                                    value: [
+                                        { name: "Red", value:"red"},
+                                        { name: "Green", value:"green"},
+                                        { name: "Blue", value:"blue"},
+                                    ]
+                                },
+                                submenu: [
+                        
+                                ]
+                            },
+                            {
+                                name: "Message de bienvenue",
+                                description: "Message envoyé aux nouveaux membres",
+                                id: "welcomemsg", // lowercase and one word
+                                settingType: {
+                                    type: 4,
+                                    required: true,
+                                    value: { placeholder: "Message de bienvenue", value:"Bienvenue à toi @user !"}
+                                },
+                                submenu: [
+                        
+                                ]
+                            },
+                            {
+                                name: "Jours dans le mois",
+                                description: "Régler le nombre de jours par mois",
+                                id: "number1", // lowercase and one word
+                                settingType: {
+                                    type: 6,
+                                    required: true,
+                                    value: 4 // undefined
+                                },
+                                submenu: [
+                        
+                                ]
+                            },
+                            {
+                                name: "Slider",
+                                description: "Message envoyé aux nouveaux membres",
+                                id: "slider1", // lowercase and one word
+                                settingType: {
+                                    type: 8,
+                                    required: true,
+                                    selected: 4,
+                                    value: { min: 1, max: 5, step: 1}
+                                },
+                                submenu: [
+                        
+                                ]
+                            },
+                            {
+                                name: "Slider",
+                                description: "Message envoyé aux nouveaux membres",
+                                id: "slider2", // lowercase and one word
+                                settingType: {
+                                    type: 8,
+                                    required: true,
+                                    selected: 35,
+                                    value: { min: 7, max: 100, step: 1}
+                                },
+                                submenu: [
+                        
+                                ]
+                            },
+                            {
+                                name: "Délai entre les messages",
+                                description: "Le nombre de seconde à attendre entre l'envoie de chaque messages.",
+                                id: "slider3", // lowercase and one word
+                                settingType: {
+                                    type: 8,
+                                    required: true,
+                                    selected: 5.234,
+                                    value: { min: 1.3, max: 10, step: 0.001}
+                                },
+                                submenu: [
+                        
+                                ]
+                            },
+                            {
+                                name: "Délai entre les messages",
+                                description: "Le nombre de seconde à attendre entre l'envoie de chaque messages.",
+                                id: "zefzefzefzef", // lowercase and one word
+                                settingType: {
+                                    type: 8,
+                                    required: true,
+                                    selected: 64,
+                                    value: { min: 1, max: 255, step: 1}
+                                },
+                                submenu: [
+                        
+                                ]
+                            },
+                            {
+                                name: "Slider",
+                                description: "Message envoyé aux nouveaux membres",
+                                id: "switch1", // lowercase and one word
+                                settingType: {
+                                    type: 1,
+                                    required: true,
+                                    selected: true,
+                                    value: false
+                                },
+                                submenu: [
+                        
+                                ]
+                            },
+                            {
+                                name: "Textarea",
+                                description: "Messages de bienvenue",
+                                id: "welcomemsg2", // lowercase and one word
+                                settingType: {
+                                    type: 1,
+                                    required: true,
+                                    selected: true,
+                                    value: { placeholder: "Message de bienvenue", value:"Bienvenue à toi @user !"}
+                                },
+                                submenu: [
+                        
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        name: "coucou",
+                        id: "main2",
+                        submenu: [
+                            {
+                                name: "Délai entre les messages",
+                                description: "Le nombre de seconde à attendre entre l'envoie de chaque messages.",
+                                id: "zefzefzefzef", // lowercase and one word
+                                settingType: {
+                                    type: 8,
+                                    required: true,
+                                    selected: 64,
+                                    value: { min: 1, max: 255, step: 1}
+                                },
+                                submenu: [
+                        
+                                ]
+                            },
+                            {
+                                name: "Slider",
+                                description: "Message envoyé aux nouveaux membres",
+                                id: "switch1", // lowercase and one word
+                                settingType: {
+                                    type: 1,
+                                    required: true,
+                                    selected: true,
+                                    value: false
+                                },
+                                submenu: [
+                        
+                                ]
+                            }
+                        ]
+                        
+                    }
+                ]
+            }
+    
+            await this.Mongo.db(this._usedDataBaseName).collection("setting_pages").insertOne(json)
+        } catch(e) {
+            console.log(e)
+        }
     }
 
 
