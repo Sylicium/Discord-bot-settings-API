@@ -267,10 +267,10 @@ class Database {
 
         }
         */
-        let json = {
-            accountID: accountID,
-            pageToken: somef.genbase64(64, true)
-        }
+        let json = pageOptions
+
+        json.accountID = accountID
+        
         await this.Mongo.db(this._usedDataBaseName).collection("setting_pages").insertOne(json)
         return json
     }

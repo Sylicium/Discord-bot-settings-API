@@ -13,7 +13,7 @@ module.exports.config = {
     authenticationLevel: 0
 }
 
-module.exports.onEvent = (req, res) => {
+module.exports.onEvent = async (req, res) => {
 
     try {
 
@@ -32,7 +32,7 @@ module.exports.onEvent = (req, res) => {
             { check: "backToEndpointToken", required: true, msg: "No endpoint TOKEN specified to receive the operation."},
             { check: "backToEndpointUrl", required: true, msg: "No endpoint URL specified to receive the operation."},
             { check: "settingsWaterfall", required: true, msg: `No settings waterfall specified to generate the page. For examples, please refer to ${config.website.uri.api_documentation}/createPage#settingsWaterfall`},
-            { check: "oneUse", required: true, msg: "No page description specified."},
+            { check: "oneUse", required: true, msg: "oneUse unspecified."},
         ]
 
         if(!req.body) return sendError("No body specified.")
@@ -45,7 +45,7 @@ module.exports.onEvent = (req, res) => {
             }
         }
 
-        if(!req.body["oneUse"] || req.body["oneUse"] != true) {
+        if(!req.body["oneUse"] || req.body["oneUse"] != "true") {
             res.send({
                 status: 400,
                 message: "Bad request",
@@ -55,8 +55,8 @@ module.exports.onEvent = (req, res) => {
         }
 
         let pageOptions = {
+            id: somef.genbase64(32,true),
             oneUse: (req.body.oneUse || true),
-            token: somef.genbase64(64,true,true),
             backToEndpointToken: req.body.backToEndpointToken,
             backToEndpointUrl: req.body.backToEndpointUrl,
             pageName: req.body.pageName,
@@ -67,15 +67,19 @@ module.exports.onEvent = (req, res) => {
                     name: "Main settings",
                     description: "Les paramètres principaux",
                     id: "main", // lowercase and one word
-                    settingType: {
-                        type: 2,
-                        value: [
-                            { placeholder: "Activer le matin", value: "active_1"},
-                            { placeholder: "Activer le matin", value: "active_2"},
-                        ]
-                    },
                     submenu: [
-
+                        {
+                            name: "Activer le bot",
+                            description: "Active ou désactive le bot",
+                            id: "bot_activation", // lowercase and one word
+                            settingType: {
+                                type: 1,
+                                value: true
+                            },
+                            submenu: [
+        
+                            ]
+                        }
                     ]
                 }
             ]
@@ -84,7 +88,9 @@ module.exports.onEvent = (req, res) => {
 
         let html = ""
 
-        let page = fs.readFileSync("./datas/patterns/settingsPage/v2.html","utf-8")
+        //let page = fs.readFileSync("./datas/patterns/settingsPage/v2.html","utf-8")
+
+        let stocked_json = await Database_.createSettingPage(pageOptions, "noAccount")
 
         
 
@@ -126,16 +132,7 @@ module.exports.onEvent = (req, res) => {
         res.send({
             status: 201,
             message: "Created",
-            json: {
-                pageURI: "OK",
-                pageToken: "ertyiop",
-                oneUse: false,
-                backEndpointToken: "zovgikjfhzeioufh",
-                waterfallSettings: [
-
-                ],
-                HTML: page
-            },
+            json: stocked_json,
             request: {
                 uri: req.url,
                 path: req.path,

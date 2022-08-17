@@ -338,6 +338,9 @@ module.exports.start = () => {
                     socket.emit("redirect",{ url: `/error?message=${msg}&code=SOCKET_INTEGRITY_FAIL` })
                     return;
                 }
+
+
+                socket.emit("sendSettings")
                 
                 
             } catch(e) {
