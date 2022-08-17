@@ -139,6 +139,20 @@ module.exports.start = () => {
     
     app.all("/api/*", (req, res) => {        
         let endpoint = req.path.substr(5, req.path.length)
+
+        try {
+            if(!req.body || JSON.parse(req.body.Authorization) != process.env.API_TOKEN) return res.send({
+                status: 401,
+                message: `Unauthorized.` 
+            })
+        } catch(e) {
+            return res.send({
+                status: 401,
+                message: `Internal server error. Unauthorized. Cannot process to authentication.`,
+                error: `${e}`,
+                stack: e.stack.split("\n")
+            })
+        }
         
         let apiEvent_list = APIEvents.filter((item) => {
             return (endpoint == item.endpoint)
@@ -230,13 +244,8 @@ module.exports.start = () => {
 
         
         if(req.body) {
-            Logger.debug("req.body",req.body)
-            
-            Logger.debug("BEFORE req.body")
-            Logger.debug(JSON.parse(JSON.stringify(req.body)))
             for(let key in req.body) {
                 try {
-                    Logger.debug(`parsing key: '${key}': `,req.body[key])
                     if(typeof req.body[key] != "string") continue;
                     req.body[key] = JSON.parse(req.body[key])
                 } catch(e) {
@@ -250,8 +259,6 @@ module.exports.start = () => {
                     })
                 }
             }
-            Logger.debug("AFTER req.body")
-            Logger.debug(req.body)
             
 
             
@@ -267,8 +274,6 @@ module.exports.start = () => {
                 } else if(req.body[body_param.name]) {
                     try {
                         if(body_param.type == "array") {
-                            Logger.debug("isArray req.body[body_param.name]",req.body[body_param.name])
-                            Logger.debug("isArray Array.isArray(req.body[body_param.name])",Array.isArray(req.body[body_param.name]))
                             if(!Array.isArray(req.body[body_param.name])) {
                                 return res.send({
                                     status: 400,
@@ -299,9 +304,6 @@ module.exports.start = () => {
             }
             
         }
-
-
-        Logger.log("req.body",req.body)
 
         apiEvent.func(req, res, Modules_)
         
@@ -369,22 +371,13 @@ module.exports.start = () => {
                 return res.sendFile(`${__dirname}/server/app/404.html`)
             }
     
-            Logger.debug("1", "req.params.pageID",req.params.pageID)
             if(!req.params.pageID) { return send404() }
-
-            Logger.debug("2")
-    
-            let object = await Database_.loadSettingPage(req.params.pageID)
-
-            Logger.debug("3",object)
-    
+   
+            let object = await Database_.loadSettingPage(req.params.pageID)    
             if(!object) { return send404() }
     
-            Logger.debug("4")
             let html = DBAPageManager.createPageHTMLFromPageOptions(object)
-    
-            Logger.debug("5")
-            
+                
             res.set('Content-Type', 'text/html');
             res.send(html)
             return;
@@ -598,7 +591,6 @@ module.exports.start = () => {
 
                 Logger.debug("pageSettingInfos:",pageSettingInfos)
 
-                Logger.debug("datas.backToEndpointUrl, pageSettingInfos.backToEndpointUrl",datas.backToEndpointUrl, pageSettingInfos.backToEndpointUrl)
                 if(datas.backToEndpointUrl != pageSettingInfos.backToEndpointUrl) {
                     let msg = "Invalid backToEndpointUrl provided.".split(" ").join("%20")
                     socket.emit("redirect",{ url: `/error?message=${msg}&code=SOCKET_INTEGRITY_FAIL` })
@@ -629,9 +621,6 @@ module.exports.start = () => {
                 Logger.error(e)
             }
 
-
-            Logger.debug("[sendSettings] datas:",datas)
-            Logger.debug("[sendSettings] socket:",socket.handshake.headers.referer)
 
 
 
