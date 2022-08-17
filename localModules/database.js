@@ -275,6 +275,11 @@ class Database {
         return json
     }
 
+
+    async deleteSettingPage(pageID) {
+        return await await this.Mongo.db(this._usedDataBaseName).collection("setting_pages").deleteOne( { "id": pageID })
+    }
+
     async loadSettingPage(pageID) {
         let object = await this.Mongo.db(this._usedDataBaseName).collection("setting_pages").findOne({
             "id": pageID

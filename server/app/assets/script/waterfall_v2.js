@@ -181,6 +181,67 @@ class generateCategory {
     }
 
     getSettingsValuesJSON() {
+        let the_json = {}
+        let the_mapped = []
+        
+        this.references.forEach((item, index) => {
+            if(item.submenuCategoryClass) {
+                //console.log("depthIDS",this.getDepthIDS())
+                //console.log("item.submenuCategoryClass",item.submenuCategoryClass.getSettingsValuesJSON())
+            }
+            let setting = item.setting
+            if(setting.settingType.type == 0) {
+                the_json[setting.id] = setting.value
+                return the_mapped.push({ id: setting.id, value: null })
+            } else if(setting.settingType.type == 1) {
+                if(setting.submenu && setting.submenu.length > 0) {
+                    if(item.submenuCategoryClass) {
+                        the_json[setting.id] = (document.getElementById(`setting_${item.waterfallID}_checkbox`).checked ? item.submenuCategoryClass.getSettingsValuesJSON().json : false)
+                        return the_mapped.push({ id: setting.id, value: (document.getElementById(`setting_${item.waterfallID}_checkbox`).checked ? item.submenuCategoryClass.getSettingsValuesJSON().mapped : false) })
+                    } else {
+                        the_json[setting.id] = "ERROR"
+                        return the_mapped.push({ id: setting.id, value: "ERROR"})
+                    }
+                } else {
+                    let the_value = (document.getElementById(`setting_${item.waterfallID}_checkbox`).checked ? true : false)
+                    the_json[setting.id] = the_value
+                    return the_mapped.push({ id: setting.id, value: the_value })
+                }
+            } else if(setting.settingType.type == 2) {
+                let the_value = (document.getElementById(`setting_${item.waterfallID}_select`).value || null)
+                the_json[setting.id] = the_value
+                return the_mapped.push({ id: setting.id, value: the_value })
+            } else if(setting.settingType.type == 3) {
+                let elem_query = document.querySelector(`input[name="setting_${item.waterfallID}_radiobutton"]:checked`)
+                let value = (elem_query? elem_query.value : undefined)
+                the_json[setting.id] = value
+                return the_mapped.push({ id: setting.id, value: value })
+            } else if(setting.settingType.type == 4) {
+                let the_value = (document.getElementById(`setting_${item.waterfallID}_value`).value || null)
+                the_json[setting.id] = the_value
+                return the_mapped.push({ id: setting.id, value: the_value })
+            } else if(setting.settingType.type == 5) {
+                let the_value = (document.getElementById(`setting_${item.waterfallID}_value`).value || null)
+                the_json[setting.id] = the_value
+                return the_mapped.push({ id: setting.id, value: the_value })
+            } else if(setting.settingType.type == 6) {
+                let the_value = parseFloat(document.getElementById(`setting_${item.waterfallID}_value`).value || null)
+                the_json[setting.id] = the_value
+                return the_mapped.push({ id: setting.id, value: the_value })
+            } else if(setting.settingType.type == 7) {
+                let the_value = parseFloat(document.getElementById(`setting_${item.waterfallID}_value`).value || null)
+                the_json[setting.id] = the_value
+                return the_mapped.push({ id: setting.id, value: the_value })
+            } else if(setting.settingType.type == 8) {
+                let the_value = parseFloat(document.getElementById(`setting_${item.waterfallID}_value`).value || null)
+                the_json[setting.id] = the_value
+                return the_mapped.push({ id: setting.id, value: the_value })
+            } else if(setting.settingType.type == 9) {
+                let the_value = ("list manager not created" || null)
+                the_json[setting.id] = the_value
+                return the_mapped.push({ id: setting.id, value: the_value })
+            }
+        })
         let mapped = this.references.map((item, index) => {
             if(item.submenuCategoryClass) {
                 //console.log("depthIDS",this.getDepthIDS())
@@ -219,7 +280,7 @@ class generateCategory {
                 return { id: setting.id, value: ("list manager not created" || null) }
             }
         })
-        return mapped
+        return { mapped: the_mapped, json: the_json}
     }
 
     categoryBase(categoryName, categoryID, settingList_html) {
@@ -950,9 +1011,13 @@ let Waterfall = {
         Global_["categories"] = []
     },
     getSettings: () => {
-        return Global_["categories"].map((category, index) => {
-            return { id: category.id, value: category.object.getSettingsValuesJSON()}
+        let json = {}
+        let mapped = []
+        Global_["categories"].forEach((category, index) => {
+            json[category.id] = category.object.getSettingsValuesJSON().json
+            mapped.push({ id: category.id, value: category.object.getSettingsValuesJSON().mapped})
         })
+        return { json: json, mapped: mapped}
     },
     canSaveJSON: () => {
         return !(Global_["categories"].map((category, index) => {

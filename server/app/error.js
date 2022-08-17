@@ -18,7 +18,7 @@ let Pattern = `<html>
 <body>
 
     <h1>An error occured</h1>
-    <p>You were redirected here because an error occured:</p>
+    <p>You have been redirected here because an error occured:</p>
     <h2>{{message}}</h2>
     <h2>{{code}}</h2>
 

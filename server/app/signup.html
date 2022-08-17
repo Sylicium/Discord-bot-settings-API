@@ -243,15 +243,14 @@ socket.on("sendSettings", () => {
 })
 
 function sendSettingsToAPI() {
-    socket.emit("sendSettings", {
-        connectionToken: getCookie("connectionToken"),
-        settings: Waterfall.getSettings(),
-    })
-    document.getElementById("saving").hidden = false
-
     setTimeout(() => {
-        document.getElementById("saving").hidden = true
-    }, (Math.random()*3000))
+        socket.emit("sendSettings", {
+            connectionToken: getCookie("connectionToken"),
+            url: window.location.href,
+            settings: Waterfall.getSettings(),
+        })
+    }, 500)
+    document.getElementById("saving").hidden = false
 }
 
 

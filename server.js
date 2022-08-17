@@ -17,11 +17,49 @@ const path = require("path")
 const axios = require('axios')
 const fetch = require('node-fetch');
 const Database_ = require("./localModules/database");
-const { off } = require("process");
-const { LoggerLevel } = require("mongodb");
 const Logger = new (require("./localModules/logger"))()
+const Discord = require("discord.js");
 
 let DBAPageManager = require("./localModules/DBA_page_manager").DBAPageManager
+
+const Modules_ = {
+    "config": config,
+    "somef": somef,
+    "Database": Database_,
+    "Discord": Discord,
+    "app": app,
+    "axios": axios,
+}
+
+let APIEvents = [
+]
+
+Logger.info(`[API] Loading APIEvents...`)
+fs.readdirSync("./server/api/events/").forEach(directoryName => {
+    let dirPath = `./server/api/events/${directoryName}`
+    try {
+        if( fs.existsSync(dirPath) && fs.lstatSync(dirPath).isDirectory() ) {
+            Logger.info(`[API]   Loading api endpoints for method ${directoryName.toUpperCase()}`)
+            fs.readdirSync(`./server/api/events/${directoryName}/`).forEach(file => {
+                let the_require = require(`./server/api/events/${directoryName}/${file}`)
+                the_require.method = directoryName.toUpperCase()
+                let fileName = file.split(".")
+                fileName.pop()
+                fileName = fileName.join(".")
+                the_require.endpoint = fileName
+                APIEvents.push(the_require)
+                Logger.info(`[API]     ✔ Loaded API endpoint (${the_require.method}) /${the_require.endpoint}`)
+            })
+        } else {
+            Logger.info(`[API]   ! ${directoryName} is a file, not a directory`)
+        }
+    } catch(e) {
+        Logger.warn(`[API][ERROR] ❌`,e)
+    }
+
+})
+Logger.info(`[API] ✅ Loaded ${APIEvents.length} APIEvents`,APIEvents)
+
 
 
 module.exports.start = () => {
@@ -60,27 +98,28 @@ module.exports.start = () => {
     // let allEvents = [...Object.keys(apiEvents)]
     Logger.debug(apiEvents)
 
+    /*
     app.all("/api/*", (req, res) => {
         Logger.log(`[API] [${req.ip}] (${req.method}) ${req.url}`)
 
-        /* let apiCredentials = somef.checkApiCredentials(req.query.username, req.query.password)
-        if(!apiCredentials.valid) {
-            res.send({
-                status: 401
-                message: "Unauthorized"
-            })
-        }
-        */
+        // let apiCredentials = somef.checkApiCredentials(req.query.username, req.query.password)
+        // if(!apiCredentials.valid) {
+        //     res.send({
+        //         status: 401
+        //         message: "Unauthorized"
+        //     })
+        // }
+        
 
         last_endpoint = req.path.split("/").pop()
         if(apiEvents[req.method] && apiEvents[req.method][last_endpoint]) {
-            /*
-            if(apiCredentials.authenticationLevel < apiEvents[req.method][last_endpoint].config.authenticationLevel) {
-                res.send({
-                    status: 403
-                    message: "Forbidden"
-                })
-            }*/
+            
+            // if(apiCredentials.authenticationLevel < apiEvents[req.method][last_endpoint].config.authenticationLevel) {
+            //     res.send({
+            //         status: 403
+            //         message: "Forbidden"
+            //     })
+            // }
             apiEvents[req.method][last_endpoint].onEvent(req,res)
             return;
         } else {
@@ -95,6 +134,179 @@ module.exports.start = () => {
                 }
             })
         }
+    })*/
+
+    
+    app.all("/api/*", (req, res) => {        
+        let endpoint = req.path.substr(5, req.path.length)
+        
+        let apiEvent_list = APIEvents.filter((item) => {
+            return (endpoint == item.endpoint)
+        })
+        
+        if(apiEvent_list.length == 0) return res.send({
+            status: 404,
+            message: `No endpoint.` 
+        })
+
+        apiEvent_list2 = apiEvent_list.filter((item) => {
+            return (item.method == req.method)
+        })
+        let allMethodsAllowed = apiEvent_list.map((item, index) => {
+            return item.method
+        })
+
+        if(apiEvent_list2.length == 0) return res.send({
+            status: 405,
+            message: `Method not allowed`,
+            methods: allMethodsAllowed
+        })
+
+        let apiEvent = apiEvent_list2[0]
+
+        for(let paramName in req.query) {
+            let paramValue = req.query[paramName]
+            try {
+                Logger.log("paramValue",paramValue)
+                if(paramValue.startsWith("[")) {
+                    //req.query[paramName] = JSON.parse(JSON.parse(`${JSON.stringify(paramValue)}`))
+                    req.query[paramName] = JSON.parse(`${paramValue}`)
+                } else {
+                    req.query[paramName] = JSON.parse(`${paramValue}`)
+                }
+            } catch(e) {
+                Logger.error(e)
+                return res.send({
+                    status: 500,
+                    message: `Internal server error while parsing to JSON query parameter '${paramName}'.`,
+                    error: `${e}`,
+                    stack: e.stack.split("\n"),
+                    request: { uri: req.url, path: req.path, query: req.query, method: req.method }
+                })
+            }
+        }
+
+        for(let i in apiEvent.parameters) {
+            let param = apiEvent.parameters[i]
+            if(!req.query[param.name] && param.required) {
+                return res.send({
+                    status: 400,
+                    message: `Bad request. Paramètres manquants: '${param.name}'. ${param.msg || ""}`,
+                    parameters: apiEvent.parameters,
+                    request: { uri: req.url, path: req.path, query: req.query, method: req.method }
+                })
+            } else if(req.query[param.name]) {
+                try {
+                    if(param.type == "array") {
+                        if(!Array.isArray(req.query[param.name])) {
+                            return res.send({
+                                status: 400,
+                                message: `Bad request. Type de paramètre invalide: '${param.name}'. ${param.msg || ""}`,
+                                parameters: apiEvent.parameters,
+                                request: { uri: req.url, path: req.path, query: req.query, method: req.method }
+                            })
+                        }
+                    } else if(typeof req.query[param.name] != param.type) {
+                        return res.send({
+                            status: 400,
+                            message: `Bad request. Type de paramètre invalide: '${param.name}'. ${param.msg || ""}`,
+                            parameters: apiEvent.parameters,
+                            request: { uri: req.url, path: req.path, query: req.query, method: req.method }
+                        })
+                    }
+                } catch(e) {
+                    Logger.error(e)
+                    return res.send({
+                        status: 500,
+                        message: `Internal server error while parsing query parameter '${param.name}' (type:${param.type} | required:${param.required}).`,
+                        error: `${e}`,
+                        stack: e.stack.split("\n"),
+                        request: { uri: req.url, path: req.path, query: req.query, method: req.method }
+                    })
+                }
+            }
+        }
+
+
+        
+        if(req.body) {
+            Logger.debug("req.body",req.body)
+            
+            Logger.debug("BEFORE req.body")
+            Logger.debug(JSON.parse(JSON.stringify(req.body)))
+            for(let key in req.body) {
+                try {
+                    Logger.debug(`parsing key: '${key}': `,req.body[key])
+                    if(typeof req.body[key] != "string") continue;
+                    req.body[key] = JSON.parse(req.body[key])
+                } catch(e) {
+                    Logger.error(e)
+                    return res.send({
+                        status: 500,
+                        message: `Internal server error while parsing body key '${key}'.`,
+                        error: `${e}`,
+                        stack: e.stack.split("\n"),
+                        request: { uri: req.url, path: req.path, query: req.query, method: req.method }
+                    })
+                }
+            }
+            Logger.debug("AFTER req.body")
+            Logger.debug(req.body)
+            
+
+            
+            for(let i in apiEvent.body) {
+                let body_param = apiEvent.body[i]
+                if(req.body[body_param.name] == undefined && body_param.required) {
+                    return res.send({
+                        status: 400,
+                        message: `Bad request. Paramètres du body manquants: '${body_param.name}'. ${body_param.msg || ""}`,
+                        body: apiEvent.body,
+                        request: { uri: req.url, path: req.path, query: req.query, body: req.body, method: req.method }
+                    })
+                } else if(req.body[body_param.name]) {
+                    try {
+                        if(body_param.type == "array") {
+                            Logger.debug("isArray req.body[body_param.name]",req.body[body_param.name])
+                            Logger.debug("isArray Array.isArray(req.body[body_param.name])",Array.isArray(req.body[body_param.name]))
+                            if(!Array.isArray(req.body[body_param.name])) {
+                                return res.send({
+                                    status: 400,
+                                    message: `Bad request. Type de paramètre dans le body invalide: '${body_param.name}'. ${body_param.msg || ""}`,
+                                    body: apiEvent.body,
+                                    request: { uri: req.url, path: req.path, query: req.query, body: req.body, method: req.method }
+                                })
+                            }
+                        } else if(typeof req.body[body_param.name] != body_param.type) {
+                            return res.send({
+                                status: 400,
+                                message: `Bad request. Type de paramètre dans le body invalide: '${body_param.name}'. ${body_param.msg || ""}`,
+                                body: apiEvent.body,
+                                request: { uri: req.url, path: req.path, query: req.query, body: req.body, method: req.method }
+                            })
+                        }
+                    } catch(e) {
+                        Logger.error(e)
+                        return res.send({
+                            status: 500,
+                            message: `Internal server error while parsing body key '${body_param.name}' (type:${body_param.type} | required:${body_param.required}).`,
+                            error: `${e}`,
+                            stack: e.stack.split("\n"),
+                            request: { uri: req.url, path: req.path, query: req.query, body: req.body, method: req.method }
+                        })
+                    }
+                }
+            }
+            
+        }
+
+
+        Logger.log("req.body",req.body)
+
+        apiEvent.func(req, res, Modules_)
+        
+        return;
+
     })
 
 
@@ -115,10 +327,36 @@ module.exports.start = () => {
     app.get("/", (req, res) => {
         res.sendFile(path.join(__dirname, "/server/app/index.html"))
     })
+    app.get("/favicon.ico", (req, res) => {
+        res.sendFile(path.join(__dirname, "/server/app/assets/img/favicon.ico"))
+    })
 
     app.get("/g/:pageID", async (req, res) => {
 
+        fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+        Logger.log("/g/ fullUrl",fullUrl)
         try {
+
+
+            
+            if(!req.cookies.connectionToken) {
+                res.cookie("nextRedirectURI",`${fullUrl}`)
+                setTimeout(() => {
+                    res.writeHead(307, {Location: config.website.uri.discordAuth.auth.oauth2} );
+                    res.end();
+                }, 100)
+                //dynamicPages["discordAuth"].load(req, res)
+                return;
+            }
+            let isConnected = await Database_.website_isConnected_byConnectionToken(req.cookies.connectionToken)
+            if(!isConnected) {
+                res.cookie("nextRedirectURI",`${fullUrl}`)
+                setTimeout(() => {
+                    res.writeHead(307, {Location: config.website.uri.discordAuth.auth.oauth2} );
+                    res.end();
+                }, 100)
+                return;
+            }
 
 
             // Database_.tempCommand()
@@ -171,7 +409,7 @@ module.exports.start = () => {
                 try {
                     dynamicPages[pageName].load(req, res)
                 } catch(err) {
-                    console.log(err)
+                    Logger.error(err)
                     res.send({
                         status: 500,
                         message: `${err}`,
@@ -274,7 +512,7 @@ module.exports.start = () => {
 
                 let le_user = await somef.getUserByDiscordAuthCode(datas.discordAuthCode, "identify", config.website.uri.discordAuth.auth.redirectURI)
                 
-                console.log("le_user",le_user)
+                Logger.debug("le_user",le_user)
 
                 if(!le_user || !le_user.id) {
                     redirectToDiscordAuthError("Undefined user","Cannot find Discord user")
@@ -313,6 +551,7 @@ module.exports.start = () => {
                 connectionToken: "token",
                 settings: {},
                 backToEndpoint: "ab2c23ef2c7d04a"
+                backToEndpointUrl: "ab2c23ef2c7d04a"
             }
 
 
@@ -331,16 +570,59 @@ module.exports.start = () => {
 
             try {
 
-                if(!datas || !datas.connectionToken ||! datas.url || !Array.isArray(datas["settings"])) return Logger.log("[sock][sendSettings] No datas")
 
+
+                if(!datas || !datas.connectionToken ||! datas.url) return Logger.log("[sock][sendSettings] No datas")
+                if(typeof datas["settings"] != "object") Logger.log("[sock][sendSettings] settings is not an object")
                 if(datas.url != socket.handshake.headers.referer) {
                     let msg = "Invalid client url provided.".split(" ").join("%20")
                     socket.emit("redirect",{ url: `/error?message=${msg}&code=SOCKET_INTEGRITY_FAIL` })
                     return;
                 }
 
+                let temp_pageID = socket.handshake.headers.referer.split("/g/")
+                if(temp_pageID.length < 2) {
+                    let msg = "Invalid pageID provided.".split(" ").join("%20")
+                    socket.emit("redirect",{ url: `/error?message=${msg}&code=SOCKET_INTEGRITY_FAIL` })
+                    return;
+                }
+                let pageID = temp_pageID[1]
 
-                socket.emit("sendSettings")
+                let pageSettingInfos = await Database_.loadSettingPage(`${pageID}`)
+
+                if(!pageSettingInfos) {
+                    let msg = "Invalid pageID provided.".split(" ").join("%20")
+                    socket.emit("redirect",{ url: `/error?message=${msg}&code=SETTING_PAGE_INTEGRITY_FAIL` })
+                    return;
+                }
+
+                Logger.debug("pageSettingInfos:",pageSettingInfos)
+
+                Logger.debug("datas.backToEndpointUrl, pageSettingInfos.backToEndpointUrl",datas.backToEndpointUrl, pageSettingInfos.backToEndpointUrl)
+                if(datas.backToEndpointUrl != pageSettingInfos.backToEndpointUrl) {
+                    let msg = "Invalid backToEndpointUrl provided.".split(" ").join("%20")
+                    socket.emit("redirect",{ url: `/error?message=${msg}&code=SOCKET_INTEGRITY_FAIL` })
+                    return;
+                }
+
+                axios.put(`${pageSettingInfos.backToEndpointUrl}`, {
+                    settings: datas.settings,
+                    backBody: pageSettingInfos.backBody
+                }).then(async (response) => {
+
+                    await Database_.deleteSettingPage(pageSettingInfos.id)
+
+                    socket.emit("redirect",{ url: `/expired?message=${"The setting page you previously was on was a one-use page.".split(" ").join("%20")}` })
+                    return;
+                }).catch(e => {
+                    Logger.warn(e)
+                    Logger.warn(`Cannot (GET) backToEndpointUrl: '${pageSettingInfos.backToEndpointUrl}' with settings datas.`)
+                    socket.emit("redirect",{ url: `/error?message=${"Something went wrong while sending back the settings datas to the application.".split(" ").join("%20")}&code=SEND_BACK_DATAS_PUT_REQUEST_ERROR` })
+                    return;
+                })
+
+
+                //socket.emit("sendSettings")
                 
                 
             } catch(e) {

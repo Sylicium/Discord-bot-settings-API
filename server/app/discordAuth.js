@@ -135,6 +135,7 @@ div.main {
         }
 
         let uri = getCookie("nextRedirectURI")
+        console.log("redirecting to",uri)
         return makeRedirect((uri ? uri : datas.redirect))
 
         

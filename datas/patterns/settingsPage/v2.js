@@ -22,7 +22,7 @@ let html_page = `<html>
 <body>
 
     <div id="toasts"></div>
-    <div id="pleaseconnect" class="fullPageCentered noselect">
+    <div id="pleaseconnect" class="fullPageCentered noselect" hidden>
         <div class="centered" id="loading_page_text">
             Loading settings page ...
         </div>
@@ -95,13 +95,14 @@ let html_page = `<html>
 
 let pageInfos = {
     oneUse: {{page.oneUse}},
-    waterfallSettings: {{page.waterfall}}
+    waterfallSettings: {{page.waterfall}},
+    backToEndpointUrl: {{page.backToEndpointUrl}},
 }
 
 
 window.onload = () => {
 
-    socket.emit("checkDiscordAuth", {
+    /*socket.emit("checkDiscordAuth", {
         connectionToken: getCookie("connectionToken")
     })
 
@@ -117,7 +118,7 @@ window.onload = () => {
                 document.getElementById("loading_page_text").textContent = \`Cannot load the page, please connect before throught the url \${window.location.origin}/discordAuth?discordredirect=true\`
             }
         }
-    })
+    })*/
 
 
 
@@ -130,13 +131,13 @@ window.onload = () => {
 
     setInterval(() => {
         try {
-            if(JSON.stringify(Waterfall.getSettings()) != JSON.stringify(default_settings)) {
+            if(JSON.stringify(Waterfall.getSettings().mapped) != JSON.stringify(default_settings.mapped)) {
                 confirm_button.className = confirm_button.className.split(" opened").join("")+" opened"
             } else {
                 confirm_button.className = confirm_button.className.split(" opened").join("")
             }
             
-            if(JSON.stringify(Waterfall.getSettings()) != JSON.stringify(very_default_settings)) {
+            if(JSON.stringify(Waterfall.getSettings().mapped) != JSON.stringify(very_default_settings.mapped)) {
                 reset_from_opening_page_button.className = reset_from_opening_page_button.className.split(" opened").join("")+" opened"
             } else {
                 reset_from_opening_page_button.className = reset_from_opening_page_button.className.split(" opened").join("")
@@ -186,16 +187,15 @@ socket.on("sendSettings", () => {
 })
 
 function sendSettingsToAPI() {
-    socket.emit("sendSettings", {
-        connectionToken: getCookie("connectionToken"),
-        url: window.location.href,
-        settings: Waterfall.getSettings(),
-    })
-    document.getElementById("saving").hidden = false
-
     setTimeout(() => {
-        document.getElementById("saving").hidden = true
-    }, (Math.random()*3000))
+        socket.emit("sendSettings", {
+            connectionToken: getCookie("connectionToken"),
+            url: window.location.href,
+            settings: Waterfall.getSettings(),
+            backToEndpointUrl: pageInfos.backToEndpointUrl,
+        })
+    }, 500)
+    document.getElementById("saving").hidden = false
 }
 
 

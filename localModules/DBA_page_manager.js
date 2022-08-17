@@ -31,9 +31,11 @@ class DBAPageManager {
             { split: "{{page.description}}", join: pageOptions.pageName},
             { split: "{{page.oneUse}}", join: `${pageOptions.oneUse}`},
             { split: "{{page.waterfall}}", join: JSON.stringify(pageOptions.settingsWaterfall)},
+            { split: "{{page.backToEndpointUrl}}", join: JSON.stringify(pageOptions.backToEndpointUrl)},
         ])
         return new_html
     }
+
 }
 
 module.exports.DBAPageManager = new DBAPageManager()
