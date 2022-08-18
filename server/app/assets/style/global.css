@@ -1,12 +1,12 @@
 
 body {
-    background-color: whitesmoke;
-    color: black;
-    font-family: calibri;
+    box-sizing: border-box;
+    font-family: Calibri;
+    background-color: var(--gray-one);
+    color: whitesmoke;
     margin: 0px;
     margin-top: 8px;
     padding: 0px;
-    padding-top: 70px;
 }
 
 

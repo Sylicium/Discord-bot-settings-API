@@ -1,22 +1,13 @@
-body {
-	background-color: #36393F;
-	color: #FFFFFF;
-	font-family: consolas;
-}
-
-.noselect {
-    -webkit-touch-callout: none; /* iOS Safari */
-      -webkit-user-select: none; /* Safari */
-       -khtml-user-select: none; /* Konqueror HTML */
-         -moz-user-select: none; /* Old versions of Firefox */
-          -ms-user-select: none; /* Internet Explorer/Edge */
-              user-select: none; /* Non-prefixed version, currently
-                                    supported by Chrome, Edge, Opera and Firefox */
-}
 
 
 
 div.bloc {
     border: 2px solid var(--gray-three);
     border-radius: 10px;
+    background-color: aqua;
+}
+div.bloc div {
+    display: flex;
+    background-color: aquamarine;
+    margin: 4px;
 }

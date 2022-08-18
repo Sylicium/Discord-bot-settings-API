@@ -4,7 +4,10 @@ try {
 
 module.exports = {
     server: {
-        port: 80
+        port: 80,
+    },
+    api: {
+        url: "https://dbs-api.captaincommand.repl.co/api"
     },
     application: {
         clientId: "1005628956965343253",
