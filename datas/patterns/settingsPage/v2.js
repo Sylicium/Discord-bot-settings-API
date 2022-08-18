@@ -179,7 +179,6 @@ function _settings_send_datas() {
 
 socket.on("sendSettings", () => {
     document.getElementById("saving").hidden = true
-        console.log("aaz")
     if(pageInfos.oneUse) {
         console.log("ff")
         window.location.href = \`/expired?message=\${"The setting page you previously was on was a one-use page.".split(" ").join("%20")}\`
