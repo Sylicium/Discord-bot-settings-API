@@ -375,7 +375,7 @@ module.exports.start = () => {
             Logger.log(`[site:settingPages] 2`)
     
             function send404() {
-                return res.sendFile(`${__dirname}/server/app/404.html`)
+                return dynamicPages["404"].load(req, res)
             }
     
             if(!req.params.pageID) { return send404() }
@@ -400,7 +400,7 @@ module.exports.start = () => {
         Logger.log(`[site] Request to ${req.path}`)
         if(req.path == "/") return;
         if(req.url.startsWith("/api/")) return;
-        if(req.url.startsWith("/g/")) { return res.sendFile(`${__dirname}/server/app/404.html`) }
+        if(req.url.startsWith("/g/")) { return dynamicPages["404"].load(req, res) }
         if(req.path.startsWith("/assets/")) return;
         
         if(fs.existsSync(`${__dirname}/server/app${req.path}.js`)) {
@@ -420,7 +420,7 @@ module.exports.start = () => {
         } else if(fs.existsSync(`${__dirname}/server/app${req.path}.html`)) {
             return res.sendFile(`${__dirname}/server/app${req.path}.html`)
         } else {
-            return res.sendFile(`${__dirname}/server/app/404.html`)
+            return dynamicPages["404"].load(req, res)
         }
     })
 

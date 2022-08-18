@@ -29,6 +29,7 @@ class DBAPageManager {
             { split: "{{page.oneUse}}", join: `${pageOptions.oneUse}`},
             { split: "{{page.waterfall}}", join: JSON.stringify(pageOptions.settingsWaterfall)},
             { split: "{{page.backToEndpointUrl}}", join: JSON.stringify(pageOptions.backToEndpointUrl)},
+            { split: "{{config.website.title}}", join: config.config.website.title}
         ])
         return new_html
     }

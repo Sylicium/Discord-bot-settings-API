@@ -5,11 +5,15 @@ let html_page = `<html>
 
 <head>
 	<title>
-		{{page.name}} | Discord Setting API
+    {{config.website.title}} | {{page.name}}
 	</title>
 	<meta charset="utf-8">
-	<meta property="og:title" content="{{page.name}}">
-	<meta property="og:description" content="{{page.description}}">
+    
+	<meta property="og:site_name" content="{{config.website.title}}">
+	<meta property="og:title" content="DirtyBiologistan">
+	<meta property="og:description" content="{{settings.description}}">
+    <meta name="theme-color" content="#586DF2">
+
     <link rel="stylesheet" href="/assets/style/discordColors.css">
     <link rel="stylesheet" href="/assets/style/global.css">
     <link rel="stylesheet" href="/assets/style/waterfall.css">
