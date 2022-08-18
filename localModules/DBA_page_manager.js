@@ -1,11 +1,8 @@
 
 
 const fs = require("fs")
-const crypto = require("crypto")
 let config = require("../config")
 const logger = new (require("./logger"))()
-var DOMParser = require('dom-parser');
-const fetch = require('node-fetch');
 const Database_ = require("./database");
 const somef = require("./someFunctions");
 

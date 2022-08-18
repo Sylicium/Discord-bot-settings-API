@@ -5,7 +5,7 @@ const crypto = require("crypto")
 let config = require("../config")
 const logger = new (require("./logger"))()
 var DOMParser = require('dom-parser');
-const fetch = require('node-fetch');
+const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 const Database_ = require("./database");
 
 module.exports.shuffle = shuffle

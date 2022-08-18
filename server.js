@@ -15,7 +15,6 @@ const io = require('socket.io')(serv);
 const fs = require("fs");
 const path = require("path")
 const axios = require('axios')
-const fetch = require('node-fetch');
 const Database_ = require("./localModules/database");
 const Logger = new (require("./localModules/logger"))()
 const Discord = require("discord.js");
