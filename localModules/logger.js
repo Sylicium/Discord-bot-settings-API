@@ -18,7 +18,7 @@ let configuration = {
     ReplitName: "dbs-api",
     workDirectoryFullPath: "sers\\Sylicium\\Documents\\devlopement\\Projets\\#0006 Discord bot settings API\\v2\\Discord-bot-settings-API",
     workDirectory: "\\dbs-api",
-    replitMode: true
+    replitMode: false
 }
 function formatDate(timestamp, format) {
     /*

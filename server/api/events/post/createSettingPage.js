@@ -213,7 +213,7 @@ module.exports.func = async (req, res, Modules_) => {
             backBody: req.body.backBody,
             pageName: req.body.pageName,
             pageDescription: (req.body.pageDescription || ""),
-            settingsWaterfall: [
+            settingsWaterfall: req.body.settingsWaterfall /*[
     
                 {
                     name: "Main settings",
@@ -234,7 +234,7 @@ module.exports.func = async (req, res, Modules_) => {
                         }
                     ]
                 }
-            ]
+            ]*/
         }
 
         let stocked_json = await Modules_["Database"].createSettingPage(pageOptions, "noAccount")
