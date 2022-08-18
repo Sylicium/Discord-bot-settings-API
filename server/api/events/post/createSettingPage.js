@@ -180,9 +180,8 @@ let parameters = [
 module.exports.parameters = parameters
 
 let body = [
-    { name: "description",          required: false,    type: "string" },
     { name: "pageName",             required: true,     type: "string" },
-    { name: "pageDescription",      required: true,     type: "string" },
+    { name: "pageDescription",      required: false,     type: "string" },
     { name: "backToEndpointToken",  required: true,     type: "string" },
     { name: "backToEndpointUrl",    required: true,     type: "string" },
     { name: "settingsWaterfall",    required: true,     type: "array", msg: `For waterfall settings examples, please refer to ${config.website.uri.api_documentation}/createPage#settingsWaterfall`},
