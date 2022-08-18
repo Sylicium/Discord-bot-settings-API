@@ -157,7 +157,7 @@ module.exports.start = () => {
         Logger.debug(`[API] Used Authorization token: ${JSON.parse(req.body.Authorization).split("").map((item,index) => { 
             if(index < 10) return item
             else return "*"
-        }).joint("")}`)
+        }).join("")}`)
         
         let apiEvent_list = APIEvents.filter((item) => {
             return (endpoint == item.endpoint)
