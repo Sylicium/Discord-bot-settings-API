@@ -7,6 +7,7 @@ module.exports = {
         port: 80,
     },
     api: {
+        tokens: JSON.parse(process.env.API_TOKENS),
         url: "https://dbs-api.captaincommand.repl.co/api"
     },
     application: {

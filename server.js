@@ -139,9 +139,9 @@ module.exports.start = () => {
     
     app.all("/api/*", (req, res) => {        
         let endpoint = req.path.substr(5, req.path.length)
-
+        
         try {
-            if(!req.body || JSON.parse(req.body.Authorization) != process.env.API_TOKEN) return res.send({
+            if(!req.body || config.api.tokens.indexOf(JSON.parse(req.body.Authorization)) == -1 ) return res.send({
                 status: 401,
                 message: `Unauthorized.` 
             })
@@ -153,6 +153,11 @@ module.exports.start = () => {
                 stack: e.stack.split("\n")
             })
         }
+
+        Logger.debug(`[API] Used Authorization token: ${JSON.parse(req.body.Authorization).split("").map((item,index) => { 
+            if(index < 10) return item
+            else return "*"
+        }).joint("")}`)
         
         let apiEvent_list = APIEvents.filter((item) => {
             return (endpoint == item.endpoint)
