@@ -564,7 +564,11 @@ module.exports.start = () => {
 
 
 
-                if(!datas || !datas.connectionToken ||! datas.url) return Logger.log("[sock][sendSettings] No datas")
+                if(!datas) return Logger.log("[sock][sendSettings] No datas")
+                if(!datas.connectionToken ||! datas.url) {
+                    socket.emit("sendSettings", { state: false })
+                    return Logger.log("[sock][sendSettings] Received datas, but some datas are missing")
+                }
                 if(typeof datas["settings"] != "object") Logger.log("[sock][sendSettings] settings is not an object")
                 if(datas.url != socket.handshake.headers.referer) {
                     let msg = "Invalid client url provided.".split(" ").join("%20")

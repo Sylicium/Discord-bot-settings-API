@@ -1,5 +1,3 @@
-const { config } = require("dotenv")
-
 try {
     require("dotenv").config()
 } catch(e) {}
@@ -21,8 +19,10 @@ module.exports = {
         uri: {
             discordAuth: {
                 auth: {
-                    redirectURI: "https://google.com",
-                    oauth2: "https://discord.com/oauth2/authorize?client_id=1005628956965343253&redirect_uri=https%3A%2F%2Fgoogle.com&response_type=code&scope=identify"
+                    //redirectURI: "https://google.com",
+                    //oauth2: "https://discord.com/oauth2/authorize?client_id=1005628956965343253&redirect_uri=https%3A%2F%2Fgoogle.com&response_type=code&scope=identify"
+                    redirectURI: "https://dbs-api.captaincommand.repl.co/discordAuth",
+                    oauth2: "https://discord.com/api/oauth2/authorize?client_id=1005628956965343253&redirect_uri=https%3A%2F%2Fdbs-api.captaincommand.repl.co%2FdiscordAuth&response_type=code&scope=identify"
                 }
             },
             api_documentation: "localhost/docs"
