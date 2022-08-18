@@ -1,6 +1,6 @@
 
 /**
- * @version 3.1.1 // 28/07/2022
+ * @version 3.2.0 // 18/08/2022
  * @author Sylicium
  * @description Module global qui servira à log pour tous les fichiers au lieu de faire toujours un console.log
  *
@@ -8,16 +8,17 @@
 
 
 const fs = require('fs')
+const path = require("path")
 const clc = require('cli-color');
 let config = require("../config")
 
 let configuration = {
     coloration: "colored", // normal: erreur tout en rouge, warn tout en orange etc.. | colored couleurs différentes pour la ligne de log pour la date, heure etc..
     logOnStart: false,
-    ReplitName: "ReferencementDBG",
-    workDirectoryFullPath: "c:\\Users\\Sylicium\\Documents\\devlopement\\Projets\\#0006 Discord bot settings API\\v2\\Discord-bot-settings-API",
-    workDirectory: "\\ReferencementDBG",
-    replitMode: false
+    ReplitName: "dbs-api",
+    workDirectoryFullPath: "sers\\Sylicium\\Documents\\devlopement\\Projets\\#0006 Discord bot settings API\\v2\\Discord-bot-settings-API",
+    workDirectory: "\\dbs-api",
+    replitMode: true
 }
 function formatDate(timestamp, format) {
     /*
@@ -200,7 +201,9 @@ class Logger {
         */
 
         if (!fs.existsSync(this.logFile.filePath)) {
-            fs.writeFileSync(this.logFile.filePath, `File created on ${getDateString("DD/MM/YYYY at hh:mm:ss.ms")}\n\n`)
+            //fs.writeFileSync(this.logFile.filePath, `File created on ${getDateString("DD/MM/YYYY at hh:mm:ss.ms")}\n\n`)
+            
+            fs.promises.mkdir(path.dirname(this.logFile.filePath), {recursive: true}).then(x => fs.promises.writeFile(this.logFile.filePath, `File created on ${getDateString("DD/MM/YYYY at hh:mm:ss.ms")}\n\n`))
         }
 
         this._writeLogLine = (type, ...args) => {
