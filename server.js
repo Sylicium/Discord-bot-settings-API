@@ -18,6 +18,7 @@ const axios = require('axios')
 const Database_ = require("./localModules/database");
 const Logger = new (require("./localModules/logger"))()
 const Discord = require("discord.js");
+const { off } = require("process");
 
 let DBAPageManager = require("./localModules/DBA_page_manager").DBAPageManager
 
@@ -334,29 +335,36 @@ module.exports.start = () => {
 
     app.get("/g/:pageID", async (req, res) => {
 
+        let the_req_headers = req.headers["user-agent"].toLocaleLowerCase()
+        let isDiscordRequest = false
+        if( (the_req_headers.indexOf("discordbot/") != -1) || (the_req_headers.indexOf("discordapp.com") != -1) ) {
+            isDiscordRequest = true
+        }
+
         fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
         Logger.log("/g/ fullUrl",fullUrl)
         try {
 
 
-            
-            if(!req.cookies.connectionToken) {
-                res.cookie("nextRedirectURI",`${fullUrl}`)
-                setTimeout(() => {
-                    res.writeHead(307, {Location: config.website.uri.discordAuth.auth.oauth2} );
-                    res.end();
-                }, 100)
-                //dynamicPages["discordAuth"].load(req, res)
-                return;
-            }
-            let isConnected = await Database_.website_isConnected_byConnectionToken(req.cookies.connectionToken)
-            if(!isConnected) {
-                res.cookie("nextRedirectURI",`${fullUrl}`)
-                setTimeout(() => {
-                    res.writeHead(307, {Location: config.website.uri.discordAuth.auth.oauth2} );
-                    res.end();
-                }, 100)
-                return;
+            if(!isDiscordRequest) {
+                if(!req.cookies.connectionToken) {
+                    res.cookie("nextRedirectURI",`${fullUrl}`)
+                    setTimeout(() => {
+                        res.writeHead(307, {Location: config.website.uri.discordAuth.auth.oauth2} );
+                        res.end();
+                    }, 100)
+                    //dynamicPages["discordAuth"].load(req, res)
+                    return;
+                }
+                let isConnected = await Database_.website_isConnected_byConnectionToken(req.cookies.connectionToken)
+                if(!isConnected) {
+                    res.cookie("nextRedirectURI",`${fullUrl}`)
+                    setTimeout(() => {
+                        res.writeHead(307, {Location: config.website.uri.discordAuth.auth.oauth2} );
+                        res.end();
+                    }, 100)
+                    return;
+                }
             }
 
 
@@ -565,22 +573,37 @@ module.exports.start = () => {
 
 
                 if(!datas) return Logger.log("[sock][sendSettings] No datas")
-                if(!datas.connectionToken ||! datas.url) {
-                    socket.emit("sendSettings", { state: false })
-                    return Logger.log("[sock][sendSettings] Received datas, but some datas are missing")
+                if(!datas.url) {
+                    let msg = "Some datas are missing.".split(" ").join("%20")
+                    socket.emit("redirect",{ url: `/error?message=${msg}&code=SOCKET_INTEGRITY_FAIL` })
+                    return Logger.log("[sock][sendSettings] SOCKET_INTEGRITY_FAIL. Received datas, but some datas are missing")
                 }
+
+                let isConnected = false
+                if(datas.connectionToken) {
+                    isConnected = await Database_.website_isConnected_byConnectionToken(datas.connectionToken)
+                }
+                if(!datas.connectionToken || !isConnected) {
+                    let msg = "It seems like you are trying to send datas but but you are not connected :/".split(" ").join("%20")
+                    socket.emit("redirect",{ url: `/discordAuthError?message=${msg}&title=DISCORD_AUTH_FAIL` })
+                    return Logger.log("[sock][sendSettings] DISCORD_AUTH_FAIL. Received datas, but user not connected.")
+                }
+                
+
+
+
                 if(typeof datas["settings"] != "object") Logger.log("[sock][sendSettings] settings is not an object")
                 if(datas.url != socket.handshake.headers.referer) {
                     let msg = "Invalid client url provided.".split(" ").join("%20")
                     socket.emit("redirect",{ url: `/error?message=${msg}&code=SOCKET_INTEGRITY_FAIL` })
-                    return;
+                    return Logger.log("[sock][sendSettings] SOCKET_INTEGRITY_FAIL. Invalid client url provided.")
                 }
 
                 let temp_pageID = socket.handshake.headers.referer.split("/g/")
                 if(temp_pageID.length < 2) {
                     let msg = "Invalid pageID provided.".split(" ").join("%20")
                     socket.emit("redirect",{ url: `/error?message=${msg}&code=SOCKET_INTEGRITY_FAIL` })
-                    return;
+                    return Logger.log("[sock][sendSettings] SOCKET_INTEGRITY_FAIL. Invalid pageID provided.")
                 }
                 let pageID = temp_pageID[1]
 
@@ -589,7 +612,7 @@ module.exports.start = () => {
                 if(!pageSettingInfos) {
                     let msg = "Invalid pageID provided.".split(" ").join("%20")
                     socket.emit("redirect",{ url: `/error?message=${msg}&code=SETTING_PAGE_INTEGRITY_FAIL` })
-                    return;
+                    return Logger.log("[sock][sendSettings] SOCKET_INTEGRITY_FAIL. Invalid pageID provided.")
                 }
 
                 Logger.debug("pageSettingInfos:",pageSettingInfos)
@@ -597,7 +620,7 @@ module.exports.start = () => {
                 if(datas.backToEndpointUrl != pageSettingInfos.backToEndpointUrl) {
                     let msg = "Invalid backToEndpointUrl provided.".split(" ").join("%20")
                     socket.emit("redirect",{ url: `/error?message=${msg}&code=SOCKET_INTEGRITY_FAIL` })
-                    return;
+                    return Logger.log("[sock][sendSettings] SOCKET_INTEGRITY_FAIL. Invalid backToEndpointUrl provided.")
                 }
 
                 axios.put(`${pageSettingInfos.backToEndpointUrl}`, {
