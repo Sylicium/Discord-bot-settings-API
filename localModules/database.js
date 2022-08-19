@@ -4,7 +4,7 @@ const somef = require("./someFunctions")
 const logger = new (require("./logger"))()
 //const MongoClient = require('mongodb').MongoClient;
 
-// v1.0.0 - 24/04/2022
+// v1.1.0 - 19/08/2022
 
 
 /*function getdb() {
@@ -255,6 +255,16 @@ class Database {
             "connected": true
         })
         return (object ? true : false)
+    }
+    async website_getConnectedUser_byConnectionToken(connectionToken) {
+        this.website_disconnectExpiredUsers()
+        let now = Date.now()
+        let object = await this.Mongo.db(this._usedDataBaseName).collection("connected_users").findOne({
+            "connectionToken": connectionToken,
+            "expiresAt": { $gt: now },
+            "connected": true
+        })
+        return (object ? object : false)
     }
 
     async getBackEndpointURI_byApplicationToken(token) {

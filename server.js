@@ -141,7 +141,7 @@ module.exports.start = () => {
         let endpoint = req.path.substr(5, req.path.length)
         
         try {
-            if(!req.body || config.api.tokens.indexOf(JSON.parse(req.body.Authorization)) == -1 ) return res.send({
+            if(!req.body || config.api.tokens.indexOf(req.body.Authorization) == -1 ) return res.send({
                 status: 401,
                 message: `Unauthorized.` 
             })
@@ -154,7 +154,7 @@ module.exports.start = () => {
             })
         }
 
-        Logger.debug(`[API] Used Authorization token: ${JSON.parse(req.body.Authorization).split("").map((item,index) => { 
+        Logger.debug(`[API] Used Authorization token: ${req.body.Authorization.split("").map((item,index) => { 
             if(index < 10) return item
             else return "*"
         }).join("")}`)
@@ -164,7 +164,7 @@ module.exports.start = () => {
         })
         
         if(apiEvent_list.length == 0) return res.send({
-            status: 404,
+            status: 501,
             message: `No endpoint.` 
         })
 
@@ -249,23 +249,6 @@ module.exports.start = () => {
 
         
         if(req.body) {
-            for(let key in req.body) {
-                try {
-                    if(typeof req.body[key] != "string") continue;
-                    req.body[key] = JSON.parse(req.body[key])
-                } catch(e) {
-                    Logger.error(e)
-                    return res.send({
-                        status: 500,
-                        message: `Internal server error while parsing body key '${key}'.`,
-                        error: `${e}`,
-                        stack: e.stack.split("\n"),
-                        request: { uri: req.url, path: req.path, query: req.query, method: req.method }
-                    })
-                }
-            }
-            
-
             
             for(let i in apiEvent.body) {
                 let body_param = apiEvent.body[i]
@@ -585,8 +568,10 @@ module.exports.start = () => {
                 }
 
                 let isConnected = false
+                let connectedUser = undefined;
                 if(datas.connectionToken) {
-                    isConnected = await Database_.website_isConnected_byConnectionToken(datas.connectionToken)
+                    connectedUser = await Database_.website_getConnectedUser_byConnectionToken(datas.connectionToken)
+                    isConnected = (connectedUser ? true : false)
                 }
                 if(!datas.connectionToken || !isConnected) {
                     let msg = "It seems like you are trying to send datas but but you are not connected :/".split(" ").join("%20")
@@ -630,6 +615,7 @@ module.exports.start = () => {
 
                 axios.put(`${pageSettingInfos.backToEndpointUrl}`, {
                     settings: datas.settings,
+                    user: connectedUser.discordUser,
                     backBody: pageSettingInfos.backBody
                 }).then(async (response) => {
 
