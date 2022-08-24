@@ -1,0 +1,13 @@
+
+
+
+div.bloc {
+    border: 2px solid var(--gray-three);
+    border-radius: 10px;
+    background-color: aqua;
+}
+div.bloc div {
+    display: flex;
+    background-color: aquamarine;
+    margin: 4px;
+}

@@ -1,0 +1,411 @@
+hr.separator {
+    height: 1px;
+    width: 97.5%;
+    border-width: 0;
+    background-color: var(--gray-three);
+}
+
+div.settingCategory {
+    box-shadow: #282A2E 3px 3px 30px 5px;
+    border: 0;
+    border-radius: 10px;
+    /* box-shadow: #202225 3px 3px 30px 0px; */
+    /* box-shadow: 3px 3px 30px 0px black; */
+    transition: 0.3s all;
+    margin: 20px;
+    padding-bottom: 10px;
+}
+
+div.settingCategory.disabled {
+    /* filter: blur(3px); */
+    opacity: 0.3;
+    transition: 0.3s all;
+    cursor: not-allowed;
+    pointer-events: none;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+div.settingCategory > div.setting{
+    display: flex;
+    padding: 10px 20px;
+}
+div.settingCategory > div.setting .flexed{
+    margin-top: 0;
+    width: 50%;
+}
+div.settingCategory > div.setting .totalwidth{
+    width: 100%;
+}
+div.settingCategory > div.setting .flexedright{
+    margin: auto;
+    float: right;
+    text-align: right;
+    width: auto;
+}
+div.settingCategory > div.setting .flexedright_noautowidth{
+    float: right;
+    text-align: right;
+}
+
+div.settingCategory div.setting div.sliderSelectedValue {
+    text-align: center;
+}
+div.settingCategory div.setting div.sliderInfos {
+    display: flex;
+    align-items: center;
+}
+div.settingCategory div.setting div.sliderInfos div.borne{
+    margin: 5px;
+    font-weight: bold;
+}
+
+
+div.settingCategory .settingLabel {
+    cursor: pointer;
+}
+div.settingCategory .settingLabel div.name {
+    text-transform: uppercase;
+    color: rgb(150, 150, 150);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+div .categoryTitle {
+    /* text-decoration: underline; */
+    font-size: 27px;
+    text-align: center;
+    margin: auto;
+    padding: 20px 10px;
+    min-width: max-content;
+    /* margin-bottom: 25px; */
+} 
+
+div.settingCategory input.textInput {
+    background-color: #202225;
+    font-size: 14px;
+    padding: 10px 15px 10px 15px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: whitesmoke;
+    font-family: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    width: 100%;
+}
+div.settingCategory input.passwordInput {
+    background-color: #202225;
+    font-size: 14px;
+    padding: 10px 15px;
+    padding-right: 0px;
+    outline: none;
+    border: none;
+    border-radius: 5px 0px 0px 5px;
+    color: whitesmoke;
+    font-family: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    width: 100%;
+}
+div.settingCategory .passwordInputEye {
+    background-color: #202225;
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 0px 5px 5px 0px;
+    color: whitesmoke;
+    min-width: max-content;
+    display: flex;
+}
+div.settingCategory .passwordInputEye:hover {
+    cursor: pointer;
+}
+div.settingCategory input.numberInput {
+    background-color: #202225;
+    font-size: 14px;
+    padding: 10px 0px 10px 15px;
+    outline: none;
+    border: none;
+    border-radius: 5px 0px 0px 5px;
+    color: whitesmoke;
+    font-family: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    width: 100%;
+}
+div.settingCategory .numberInputArrows {
+    background-color: #202225;
+    min-width: 30px;
+    border-radius: 0px 5px 5px 0px;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+}
+div.settingCategory .numberInputArrows .intArrow {
+    height: 100%;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    display: flex;
+}
+div.settingCategory .numberInputArrows .intArrow:hover {
+    cursor: pointer;
+}
+div.settingCategory textarea.textarea {
+    background-color: #202225;
+    font-size: 1.5vh;
+    padding: 10px 15px 10px 15px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: whitesmoke;
+    font-family: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    width: 100%;
+    resize: none;
+    font-size: 14px;
+}
+
+div.settingCategory textarea.textarea::-webkit-scrollbar {
+    width: 5px;
+    border: solid 10px transparent;
+}
+
+div.settingCategory textarea.textarea::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+div.settingCategory textarea.textarea::-webkit-scrollbar-thumb {
+    background-color: #282A2E;
+    border-radius: 10px;
+    border: solid 10px transparent;
+}
+
+div.settingCategory button.discordSelectCSS {
+    background-color: #202225;
+    font-size: 1.5vh;
+    outline: none;
+    border: none;
+    padding: 0px;
+    text-align: left;
+    color: whitesmoke;
+    font-family: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+div.settingCategory button.discordSelectCSS input.selectedName {
+    color: whitesmoke;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-weight: 700;
+    font-size: 14px;
+    width: 100%;
+    margin: auto;
+    padding-left: 15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+}
+div.settingCategory button.discordSelectCSS div.selector {
+    width: 100%;
+    max-height: 150px;
+    height: max-content;
+    background-color: #202225;
+    color: #fff;
+    text-align: left;
+    padding: 2.5px;
+    display: flex;
+    overflow-y: auto;
+    left: 0;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+}
+
+div.settingCategory button.discordSelectCSS div.selector::-webkit-scrollbar {
+    width: 5px;
+    border: solid 10px transparent;
+}
+
+div.settingCategory button.discordSelectCSS div.selector::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+div.settingCategory button.discordSelectCSS div.selector::-webkit-scrollbar-thumb {
+    background-color: #282A2E;
+    border-radius: 10px;
+    border: solid 10px transparent;
+}
+
+div.settingCategory button.discordSelectCSS div.selector div.options {
+    height: max-content;
+    border-radius: 2.5px;
+    padding: 10px;
+    font-weight: normal;
+    margin: 2.5px;
+    min-height: 37px;
+    font-size: 14px;
+}
+
+div.settingCategory button.discordSelectCSS div.selector div.options[selected] {
+    background-color: #5865F2 !important;
+}
+
+div.settingCategory button.discordSelectCSS div.selector div.options:hover {
+    background-color: #282A2E;
+}
+
+div.settingCategory button.discordSelectCSS:hover {
+    cursor: pointer;
+}
+
+div.confirm_button {
+    width: 100vw;
+    position: fixed;
+    bottom: -92.5%; 
+    z-index: 3;
+    overflow-y: auto;
+    height: 100%;
+}
+
+div.confirm_button div.centered {
+    border-radius: 10px;
+    max-width: 550px;
+    margin: 0px auto;
+    padding: 5px;
+    background-color: #202225;
+    display: flex;
+    margin-top: 10px;
+    box-shadow: #282A2E 7.5px 7.5px 15px 5px;
+    display: flex;
+}
+
+div.confirm_button div.centered div.text {
+    width: 100%;
+    margin: auto;
+    margin-left: 7.5px;
+}
+
+div.confirm_button div.centered div.buttons {
+    display: flex;
+    min-width: max-content;
+}
+
+div.confirm_button div.centered button#button_settings_save_changes {
+    color: whitesmoke;
+    background-color: var(--btn-positive);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s all;
+}
+
+div.confirm_button div.centered button#button_settings_discard_changes {
+    color: whitesmoke;
+    background-color: #36393F;
+    margin-right: 5px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s all;
+}
+
+div.confirm_button div.centered button#button_settings_save_changes:hover {
+    background-color: var(--btn-positive-hover);
+    transition: 0.3s all;
+}
+
+div.confirm_button div.centered button#button_settings_discard_changes:hover {
+    background-color: #2F3136;
+    transition: 0.3s all;
+}
+
+div.confirm_button.opened {
+    transform: translate(0,0px);
+    animation-timing-function: linear;
+    animation: unsavedChangesButton_in;
+    animation-duration: 0.5s;
+}
+
+div.confirm_button:not(.opened) {
+    transform: translate(0,110px);
+    animation-timing-function: linear;
+    animation: unsavedChangesButton_out;
+    animation-duration: 0.7s;
+}
+
+@keyframes unsavedChangesButton_in {
+    0% {
+        transform: translate(0,110px);
+    }
+    50% {
+        transform: translate(0,-10px);
+    }
+    100% {
+        transform: translate(0,0px);
+    }
+}
+@keyframes unsavedChangesButton_out {
+    0% {
+        transform: translate(0,0px);
+    }
+    50% {
+        transform: translate(0,-20px);
+    }
+    100% {
+        transform: translate(0,110px);
+    }
+}
+
+div.fullPageCentered {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+div.fullPageCentered div.centered{
+    width: fit-content;
+    max-width: 600px;
+    background-color: #2B2D30;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 1px 1px 30px #222222;
+    margin: 0px auto;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+}
+div#saving div.centered {
+    color: #FFFFFF;
+    font-family: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 3vh;
+}
+
+div#pleaseconnect {
+    background-color: var(--gray-two);
+}
+div#pleaseconnect div.centered {
+    color: #FFFFFF;
+    font-family: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 3vh;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

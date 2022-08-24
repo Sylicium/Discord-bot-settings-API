@@ -4,8 +4,8 @@
 }
 
 :root {
-  --light-grey: #72767D;
-  --green: #3CA55D;
+  --light-grey: hsl(218deg, 4%, 46%);
+  --green: hsl(152deg, 45%, 48%);
 }
 
 
@@ -71,7 +71,6 @@
   background: white;
   display: grid;
 }
-/* Code pour ajouter un check mark X et V quand on active ou désactive le bouton
 
 .checkbox ~ .checkbox-visual > div:before,
 .checkbox ~ .checkbox-visual > div:after {
@@ -102,5 +101,3 @@
 .checkbox:checked ~ .checkbox-visual > div:after {
   clip-path: polygon(20% 45%, 0% 65%, 33.33% 100%, 45% 75%);
 }
-
-*/

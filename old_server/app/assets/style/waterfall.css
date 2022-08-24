@@ -1,0 +1,340 @@
+
+hr.separator {
+    height:1px;
+    width:100%;
+    border-width:0;
+    color:var(--gray-two);
+    background-color:var(--gray-three);
+}
+
+
+div.settingCategory {
+    border: 2px solid black;
+    padding: 10px;
+    transition: 0.3s all;
+    margin: 50px 20px 50px 20px ;
+}
+
+div.settingCategory.disabled {
+    /* filter: blur(3px); */
+    opacity: 0.3;
+    transition: 0.3s all;
+    cursor: not-allowed;
+    pointer-events: none;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+div.settingCategory > div.setting{
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+div.settingCategory > div.setting .flexed{
+    width: 50%;
+}
+div.settingCategory > div.setting .totalwidth{
+    width: 100%;
+}
+div.settingCategory > div.setting .flexedright{
+    float: right;
+    text-align: right;
+    width: auto;
+}
+div.settingCategory > div.setting .flexedright_noautowidth{
+    float: right;
+    text-align: right;
+}
+
+div.settingCategory div.setting div.sliderSelectedValue {
+    text-align: center;
+}
+div.settingCategory div.setting div.sliderInfos {
+    display: flex;
+    align-items: center;
+}
+div.settingCategory div.setting div.sliderInfos div.borne{
+    margin: 5px;
+    font-weight: bold;
+}
+
+
+div.settingCategory .settingLabel {
+    cursor: pointer;
+}
+div.settingCategory .settingLabel div.name {
+    text-transform: uppercase;
+    color: gray;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+div .categoryTitle {
+    text-decoration: underline;
+    text-align: center;
+    margin: 10px;
+}
+
+
+div.settingCategory input.textInput {
+    background-color: var(--gray-two);
+    font-size: 1.5vh;
+    padding: 10px 15px 10px 15px;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: whitesmoke;
+    font-family: consolas;
+    width: 80%;
+}
+div.settingCategory input.numberInput {
+    background-color: var(--gray-two);
+    font-size: 1.5vh;
+    padding: 10px 15px 10px 15px;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: whitesmoke;
+    font-family: consolas;
+    width: auto;
+}
+div.settingCategory textarea.textarea {
+    background-color: var(--gray-two);
+    font-size: 1.5vh;
+    padding: 10px 15px 10px 15px;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: whitesmoke;
+    font-family: consolas;
+    width: 100%;
+    resize: vertical;
+    min-height: 7vh;
+}
+
+div.settingCategory select.discordSelectCSS {
+    background-color: var(--gray-two);
+    font-size: 1.5vh;
+    padding: 10px 15px 10px 15px;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: whitesmoke;
+    font-family: consolas;
+    min-width: 200px;
+    max-width: 50vw;
+}
+
+
+
+
+div.confirm_button {
+    width: 100vw;
+    position: fixed;
+    bottom: 3vh;
+}
+
+div.confirm_button div.centered {
+    background-color: rgb(119, 0, 255);
+    border-radius: 5px;
+    max-width: 550px;
+    margin: 0px auto;
+    padding: 5px;
+    background-color: var(--btn-careful-red);
+    display: flex;
+    align-items:baseline;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.5);
+}
+
+div.confirm_button div.centered > div.padded {
+    flex: 1;
+}
+div.confirm_button div.centered div.carefultext {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+div.confirm_button div.centered div.buttons {
+    text-align: right;
+    display: flex;
+}
+div.confirm_button div.centered div.buttons > div {
+    flex: 3;
+}
+div.confirm_button button#button_settings_discard_changes {
+    background: none;
+    border: none;
+    color: whitesmoke;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 0px 10px 0px;
+}
+div.confirm_button div.centered button#button_settings_discard_changes:hover {
+    text-decoration: underline;
+}
+div.confirm_button div.centered button#button_settings_save_changes {
+    color: whitesmoke;
+    background-color: var(--btn-positive);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s all;
+}
+div.confirm_button div.centered button#button_settings_save_changes:hover {
+    background-color: var(--btn-positive-hover);
+    transition: 0.3s all;
+}
+
+
+div.confirm_button.opened {
+    transform: translate(0,0px);
+    animation-timing-function: linear;
+    animation: unsavedChangesButton_in;
+    animation-duration: 0.5s;
+}
+div.confirm_button:not(.opened) {
+    transform: translate(0,110px);
+    animation-timing-function: linear;
+    animation: unsavedChangesButton_out;
+    animation-duration: 0.7s;
+}
+
+@keyframes unsavedChangesButton_in {
+    0% {
+        transform: translate(0,110px);
+    }
+    50% {
+        transform: translate(0,-10px);
+    }
+    100% {
+        transform: translate(0,0px);
+    }
+}
+@keyframes unsavedChangesButton_out {
+    0% {
+        transform: translate(0,0px);
+    }
+    50% {
+        transform: translate(0,-20px);
+    }
+    100% {
+        transform: translate(0,110px);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+div#contents_diverged {
+    position: fixed;
+    bottom: 3vh;
+}
+
+div#contents_diverged div.centered {
+    background-color: rgb(119, 0, 255);
+    border-radius: 5px;
+    max-width: 400px;
+    margin-left: 50px;
+    padding: 5px;
+    background-color: var(--gray-three);
+    display: flex;
+    border: 1px solid black;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.5);
+}
+
+div#contents_diverged div.centered > div.padded {
+    flex: 1;
+}
+div#contents_diverged div.centered div.carefultext {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+div#contents_diverged div.centered div.buttons {
+    text-align: right;
+    display: flex;
+}
+div#contents_diverged div.centered div.buttons > div {
+    flex: 3;
+}
+div#contents_diverged button#button_settings_discard_changes {
+    color: whitesmoke;
+    background-color: var(--btn-careful-red2);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s all;
+}
+div#contents_diverged div.centered button#button_settings_discard_changes:hover {
+    background-color: var(--btn-careful-red2-hover);
+    transition: 0.3s all;
+    text-decoration: underline;
+}
+
+
+div#contents_diverged.opened {
+    transform: translate(0,0px);
+    animation-timing-function:cubic-bezier(1, 0, 0, 1);
+    animation-timing-function: linear;
+    animation: unsavedChangesButton_in;
+    animation-duration: 0.5s;
+}
+div#contents_diverged:not(.opened) {
+    transform: translate(0,110px);
+    animation-timing-function: linear;
+    animation: unsavedChangesButton_out;
+    animation-duration: 0.7s;
+}
+
+
+
+div.fullPageCentered {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+div.fullPageCentered div.centered{
+    width: fit-content;
+    max-width: 600px;
+    background-color: #2B2D30;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 1px 1px 30px #222222;
+    margin: 0px auto;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+}
+div#saving div.centered {
+    color: #FFFFFF;
+    font-family: consolas;
+    font-size: 3vh;
+}
+
+
+div#pleaseconnect {
+    background-color: var(--gray-two);
+}
+div#pleaseconnect div.centered {
+    color: #FFFFFF;
+    font-family: consolas;
+    font-size: 3vh;
+}

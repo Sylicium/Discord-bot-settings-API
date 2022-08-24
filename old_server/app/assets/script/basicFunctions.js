@@ -102,7 +102,7 @@ function genHex(length, capitalize=false) {
 
 
 
-/*function _autoResizeVerticallyAllTextarea() {
+function _autoResizeVerticallyAllTextarea() {
     Array.from( document.querySelectorAll('.textarea-autoresize-vertically'), (elem)=>{
     
         function updateSize(){
@@ -111,7 +111,7 @@ function genHex(length, capitalize=false) {
         elem.addEventListener('input', updateSize);
         updateSize();
     });
-}*/
+}
 
 function _autoResizeVerticallyThisElement(elem) {
     function updateSize(){

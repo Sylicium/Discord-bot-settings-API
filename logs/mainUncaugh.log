@@ -231,3 +231,226 @@ File created on 02/07/2022, 18:51:13
 [12/08/2022, 01:32:36 ERROR] (unknown):     at listOnTimeout (node:internal/timers:559:17)
 [12/08/2022, 01:32:36 ERROR] (unknown):     at processTimers (node:internal/timers:502:7)
 [12/08/2022, 01:32:36 ERROR] (unknown): 
+[16/08/2022, 20:44:12 ERROR] (unknown): Uncaught Exception (process.on handle) Error: listen EADDRINUSE: address already in use :::80
+[16/08/2022, 20:44:12 ERROR] (unknown):     at Server.setupListenHandle [as _listen2] (node:net:1372:16)
+[16/08/2022, 20:44:12 ERROR] (unknown):     at listenInCluster (node:net:1420:12)
+[16/08/2022, 20:44:12 ERROR] (unknown):     at Server.listen (node:net:1508:7)
+[16/08/2022, 20:44:12 ERROR] (unknown):     at Object.module.exports.start (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server.js:141:10)
+[16/08/2022, 20:44:12 ERROR] (unknown):     at _allCode (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\index.js:103:8)
+[16/08/2022, 20:44:12 ERROR] (unknown):     at c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\index.js:37:5
+[16/08/2022, 20:44:12 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\mongodb\lib\utils.js:423:9
+[16/08/2022, 20:44:12 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\mongodb\lib\mongo_client.js:130:17
+[16/08/2022, 20:44:12 ERROR] (unknown):     at connectCallback (c:\Users\Sylicium\node_modules\mongodb\lib\operations\connect.js:29:9)
+[16/08/2022, 20:44:12 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\mongodb\lib\operations\connect.js:80:9
+[16/08/2022, 20:44:12 ERROR] (unknown): 
+[16/08/2022, 21:10:35 ERROR] (unknown): /!\ UNCAUGH ERROR /!\ Error: Cannot find module 'cookie-parser'
+[16/08/2022, 21:10:35 ERROR] (unknown): Require stack:
+[16/08/2022, 21:10:35 ERROR] (unknown): - c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server.js
+[16/08/2022, 21:10:35 ERROR] (unknown): - c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\index.js
+[16/08/2022, 21:10:35 ERROR] (unknown):     at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+[16/08/2022, 21:10:35 ERROR] (unknown):     at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+[16/08/2022, 21:10:35 ERROR] (unknown):     at Module.require (node:internal/modules/cjs/loader:1005:19)
+[16/08/2022, 21:10:35 ERROR] (unknown):     at require (node:internal/modules/cjs/helpers:102:18)
+[16/08/2022, 21:10:35 ERROR] (unknown):     at Object.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server.js:5:22)
+[16/08/2022, 21:10:35 ERROR] (unknown):     at Module._compile (node:internal/modules/cjs/loader:1105:14)
+[16/08/2022, 21:10:35 ERROR] (unknown):     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+[16/08/2022, 21:10:35 ERROR] (unknown):     at Module.load (node:internal/modules/cjs/loader:981:32)
+[16/08/2022, 21:10:35 ERROR] (unknown):     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+[16/08/2022, 21:10:35 ERROR] (unknown):     at Module.require (node:internal/modules/cjs/loader:1005:19)
+[16/08/2022, 21:10:35 ERROR] (unknown): 
+[16/08/2022, 22:57:07 ERROR] (unknown): /!\ UNCAUGH ERROR /!\ Error: Cannot find module '../datas/static/patterns/settingsPage/v2'
+[16/08/2022, 22:57:07 ERROR] (unknown): Require stack:
+[16/08/2022, 22:57:07 ERROR] (unknown): - c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\localModules\DBA_page_manager.js
+[16/08/2022, 22:57:07 ERROR] (unknown): - c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server.js
+[16/08/2022, 22:57:07 ERROR] (unknown): - c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\index.js
+[16/08/2022, 22:57:07 ERROR] (unknown):     at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+[16/08/2022, 22:57:07 ERROR] (unknown):     at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+[16/08/2022, 22:57:07 ERROR] (unknown):     at Module.require (node:internal/modules/cjs/loader:1005:19)
+[16/08/2022, 22:57:07 ERROR] (unknown):     at require (node:internal/modules/cjs/helpers:102:18)
+[16/08/2022, 22:57:07 ERROR] (unknown):     at Object.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\localModules\DBA_page_manager.js:14:29)
+[16/08/2022, 22:57:07 ERROR] (unknown):     at Module._compile (node:internal/modules/cjs/loader:1105:14)
+[16/08/2022, 22:57:07 ERROR] (unknown):     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+[16/08/2022, 22:57:07 ERROR] (unknown):     at Module.load (node:internal/modules/cjs/loader:981:32)
+[16/08/2022, 22:57:07 ERROR] (unknown):     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+[16/08/2022, 22:57:07 ERROR] (unknown):     at Module.require (node:internal/modules/cjs/loader:1005:19)
+[16/08/2022, 22:57:07 ERROR] (unknown): 
+[16/08/2022, 22:57:35 ERROR] (unknown): /!\ UNCAUGH ERROR /!\ Error: Cannot find module './datas/static/patterns/settingsPage/v2'
+[16/08/2022, 22:57:35 ERROR] (unknown): Require stack:
+[16/08/2022, 22:57:35 ERROR] (unknown): - c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\localModules\DBA_page_manager.js
+[16/08/2022, 22:57:35 ERROR] (unknown): - c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server.js
+[16/08/2022, 22:57:35 ERROR] (unknown): - c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\index.js
+[16/08/2022, 22:57:35 ERROR] (unknown):     at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+[16/08/2022, 22:57:35 ERROR] (unknown):     at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+[16/08/2022, 22:57:35 ERROR] (unknown):     at Module.require (node:internal/modules/cjs/loader:1005:19)
+[16/08/2022, 22:57:35 ERROR] (unknown):     at require (node:internal/modules/cjs/helpers:102:18)
+[16/08/2022, 22:57:35 ERROR] (unknown):     at Object.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\localModules\DBA_page_manager.js:14:29)
+[16/08/2022, 22:57:35 ERROR] (unknown):     at Module._compile (node:internal/modules/cjs/loader:1105:14)
+[16/08/2022, 22:57:35 ERROR] (unknown):     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+[16/08/2022, 22:57:35 ERROR] (unknown):     at Module.load (node:internal/modules/cjs/loader:981:32)
+[16/08/2022, 22:57:35 ERROR] (unknown):     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+[16/08/2022, 22:57:35 ERROR] (unknown):     at Module.require (node:internal/modules/cjs/loader:1005:19)
+[16/08/2022, 22:57:35 ERROR] (unknown): 
+[16/08/2022, 22:58:09 ERROR] (unknown): /!\ UNCAUGH ERROR /!\ Error: Cannot find module './datas/patterns/settingsPage/v2'
+[16/08/2022, 22:58:09 ERROR] (unknown): Require stack:
+[16/08/2022, 22:58:09 ERROR] (unknown): - c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\localModules\DBA_page_manager.js
+[16/08/2022, 22:58:09 ERROR] (unknown): - c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server.js
+[16/08/2022, 22:58:09 ERROR] (unknown): - c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\index.js
+[16/08/2022, 22:58:09 ERROR] (unknown):     at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+[16/08/2022, 22:58:09 ERROR] (unknown):     at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+[16/08/2022, 22:58:09 ERROR] (unknown):     at Module.require (node:internal/modules/cjs/loader:1005:19)
+[16/08/2022, 22:58:09 ERROR] (unknown):     at require (node:internal/modules/cjs/helpers:102:18)
+[16/08/2022, 22:58:09 ERROR] (unknown):     at Object.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\localModules\DBA_page_manager.js:14:29)
+[16/08/2022, 22:58:09 ERROR] (unknown):     at Module._compile (node:internal/modules/cjs/loader:1105:14)
+[16/08/2022, 22:58:09 ERROR] (unknown):     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+[16/08/2022, 22:58:09 ERROR] (unknown):     at Module.load (node:internal/modules/cjs/loader:981:32)
+[16/08/2022, 22:58:09 ERROR] (unknown):     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+[16/08/2022, 22:58:09 ERROR] (unknown):     at Module.require (node:internal/modules/cjs/loader:1005:19)
+[16/08/2022, 22:58:09 ERROR] (unknown): 
+[16/08/2022, 22:58:20 ERROR] (unknown): /!\ UNCAUGH ERROR /!\ c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server\api\events\POST\createSettingPage.js:50
+[16/08/2022, 22:58:20 ERROR] (unknown):             backToEndpointToken: req.body.backToEndpointToken,
+[16/08/2022, 22:58:20 ERROR] (unknown):             ^^^^^^^^^^^^^^^^^^^
+[16/08/2022, 22:58:20 ERROR] (unknown): 
+[16/08/2022, 22:58:20 ERROR] (unknown): SyntaxError: Unexpected identifier
+[16/08/2022, 22:58:20 ERROR] (unknown):     at Object.compileFunction (node:vm:352:18)
+[16/08/2022, 22:58:20 ERROR] (unknown):     at wrapSafe (node:internal/modules/cjs/loader:1033:15)
+[16/08/2022, 22:58:20 ERROR] (unknown):     at Module._compile (node:internal/modules/cjs/loader:1069:27)
+[16/08/2022, 22:58:20 ERROR] (unknown):     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+[16/08/2022, 22:58:20 ERROR] (unknown):     at Module.load (node:internal/modules/cjs/loader:981:32)
+[16/08/2022, 22:58:20 ERROR] (unknown):     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+[16/08/2022, 22:58:20 ERROR] (unknown):     at Module.require (node:internal/modules/cjs/loader:1005:19)
+[16/08/2022, 22:58:20 ERROR] (unknown):     at require (node:internal/modules/cjs/helpers:102:18)
+[16/08/2022, 22:58:20 ERROR] (unknown):     at c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server.js:40:35
+[16/08/2022, 22:58:20 ERROR] (unknown):     at Array.forEach (<anonymous>)
+[16/08/2022, 22:58:20 ERROR] (unknown): 
+[16/08/2022, 23:56:47 ERROR] (unknown): /!\ UNCAUGH ERROR /!\ c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server\api\events\POST\createSettingPage.js:90
+[16/08/2022, 23:56:47 ERROR] (unknown):         let stocked_json = await Database_.createSettingPage(pageOptions, "noAccount")
+[16/08/2022, 23:56:47 ERROR] (unknown):                            ^^^^^
+[16/08/2022, 23:56:47 ERROR] (unknown): 
+[16/08/2022, 23:56:47 ERROR] (unknown): SyntaxError: await is only valid in async functions and the top level bodies of modules
+[16/08/2022, 23:56:47 ERROR] (unknown):     at Object.compileFunction (node:vm:352:18)
+[16/08/2022, 23:56:47 ERROR] (unknown):     at wrapSafe (node:internal/modules/cjs/loader:1033:15)
+[16/08/2022, 23:56:47 ERROR] (unknown):     at Module._compile (node:internal/modules/cjs/loader:1069:27)
+[16/08/2022, 23:56:47 ERROR] (unknown):     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+[16/08/2022, 23:56:47 ERROR] (unknown):     at Module.load (node:internal/modules/cjs/loader:981:32)
+[16/08/2022, 23:56:47 ERROR] (unknown):     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+[16/08/2022, 23:56:47 ERROR] (unknown):     at Module.require (node:internal/modules/cjs/loader:1005:19)
+[16/08/2022, 23:56:47 ERROR] (unknown):     at require (node:internal/modules/cjs/helpers:102:18)
+[16/08/2022, 23:56:47 ERROR] (unknown):     at c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server.js:41:35
+[16/08/2022, 23:56:47 ERROR] (unknown):     at Array.forEach (<anonymous>)
+[16/08/2022, 23:56:47 ERROR] (unknown): 
+[17/08/2022, 15:27:47 ERROR] (unknown): /!\ UNCAUGH ERROR /!\ Error: ENOENT: no such file or directory, scandir './api/'
+[17/08/2022, 15:27:47 ERROR] (unknown):     at Object.readdirSync (node:fs:1405:3)
+[17/08/2022, 15:27:47 ERROR] (unknown):     at Object.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server.js:38:4)
+[17/08/2022, 15:27:47 ERROR] (unknown):     at Module._compile (node:internal/modules/cjs/loader:1105:14)
+[17/08/2022, 15:27:47 ERROR] (unknown):     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+[17/08/2022, 15:27:47 ERROR] (unknown):     at Module.load (node:internal/modules/cjs/loader:981:32)
+[17/08/2022, 15:27:47 ERROR] (unknown):     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+[17/08/2022, 15:27:47 ERROR] (unknown):     at Module.require (node:internal/modules/cjs/loader:1005:19)
+[17/08/2022, 15:27:47 ERROR] (unknown):     at require (node:internal/modules/cjs/helpers:102:18)
+[17/08/2022, 15:27:47 ERROR] (unknown):     at _allCode (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\index.js:102:14)
+[17/08/2022, 15:27:47 ERROR] (unknown):     at c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\index.js:37:5
+[17/08/2022, 15:27:47 ERROR] (unknown): 
+[17/08/2022, 15:28:17 ERROR] (unknown): /!\ UNCAUGH ERROR /!\ Error: ENOENT: no such file or directory, scandir './site/api/'
+[17/08/2022, 15:28:17 ERROR] (unknown):     at Object.readdirSync (node:fs:1405:3)
+[17/08/2022, 15:28:17 ERROR] (unknown):     at Object.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server.js:38:4)
+[17/08/2022, 15:28:17 ERROR] (unknown):     at Module._compile (node:internal/modules/cjs/loader:1105:14)
+[17/08/2022, 15:28:17 ERROR] (unknown):     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+[17/08/2022, 15:28:17 ERROR] (unknown):     at Module.load (node:internal/modules/cjs/loader:981:32)
+[17/08/2022, 15:28:17 ERROR] (unknown):     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+[17/08/2022, 15:28:17 ERROR] (unknown):     at Module.require (node:internal/modules/cjs/loader:1005:19)
+[17/08/2022, 15:28:17 ERROR] (unknown):     at require (node:internal/modules/cjs/helpers:102:18)
+[17/08/2022, 15:28:17 ERROR] (unknown):     at _allCode (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\index.js:102:14)
+[17/08/2022, 15:28:17 ERROR] (unknown):     at c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\index.js:37:5
+[17/08/2022, 15:28:17 ERROR] (unknown): 
+[17/08/2022, 15:51:44 ERROR] (unknown): /!\ UNCAUGH ERROR /!\ ReferenceError: config is not defined
+[17/08/2022, 15:51:44 ERROR] (unknown):     at Object.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server\api\events\POST\createSettingPage.js:174:165)
+[17/08/2022, 15:51:44 ERROR] (unknown):     at Module._compile (node:internal/modules/cjs/loader:1105:14)
+[17/08/2022, 15:51:44 ERROR] (unknown):     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+[17/08/2022, 15:51:44 ERROR] (unknown):     at Module.load (node:internal/modules/cjs/loader:981:32)
+[17/08/2022, 15:51:44 ERROR] (unknown):     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+[17/08/2022, 15:51:44 ERROR] (unknown):     at Module.require (node:internal/modules/cjs/loader:1005:19)
+[17/08/2022, 15:51:44 ERROR] (unknown):     at require (node:internal/modules/cjs/helpers:102:18)
+[17/08/2022, 15:51:44 ERROR] (unknown):     at c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server.js:79:35
+[17/08/2022, 15:51:44 ERROR] (unknown):     at Array.forEach (<anonymous>)
+[17/08/2022, 15:51:44 ERROR] (unknown):     at c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server.js:73:64
+[17/08/2022, 15:51:44 ERROR] (unknown): 
+[17/08/2022, 21:41:31 ERROR] (unknown): Unhandled Rejection (process.on handle) TypeError: req.completeURL is not a function
+[17/08/2022, 21:41:31 ERROR] (unknown):     at c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server.js:327:38
+[17/08/2022, 21:41:31 ERROR] (unknown):     at Layer.handle [as handle_request] (c:\Users\Sylicium\node_modules\express\lib\router\layer.js:95:5)
+[17/08/2022, 21:41:31 ERROR] (unknown):     at next (c:\Users\Sylicium\node_modules\express\lib\router\route.js:137:13)
+[17/08/2022, 21:41:31 ERROR] (unknown):     at Route.dispatch (c:\Users\Sylicium\node_modules\express\lib\router\route.js:112:3)
+[17/08/2022, 21:41:31 ERROR] (unknown):     at Layer.handle [as handle_request] (c:\Users\Sylicium\node_modules\express\lib\router\layer.js:95:5)
+[17/08/2022, 21:41:31 ERROR] (unknown):     at c:\Users\Sylicium\node_modules\express\lib\router\index.js:281:22
+[17/08/2022, 21:41:31 ERROR] (unknown):     at param (c:\Users\Sylicium\node_modules\express\lib\router\index.js:354:14)
+[17/08/2022, 21:41:31 ERROR] (unknown):     at param (c:\Users\Sylicium\node_modules\express\lib\router\index.js:365:14)
+[17/08/2022, 21:41:31 ERROR] (unknown):     at Function.process_params (c:\Users\Sylicium\node_modules\express\lib\router\index.js:410:3)
+[17/08/2022, 21:41:31 ERROR] (unknown):     at next (c:\Users\Sylicium\node_modules\express\lib\router\index.js:275:10)
+[17/08/2022, 21:41:31 ERROR] (unknown): 
+[17/08/2022, 23:14:45 ERROR] (unknown): /!\ UNCAUGH ERROR /!\ ReferenceError: Cannot access 'body' before initialization
+[17/08/2022, 23:14:45 ERROR] (unknown):     at Object.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server\api\events\POST\createSettingPage.js:180:23)
+[17/08/2022, 23:14:45 ERROR] (unknown):     at Module._compile (node:internal/modules/cjs/loader:1105:14)
+[17/08/2022, 23:14:45 ERROR] (unknown):     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+[17/08/2022, 23:14:45 ERROR] (unknown):     at Module.load (node:internal/modules/cjs/loader:981:32)
+[17/08/2022, 23:14:45 ERROR] (unknown):     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+[17/08/2022, 23:14:45 ERROR] (unknown):     at Module.require (node:internal/modules/cjs/loader:1005:19)
+[17/08/2022, 23:14:45 ERROR] (unknown):     at require (node:internal/modules/cjs/helpers:102:18)
+[17/08/2022, 23:14:45 ERROR] (unknown):     at c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server.js:81:35
+[17/08/2022, 23:14:45 ERROR] (unknown):     at Array.forEach (<anonymous>)
+[17/08/2022, 23:14:45 ERROR] (unknown):     at c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server.js:75:64
+[17/08/2022, 23:14:45 ERROR] (unknown): 
+[17/08/2022, 23:17:46 ERROR] (unknown): /!\ UNCAUGH ERROR /!\ c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server\api\events\POST\createSettingPage.js:238
+[17/08/2022, 23:17:46 ERROR] (unknown):         let stocked_json = await Database_.createSettingPage(pageOptions, "noAccount")
+[17/08/2022, 23:17:46 ERROR] (unknown):                            ^^^^^
+[17/08/2022, 23:17:46 ERROR] (unknown): 
+[17/08/2022, 23:17:46 ERROR] (unknown): SyntaxError: await is only valid in async functions and the top level bodies of modules
+[17/08/2022, 23:17:46 ERROR] (unknown):     at Object.compileFunction (node:vm:352:18)
+[17/08/2022, 23:17:46 ERROR] (unknown):     at wrapSafe (node:internal/modules/cjs/loader:1033:15)
+[17/08/2022, 23:17:46 ERROR] (unknown):     at Module._compile (node:internal/modules/cjs/loader:1069:27)
+[17/08/2022, 23:17:46 ERROR] (unknown):     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+[17/08/2022, 23:17:46 ERROR] (unknown):     at Module.load (node:internal/modules/cjs/loader:981:32)
+[17/08/2022, 23:17:46 ERROR] (unknown):     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+[17/08/2022, 23:17:46 ERROR] (unknown):     at Module.require (node:internal/modules/cjs/loader:1005:19)
+[17/08/2022, 23:17:46 ERROR] (unknown):     at require (node:internal/modules/cjs/helpers:102:18)
+[17/08/2022, 23:17:46 ERROR] (unknown):     at c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server.js:81:35
+[17/08/2022, 23:17:46 ERROR] (unknown):     at Array.forEach (<anonymous>)
+[17/08/2022, 23:17:46 ERROR] (unknown): 
+[17/08/2022, 23:41:11 ERROR] (unknown): Uncaught Exception (process.on handle) TypeError: Cannot read properties of undefined (reading 'split')
+[17/08/2022, 23:41:11 ERROR] (unknown):     at writeUncaughException (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\index.js:52:40)
+[17/08/2022, 23:41:11 ERROR] (unknown):     at process.<anonymous> (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\index.js:74:5)
+[17/08/2022, 23:41:11 ERROR] (unknown):     at process.emit (node:events:527:28)
+[17/08/2022, 23:41:11 ERROR] (unknown):     at emit (node:internal/process/promises:140:20)
+[17/08/2022, 23:41:11 ERROR] (unknown):     at processPromiseRejections (node:internal/process/promises:274:27)
+[17/08/2022, 23:41:11 ERROR] (unknown):     at processTicksAndRejections (node:internal/process/task_queues:97:32)
+[17/08/2022, 23:41:11 ERROR] (unknown): 
+[17/08/2022, 23:49:27 ERROR] (unknown): /!\ UNCAUGH ERROR /!\ C:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server.js:600
+[17/08/2022, 23:49:27 ERROR] (unknown):                     await Database_.deleteSettingPage(pageSettingInfos.id)
+[17/08/2022, 23:49:27 ERROR] (unknown):                     ^^^^^
+[17/08/2022, 23:49:27 ERROR] (unknown): 
+[17/08/2022, 23:49:27 ERROR] (unknown): SyntaxError: await is only valid in async functions and the top level bodies of modules
+[17/08/2022, 23:49:27 ERROR] (unknown):     at Object.compileFunction (node:vm:352:18)
+[17/08/2022, 23:49:27 ERROR] (unknown):     at wrapSafe (node:internal/modules/cjs/loader:1033:15)
+[17/08/2022, 23:49:27 ERROR] (unknown):     at Module._compile (node:internal/modules/cjs/loader:1069:27)
+[17/08/2022, 23:49:27 ERROR] (unknown):     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+[17/08/2022, 23:49:27 ERROR] (unknown):     at Module.load (node:internal/modules/cjs/loader:981:32)
+[17/08/2022, 23:49:27 ERROR] (unknown):     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+[17/08/2022, 23:49:27 ERROR] (unknown):     at Module.require (node:internal/modules/cjs/loader:1005:19)
+[17/08/2022, 23:49:27 ERROR] (unknown):     at require (node:internal/modules/cjs/helpers:102:18)
+[17/08/2022, 23:49:27 ERROR] (unknown):     at _allCode (C:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\index.js:102:14)
+[17/08/2022, 23:49:27 ERROR] (unknown):     at C:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\index.js:37:5
+[17/08/2022, 23:49:27 ERROR] (unknown): 
+[18/08/2022, 01:56:45 ERROR] (unknown): /!\ UNCAUGH ERROR /!\ c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\server.js:152
+[18/08/2022, 01:56:45 ERROR] (unknown):                 error: `${e}`;
+[18/08/2022, 01:56:45 ERROR] (unknown):                              ^
+[18/08/2022, 01:56:45 ERROR] (unknown): 
+[18/08/2022, 01:56:45 ERROR] (unknown): SyntaxError: Unexpected token ';'
+[18/08/2022, 01:56:45 ERROR] (unknown):     at Object.compileFunction (node:vm:352:18)
+[18/08/2022, 01:56:45 ERROR] (unknown):     at wrapSafe (node:internal/modules/cjs/loader:1033:15)
+[18/08/2022, 01:56:45 ERROR] (unknown):     at Module._compile (node:internal/modules/cjs/loader:1069:27)
+[18/08/2022, 01:56:45 ERROR] (unknown):     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+[18/08/2022, 01:56:45 ERROR] (unknown):     at Module.load (node:internal/modules/cjs/loader:981:32)
+[18/08/2022, 01:56:45 ERROR] (unknown):     at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+[18/08/2022, 01:56:45 ERROR] (unknown):     at Module.require (node:internal/modules/cjs/loader:1005:19)
+[18/08/2022, 01:56:45 ERROR] (unknown):     at require (node:internal/modules/cjs/helpers:102:18)
+[18/08/2022, 01:56:45 ERROR] (unknown):     at _allCode (c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\index.js:102:14)
+[18/08/2022, 01:56:45 ERROR] (unknown):     at c:\Users\Sylicium\Documents\devlopement\Projets\#0006 Discord bot settings API\v2\Discord-bot-settings-API\index.js:37:5
+[18/08/2022, 01:56:45 ERROR] (unknown): 

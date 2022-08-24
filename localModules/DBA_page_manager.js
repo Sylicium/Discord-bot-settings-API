@@ -8,7 +8,8 @@ const somef = require("./someFunctions");
 
 
 let patterns = {
-    "waterfallsettings_v2": require("../datas/patterns/settingsPage/v2")
+    "waterfallsettings_v2": require("../datas/patterns/settingsPage/v2"),
+    "waterfallsettings_v3": require("../datas/patterns/settingsPage/v3"),
 }
 
 class DBAPageManager {
@@ -22,7 +23,7 @@ class DBAPageManager {
 
         }
         */
-        let html = patterns["waterfallsettings_v2"].getHTML()
+        let html = patterns["waterfallsettings_v3"].getHTML()
         let new_html = somef.replaceAllThoses(html, [
             { split: "{{page.name}}", join: pageOptions.pageName},
             { split: "{{page.description}}", join: pageOptions.pageDescription},
