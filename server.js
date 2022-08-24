@@ -520,12 +520,12 @@ module.exports.start = () => {
                 
                 Logger.debug("le_user",le_user)
 
-                if(!le_user || !le_user.id) {
-                    redirectToDiscordAuthError("Undefined user","Cannot find Discord user")
-                    return;
-                }
                 if(le_user.error == "429") {
                     redirectToDiscordAuthError("Rate limited","Discord has rate limited our website, please try again later.")
+                    return;
+                }
+                if(!le_user || !le_user.id) {
+                    redirectToDiscordAuthError("Undefined user","Cannot find Discord user")
                     return;
                 }
 

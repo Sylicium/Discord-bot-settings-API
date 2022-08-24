@@ -108,7 +108,7 @@ let html_page = `<html>
             Cooldowns.add("send_datas",1000)
 
             function _settings_reset_default() {
-                if(!confirm("[EN] Are you sure? It will reset and save the data as you got it the first time you loaded this page.\n\n[FR] Êtes-vous sûr? Cela réinitialisera et enregistrera les données telles que vous les avez obtenues la première fois que vous avez chargé cette page.")) return;
+                if(!confirm("[EN] Are you sure? It will reset and save the data as you got it the first time you loaded this page.\\n\\n[FR] Êtes-vous sûr? Cela réinitialisera et enregistrera les données telles que vous les avez obtenues la première fois que vous avez chargé cette page.")) return;
                 
                 if(!Cooldowns.test("discard_button")) return;
                 Waterfall.clearWaterfall(document.getElementById("mainbox"))
@@ -118,7 +118,7 @@ let html_page = `<html>
             function _settings_send_datas() {
                 
                 if(pageInfos.oneUse) {
-                    if(!confirm("[EN] Warning ! This page is for single use, it means that if you save this page only once it will expire. DO NOT SAVE UNTIL YOU DONE.\n\n[FR] Avertissement ! Cette page est à usage unique, cela signifie que si vous enregistrez cette page une seule fois elle expirera. NE PAS ENREGISTRER AVANT D'AVOIR TERMINÉ.")) return;
+                    if(!confirm("[EN] Warning ! This page is for single use, it means that if you save this page only once it will expire. DO NOT SAVE UNTIL YOU DONE.\\n\\n[FR] Avertissement ! Cette page est à usage unique, cela signifie que si vous enregistrez cette page une seule fois elle expirera. NE PAS ENREGISTRER AVANT D'AVOIR TERMINÉ.")) return;
                 }
 
                 if(!Cooldowns.test("send_datas")) return;

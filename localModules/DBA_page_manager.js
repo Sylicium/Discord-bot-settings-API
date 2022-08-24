@@ -26,7 +26,7 @@ class DBAPageManager {
         let html = patterns["waterfallsettings_v3"].getHTML()
         let new_html = somef.replaceAllThoses(html, [
             { split: "{{page.name}}", join: pageOptions.pageName},
-            { split: "{{page.description}}", join: pageOptions.pageDescription},
+            { split: "{{page.description}}", join: (pageOptions.pageDescription.length > 1 ? pageOptions.pageDescription : "")},
             { split: "{{page.oneUse}}", join: `${pageOptions.oneUse}`},
             { split: "{{page.waterfall}}", join: JSON.stringify(pageOptions.settingsWaterfall)},
             { split: "{{page.backToEndpointUrl}}", join: JSON.stringify(pageOptions.backToEndpointUrl)},
