@@ -11,12 +11,12 @@ let html_page = `<html>
         <meta property="og:title" content="{{config.website.title}}">
         <meta property="og:description" content="{{settings.description}}">
         <meta name="theme-color" content="#586DF2">
-        <link rel="stylesheet" href="./assets/style/discordColors.css">
-        <link rel="stylesheet" href="./assets/style/global.css">
-        <link rel="stylesheet" href="./assets/style/waterfall_v3/waterfall_3.css">
-        <link rel="stylesheet" href="./assets/style/discordSwitchButtons.css">
-        <link rel="stylesheet" href="./assets/style/discordRadioButtons.css">
-        <link rel="stylesheet" href="./assets/style/discordSliders.css">
+        <link rel="stylesheet" href="/assets/style/discordColors.css">
+        <link rel="stylesheet" href="/assets/style/global.css">
+        <link rel="stylesheet" href="/assets/style/waterfall_v3/waterfall_3.css">
+        <link rel="stylesheet" href="/assets/style/discordSwitchButtons.css">
+        <link rel="stylesheet" href="/assets/style/discordRadioButtons.css">
+        <link rel="stylesheet" href="/assets/style/discordSliders.css">
     </head>
     <body>
         <div id="toasts"></div>
@@ -47,9 +47,9 @@ let html_page = `<html>
         </div>
         <style></style>
         <script src="/socket.io/socket.io.js"></script>
-        <script src="./assets/script/basicFunctions.js"></script>
-        <script src="./assets/script/waterfall_v3/waterfall_v3.js"></script>
-        <script src="./assets/script/waterfall_v3/waterfall_v3_addon.js"></script>
+        <script src="/assets/script/basicFunctions.js"></script>
+        <script src="/assets/script/waterfall_v3/waterfall_v3.js"></script>
+        <script src="/assets/script/waterfall_v3/waterfall_v3_addon.js"></script>
         <script>
             let focusedID;
             let selectedID;
